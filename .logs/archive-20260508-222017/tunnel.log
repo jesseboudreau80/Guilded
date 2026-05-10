@@ -1,0 +1,47 @@
+2026-05-09T01:51:40Z INF Starting tunnel tunnelID=82b66414-9142-442e-bded-bb7fc70d7b4c
+2026-05-09T01:51:40Z INF Version 2026.3.0 (Checksum 4a9e50e6d6d798e90fcd01933151a90bf7edd99a0a55c28ad18f2e16263a5c30)
+2026-05-09T01:51:40Z INF GOOS: linux, GOVersion: go1.24.13, GoArch: amd64
+2026-05-09T01:51:40Z INF Settings: map[cred-file:/home/jesse/.cloudflared/82b66414-9142-442e-bded-bb7fc70d7b4c.json credentials-file:/home/jesse/.cloudflared/82b66414-9142-442e-bded-bb7fc70d7b4c.json]
+2026-05-09T01:51:40Z INF Autoupdate frequency is set autoupdateFreq=86400000
+2026-05-09T01:51:40Z INF Generated Connector ID: 427e6851-a8d3-4a61-8fa8-725528b9e209
+2026-05-09T01:51:40Z INF Initial protocol quic
+2026-05-09T01:51:41Z INF ICMP proxy will use 66.94.117.172 as source for IPv4
+2026-05-09T01:51:41Z INF ICMP proxy will use 2605:a142:2300:2990::1 in zone eth0 as source for IPv6
+2026-05-09T01:51:41Z WRN The user running cloudflared process has a GID (group ID) that is not within ping_group_range. You might need to add that user to a group within that range, or instead update the range to encompass a group the user is already in by modifying /proc/sys/net/ipv4/ping_group_range. Otherwise cloudflared will not be able to ping this network error="Group ID 1000 is not between ping group 1 to 0"
+2026-05-09T01:51:41Z WRN ICMP proxy feature is disabled error="cannot create ICMPv4 proxy: Group ID 1000 is not between ping group 1 to 0 nor ICMPv6 proxy: socket: permission denied"
+2026-05-09T01:51:41Z INF ICMP proxy will use 66.94.117.172 as source for IPv4
+2026-05-09T01:51:41Z INF ICMP proxy will use 2605:a142:2300:2990::1 in zone eth0 as source for IPv6
+2026-05-09T01:51:41Z INF Starting metrics server on 127.0.0.1:20243/metrics
+2026-05-09T01:51:41Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.27
+2026/05/08 21:51:41 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.
+2026-05-09T01:51:41Z INF Registered tunnel connection connIndex=0 connection=8a86ccd1-18b8-4ce3-8833-e1eb68e7350d event=0 ip=198.41.192.27 location=ewr11 protocol=quic
+2026-05-09T01:51:41Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=1 event=0 ip=198.41.200.233
+2026-05-09T01:51:41Z INF Registered tunnel connection connIndex=1 connection=89bfc955-ce99-4e2e-a6d2-5e6d69764a65 event=0 ip=198.41.200.233 location=ewr12 protocol=quic
+2026-05-09T01:51:42Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=2 event=0 ip=198.41.192.167
+2026-05-09T01:51:42Z INF Registered tunnel connection connIndex=2 connection=e268f549-a1f7-4715-829e-57adfa36cf1f event=0 ip=198.41.192.167 location=ewr11 protocol=quic
+2026-05-09T01:51:43Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=3 event=0 ip=198.41.200.193
+2026-05-09T01:51:43Z INF Registered tunnel connection connIndex=3 connection=627ee382-6b5e-43c5-ad4b-dd2b97c4a4ef event=0 ip=198.41.200.193 location=ewr15 protocol=quic
+2026-05-09T02:20:15Z INF Initiating graceful shutdown due to signal terminated ...
+2026-05-09T02:20:15Z ERR failed to run the datagram handler error="context canceled" connIndex=3 event=0 ip=198.41.200.193
+2026-05-09T02:20:15Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=3 event=0 ip=198.41.200.193
+2026-05-09T02:20:15Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=3 event=0 ip=198.41.200.193
+2026-05-09T02:20:15Z INF Retrying connection in up to 1s connIndex=3 event=0 ip=198.41.200.193
+2026-05-09T02:20:15Z ERR Connection terminated connIndex=3
+2026-05-09T02:20:15Z ERR failed to run the datagram handler error="context canceled" connIndex=0 event=0 ip=198.41.192.27
+2026-05-09T02:20:15Z ERR failed to run the datagram handler error="context canceled" connIndex=1 event=0 ip=198.41.200.233
+2026-05-09T02:20:15Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=1 event=0 ip=198.41.200.233
+2026-05-09T02:20:15Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=1 event=0 ip=198.41.200.233
+2026-05-09T02:20:15Z INF Retrying connection in up to 1s connIndex=1 event=0 ip=198.41.200.233
+2026-05-09T02:20:15Z ERR Connection terminated connIndex=1
+2026-05-09T02:20:15Z ERR failed to run the datagram handler error="context canceled" connIndex=2 event=0 ip=198.41.192.167
+2026-05-09T02:20:15Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.27
+2026-05-09T02:20:15Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.27
+2026-05-09T02:20:15Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=2 event=0 ip=198.41.192.167
+2026-05-09T02:20:15Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.27
+2026-05-09T02:20:15Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=2 event=0 ip=198.41.192.167
+2026-05-09T02:20:15Z INF Retrying connection in up to 1s connIndex=2 event=0 ip=198.41.192.167
+2026-05-09T02:20:15Z ERR Connection terminated connIndex=0
+2026-05-09T02:20:15Z ERR Connection terminated connIndex=2
+2026-05-09T02:20:15Z ERR no more connections active and exiting
+2026-05-09T02:20:15Z INF Tunnel server stopped
+2026-05-09T02:20:15Z INF Metrics server stopped

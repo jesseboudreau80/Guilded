@@ -1,0 +1,86 @@
+INFO:     Started server process [326575]
+INFO:     Waiting for application startup.
+2026-05-09 09:57:46,872 INFO app.main: CORS allowed origins: ['https://guilded.jesseboudreau.com']
+2026-05-09 09:57:46,959 INFO app.main: Database tables verified/created
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8100 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55572 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56672 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56688 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56700 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40214 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40230 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40236 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2605:a142:2300:2990::1:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/upload HTTP/1.1" 200 OK
+2026-05-09 09:59:49,680 INFO app.domains.audit.service: Audit started for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 — extracting PDF text
+2026-05-09 09:59:56,349 INFO httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 09:59:56,358 INFO app.domains.audit.service: Accounts extracted for user ca920717-3ad3-4dbb-9ac7-a0755ed32937: 5 found
+INFO:     127.0.0.1:44668 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "POST /api/audit/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44670 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/20aff580-5b80-4391-8303-fb963e6c5e1f/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44674 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "GET /api/audit/20aff580-5b80-4391-8303-fb963e6c5e1f/accounts HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/20aff580-5b80-4391-8303-fb963e6c5e1f/verify HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "POST /api/audit/20aff580-5b80-4391-8303-fb963e6c5e1f/verify HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/20aff580-5b80-4391-8303-fb963e6c5e1f/run HTTP/1.1" 200 OK
+2026-05-09 10:00:28,128 INFO httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 10:00:28,130 INFO app.domains.audit.service: Audit completed for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 — risk_score=75 recs=15
+2026-05-09 10:00:28,164 INFO app.domains.audit.service: Tier gating applied for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 (tier=APPRENTICE) — free tier=True
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "POST /api/audit/20aff580-5b80-4391-8303-fb963e6c5e1f/run HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/20aff580-5b80-4391-8303-fb963e6c5e1f/results HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "GET /api/audit/20aff580-5b80-4391-8303-fb963e6c5e1f/results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35410 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35286 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35294 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/upload HTTP/1.1" 200 OK
+2026-05-09 10:01:51,254 INFO app.domains.audit.service: Audit started for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 — extracting PDF text
+2026-05-09 10:01:57,711 INFO httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 10:01:57,712 INFO app.domains.audit.service: Accounts extracted for user ca920717-3ad3-4dbb-9ac7-a0755ed32937: 5 found
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "POST /api/audit/upload HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/800cf48c-4479-4bdf-b4ad-a68194db7c8a/accounts HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "GET /api/audit/800cf48c-4479-4bdf-b4ad-a68194db7c8a/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47844 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47858 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47872 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/800cf48c-4479-4bdf-b4ad-a68194db7c8a/verify HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "POST /api/audit/800cf48c-4479-4bdf-b4ad-a68194db7c8a/verify HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/800cf48c-4479-4bdf-b4ad-a68194db7c8a/run HTTP/1.1" 200 OK
+2026-05-09 10:02:20,827 INFO httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 10:02:20,830 INFO app.domains.audit.service: Audit completed for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 — risk_score=75 recs=15
+2026-05-09 10:02:20,836 INFO app.domains.audit.service: Tier gating applied for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 (tier=APPRENTICE) — free tier=True
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "POST /api/audit/800cf48c-4479-4bdf-b4ad-a68194db7c8a/run HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/audit/800cf48c-4479-4bdf-b4ad-a68194db7c8a/results HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "GET /api/audit/800cf48c-4479-4bdf-b4ad-a68194db7c8a/results HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "OPTIONS /api/stripe/checkout HTTP/1.1" 200 OK
+2026-05-09 10:02:44,931 INFO stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-05-09 10:02:45,329 INFO stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=200
+2026-05-09 10:02:45,333 INFO app.domains.stripe.router: Checkout session created: user ca920717-3ad3-4dbb-9ac7-a0755ed32937 tier JOURNEYMAN session cs_test_a1E3GEzcgbnFW7uNWISDWnPohv68Y8iEKgo01pS4qcWeaJDAwciOys4FyH
+INFO:     2600:1702:db0:1be0:1cf4:f514:2367:9ff9:0 - "POST /api/stripe/checkout HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43046 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43052 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43060 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37914 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37928 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37930 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47290 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47302 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47310 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50916 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50920 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50932 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50308 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50324 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50334 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36758 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36770 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36774 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56090 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38662 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38674 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35884 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35886 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35890 - "GET / HTTP/1.1" 404 Not Found

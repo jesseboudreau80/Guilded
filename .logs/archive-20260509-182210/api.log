@@ -1,0 +1,77 @@
+INFO:     Started server process [558850]
+INFO:     Waiting for application startup.
+2026-05-09 13:34:35,609 INFO app.main: CORS allowed origins: ['https://guilded.jesseboudreau.com']
+2026-05-09 13:34:35,729 INFO app.main: Database tables verified/created
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8100 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49758 - "GET /health HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45880 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45882 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45886 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/modules HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/ledger/accounts HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/ledger/summary HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/bankruptcy/info HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/bankruptcy/case HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/consultations/eligibility HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/audit/upload HTTP/1.1" 200 OK
+2026-05-09 13:35:18,071 INFO app.domains.audit.service: Audit started for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 — extracting PDF text
+2026-05-09 13:35:26,767 INFO httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 13:35:26,776 INFO app.domains.audit.service: Accounts extracted for user ca920717-3ad3-4dbb-9ac7-a0755ed32937: 5 found
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "POST /api/audit/upload HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/audit/e7e409ba-2ced-4cb2-8158-b3a65d66af89/accounts HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/audit/e7e409ba-2ced-4cb2-8158-b3a65d66af89/accounts HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/audit/e7e409ba-2ced-4cb2-8158-b3a65d66af89/verify HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "POST /api/audit/e7e409ba-2ced-4cb2-8158-b3a65d66af89/verify HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/audit/e7e409ba-2ced-4cb2-8158-b3a65d66af89/run HTTP/1.1" 200 OK
+2026-05-09 13:35:44,881 INFO httpx: HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-09 13:35:44,883 INFO app.domains.audit.service: Audit completed for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 — risk_score=75 recs=15
+2026-05-09 13:35:44,902 INFO app.domains.audit.service: Tier gating applied for user ca920717-3ad3-4dbb-9ac7-a0755ed32937 (tier=APPRENTICE) — free tier=True
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "POST /api/audit/e7e409ba-2ced-4cb2-8158-b3a65d66af89/run HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/audit/e7e409ba-2ced-4cb2-8158-b3a65d66af89/results HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/audit/e7e409ba-2ced-4cb2-8158-b3a65d66af89/results HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44340 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44350 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44360 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37180 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37196 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37206 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34108 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34122 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44788 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36106 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36120 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36128 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46372 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46380 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46394 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38394 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38402 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38406 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41600 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41612 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41624 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52844 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52852 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52868 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41774 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41780 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41790 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37162 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37178 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37192 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58120 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58130 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58144 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57842 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52722 - "POST /auth/login HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52732 - "GET /organization/settings HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52738 - "PATCH /organization/settings HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34844 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34860 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34866 - "GET / HTTP/1.1" 404 Not Found

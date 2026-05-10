@@ -1,0 +1,172 @@
+{#
+  _macros.html — Guilded email template utilities
+
+  Include in every template:
+    {% from "_macros.html" import email_wrapper, cta_button, divider, stat_pill %}
+
+  Macros:
+    email_wrapper(content)    — full dark layout with header + footer
+    cta_button(url, label)    — gold CTA button
+    divider()                 — horizontal separator
+    stat_pill(label, value)   — inline stat display
+    section_label(text)       — small uppercase section heading
+#}
+
+{% macro email_wrapper(subject_preview="") %}
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+  <!--[if mso]>
+  <xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml>
+  <noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+  <![endif]-->
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table { border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { border: 0; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; }
+    /* ── Mobile ── */
+    @media only screen and (max-width: 620px) {
+      .em-w-full  { width: 100% !important; }
+      .em-px      { padding-left: 20px !important; padding-right: 20px !important; }
+      .em-py      { padding-top: 28px !important; padding-bottom: 28px !important; }
+      .em-block   { display: block !important; }
+      .em-center  { text-align: center !important; }
+      .em-h1      { font-size: 24px !important; }
+      .em-stat    { display: block !important; width: 100% !important; padding: 8px 0 !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#0f172a;-webkit-font-smoothing:antialiased;">
+
+{% if subject_preview %}
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">{{ subject_preview }}</div>
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
+{% endif %}
+
+<!-- Outer wrapper -->
+<table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background-color:#0f172a;">
+  <tr>
+    <td align="center" style="padding:40px 20px;">
+
+      <!-- Container — max 580px -->
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="max-width:580px;">
+
+        <!-- ── Brand header ── -->
+        <tr>
+          <td align="center" style="padding-bottom:28px;">
+            <!-- Shield icon (SVG fallback to emoji) -->
+            <!--[if mso]>
+            <table><tr><td style="width:52px;height:52px;background:#bfa03a22;border:1px solid #bfa03a55;border-radius:13px;text-align:center;line-height:52px;font-size:22px;">
+            <![endif]-->
+            <div style="display:inline-block;width:52px;height:52px;background-color:#bfa03a22;border:1px solid #bfa03a55;border-radius:13px;text-align:center;line-height:52px;font-size:22px;margin-bottom:12px;">
+              🛡
+            </div>
+            <!--[if mso]></td></tr></table><![endif]-->
+            <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:21px;font-weight:800;color:#ffffff;letter-spacing:-0.3px;">Guilded</div>
+            <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;color:#475569;margin-top:4px;letter-spacing:1.5px;text-transform:uppercase;">Financial Recovery Platform</div>
+          </td>
+        </tr>
+
+        <!-- ── Card ── -->
+        <tr>
+          <td>
+            <!--[if mso]>
+            <table width="100%" cellpadding="0" cellspacing="0"><tr><td style="background:#1e293b;border-radius:18px;border:1px solid #334155;">
+            <![endif]-->
+            <div class="em-py em-px" style="background-color:#1e293b;border-radius:18px;border:1px solid #334155;overflow:hidden;">
+              <!-- Gold accent bar -->
+              <div style="height:3px;background:linear-gradient(90deg,#bfa03a 0%,#d4b56a 60%,#bfa03a 100%);margin:-28px -28px 28px -28px;mso-hide:all;"></div>
+              <!--[if mso]><div style="height:3px;background:#bfa03a;margin-bottom:24px;"></div><![endif]-->
+              <!-- Main content slot -->
+              {{ caller() }}
+            </div>
+            <!--[if mso]></td></tr></table><![endif]-->
+          </td>
+        </tr>
+
+        <!-- ── Footer ── -->
+        <tr>
+          <td style="padding:24px 0 0;" align="center">
+            <p style="margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;color:#475569;line-height:1.8;">
+              <a href="{{ app_url }}/terms" style="color:#475569;text-decoration:none;">Terms</a>
+              &nbsp;·&nbsp;
+              <a href="{{ app_url }}/privacy" style="color:#475569;text-decoration:none;">Privacy</a>
+              &nbsp;·&nbsp;
+              <a href="{{ app_url }}/ai-disclaimer" style="color:#475569;text-decoration:none;">AI Disclaimer</a>
+              &nbsp;·&nbsp;
+              <a href="mailto:{{ support_email }}" style="color:#475569;text-decoration:none;">Support</a>
+            </p>
+            <p style="margin:8px 0 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;color:#334155;">
+              Educational guidance only &nbsp;·&nbsp; Not legal or financial advice
+            </p>
+            <p style="margin:8px 0 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;color:#1e293b;">
+              &copy; {{ current_year }} Guilded &nbsp;·&nbsp; Early Access
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+{% endmacro %}
+
+
+{% macro cta_button(url, label, secondary=false) %}
+<table cellpadding="0" cellspacing="0" role="presentation" style="margin:24px 0;">
+  <tr>
+    <td align="left">
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="{{ url }}" style="height:48px;mso-wrap-style:none;" arcsize="25%" fillcolor="{% if secondary %}#1e293b{% else %}#bfa03a{% endif %}">
+      <v:stroke dashstyle="Solid" weight="1pt" color="{% if secondary %}#334155{% else %}#bfa03a{% endif %}"/>
+      <w:anchorlock/><center style="color:{% if secondary %}#94a3b8{% else %}#0f172a{% endif %};font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:600;">{{ label }}</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a href="{{ url }}" style="display:inline-block;background-color:{% if secondary %}transparent{% else %}#bfa03a{% endif %};color:{% if secondary %}#94a3b8{% else %}#0f172a{% endif %};font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:14px;font-weight:700;letter-spacing:0.2px;line-height:1;padding:15px 28px;border-radius:12px;text-decoration:none;{% if secondary %}border:1px solid #334155;{% endif %}">
+        {{ label }}
+      </a>
+      <!--<![endif]-->
+    </td>
+  </tr>
+</table>
+{% endmacro %}
+
+
+{% macro divider() %}
+<table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="margin:24px 0;">
+  <tr>
+    <td style="border-top:1px solid #334155;font-size:0;line-height:0;">&nbsp;</td>
+  </tr>
+</table>
+{% endmacro %}
+
+
+{% macro section_label(text) %}
+<p style="margin:0 0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:600;color:#bfa03a;letter-spacing:1.5px;text-transform:uppercase;">{{ text }}</p>
+{% endmacro %}
+
+
+{% macro stat_row(items) %}
+<table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="margin:16px 0;">
+  <tr>
+    {% for label, value, color in items %}
+    <td class="em-stat" style="padding:0 16px 0 0;vertical-align:top;{% if loop.last %}padding-right:0;{% endif %}">
+      <div style="background:#0f172a;border-radius:10px;border:1px solid #334155;padding:12px 14px;">
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;color:#64748b;margin-bottom:4px;letter-spacing:0.5px;text-transform:uppercase;">{{ label }}</div>
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:700;color:{{ color or '#f1f5f9' }};">{{ value }}</div>
+      </div>
+    </td>
+    {% endfor %}
+  </tr>
+</table>
+{% endmacro %}

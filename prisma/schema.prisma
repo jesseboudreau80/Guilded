@@ -22,22 +22,22 @@ enum SubscriptionStatus {
 }
 
 model User {
-  id                    String             @id @default(cuid())
-  name                  String?
-  email                 String?            @unique
-  emailVerified         DateTime?
-  image                 String?
-  passwordHash          String?
-  tier                  Tier               @default(APPRENTICE)
-  subscriptionStartDate DateTime?
-  successfulBillingCount Int               @default(0)
-  subscriptionStatus    SubscriptionStatus @default(INACTIVE)
-  aiUsageCount          Int                @default(0)
-  aiUsageResetDate      DateTime?
-  stripeCustomerId      String?            @unique
-  stripeSubscriptionId  String?            @unique
-  createdAt             DateTime           @default(now())
-  updatedAt             DateTime           @updatedAt
+  id                     String             @id @default(cuid())
+  name                   String?
+  email                  String?            @unique
+  emailVerified          DateTime?
+  image                  String?
+  passwordHash           String?
+  tier                   Tier               @default(APPRENTICE)
+  subscriptionStatus     SubscriptionStatus @default(INACTIVE)
+  stripeCustomerId       String?            @unique
+  stripeSubscriptionId   String?            @unique
+  subscriptionStartDate  DateTime?
+  successfulBillingCount Int                @default(0)
+  aiUsageCount           Int                @default(0)
+  aiUsageResetDate       DateTime?
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
 
   accounts      Account[]
   sessions      Session[]
@@ -46,18 +46,18 @@ model User {
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?
-  access_token       String?
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -104,19 +104,29 @@ model Progress {
   lessonId    String
   completedAt DateTime @default(now())
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  lesson      Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  lesson      Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
 
   @@unique([userId, lessonId])
 }
 
 model Consultation {
-  id            String   @id @default(cuid())
-  userId        String
+  id             String    @id @default(cuid())
+  userId         String
   tierAtPurchase Tier
-  price         Int
-  purchasedAt   DateTime @default(now())
-  scheduledDate DateTime?
-  completed     Boolean  @default(false)
-  discounted    Boolean  @default(false)
-  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pricePaid      Int       // cents — e.g. 20000 = $200.00
+  discounted     Boolean   @default(false)
+  scheduledDate  DateTime?
+  createdAt      DateTime  @default(now())
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Idempotency table for Stripe webhook events.
+// The Stripe event ID (evt_xxxx) is the primary key.
+// Processing is wrapped in a $transaction that creates this record first;
+// a duplicate delivery hits the unique constraint and is rejected before any
+// business logic runs.
+model StripeEvent {
+  id          String   @id // Stripe evt_xxxx
+  type        String
+  processedAt DateTime @default(now())
 }

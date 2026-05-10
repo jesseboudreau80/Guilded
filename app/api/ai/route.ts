@@ -1,41 +1,60 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireUser } from "@/lib/server-auth";
-import { getAiLimit, resetAiUsageIfNeeded } from "@/lib/ai-usage";
+import { atomicConsumeAiMessage } from "@/lib/ai-usage";
+import { AI_LIMITS } from "@/lib/tiers";
 import { openai, EDUCATIONAL_DISCLAIMER } from "@/lib/openai";
-import { prisma } from "@/lib/prisma";
 
-const schema = z.object({ prompt: z.string().min(4).max(4000) });
+const schema = z.object({
+  prompt: z.string().min(4).max(4000),
+});
 
 export async function POST(request: Request) {
   const user = await requireUser();
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  await resetAiUsageIfNeeded(user.id, user.tier, user.aiUsageResetDate);
-  const refreshed = await prisma.user.findUnique({ where: { id: user.id } });
-  if (!refreshed) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { messages, maxTokens } = getAiLimit(refreshed.tier);
-  if (messages === 0) {
-    return NextResponse.json({ error: "AI is unavailable on your tier. Upgrade required." }, { status: 403 });
+  // Parse and validate body before consuming a message credit.
+  let body: z.infer<typeof schema>;
+  try {
+    const raw = await request.json();
+    body = schema.parse(raw);
+  } catch {
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  if (refreshed.aiUsageCount >= messages) {
-    return NextResponse.json({
-      error: "Monthly AI message cap reached.",
-      upgradeRequired: true,
-    }, { status: 429 });
+  // Atomically reset monthly counter if needed, then attempt to consume one
+  // message. This is the single enforcement point — never trust client state.
+  const result = await atomicConsumeAiMessage(user.id, user.tier);
+
+  if (result === "no_access") {
+    return NextResponse.json(
+      { error: "AI access requires a paid subscription.", upgradeRequired: true },
+      { status: 403 }
+    );
   }
 
-  const body = schema.parse(await request.json());
-  const completion = await openai.responses.create({
+  if (result === "cap_exceeded") {
+    return NextResponse.json(
+      { error: "Monthly AI message cap reached.", upgradeRequired: true },
+      { status: 429 }
+    );
+  }
+
+  // Counter has been incremented. Proceed with the OpenAI call.
+  // If the call fails, the credit is consumed — this prevents abuse via
+  // error-looping to avoid counting.
+  const { maxTokens } = AI_LIMITS[user.tier];
+
+  const completion = await openai.chat.completions.create({
     model: "gpt-4o-mini",
-    input: body.prompt,
-    max_output_tokens: maxTokens,
+    messages: [{ role: "user", content: body.prompt }],
+    max_tokens: maxTokens,
   });
 
-  await prisma.user.update({ where: { id: user.id }, data: { aiUsageCount: { increment: 1 } } });
+  const text =
+    completion.choices[0]?.message?.content ?? "No response generated.";
 
-  const text = completion.output_text || "No response generated.";
-  return NextResponse.json({ response: `${EDUCATIONAL_DISCLAIMER}\n\n${text}` });
+  return NextResponse.json({
+    response: `${EDUCATIONAL_DISCLAIMER}\n\n${text}`,
+  });
 }

@@ -1,0 +1,3725 @@
+{
+  "modules": [
+    {
+      "number": 1,
+      "title": "Understanding Credit Fundamentals",
+      "slug": "understanding-credit-fundamentals",
+      "meta": {
+        "tier": "APPRENTICE",
+        "minutes": 45,
+        "badge": "Foundation"
+      },
+      "intro_blocks": [],
+      "lessons": [
+        {
+          "number": "1.1",
+          "title": "Anatomy of a Credit Score",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "What is a Credit Score?",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Definition and purpose of credit scores.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How lenders use credit scores to evaluate risk.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Examples of when your credit score matters (e.g., loans, housing, employment).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "The Factors Behind Your Credit Score",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Payment History (35%): The impact of missed payments and delinquencies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Credit Utilization (30%): Why keeping balances low is key.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Credit History Length (15%): Why time plays a critical role.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Credit Mix (10%): The benefits of having a variety of credit accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "New Credit (10%): How inquiries and new accounts affect your score.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Understanding the Scoring Models",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "FICO Score vs. VantageScore: Similarities and differences.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Industry-specific credit scores (e.g., mortgage, auto loan scores).",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "1.2",
+          "title": "What is a Credit Report?",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Breaking Down a Credit Report",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Sections of a credit report (Personal Information, Accounts, Inquiries, Public Records).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Common inaccuracies to look for (misspelled names, incorrect balances, duplicate accounts).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Where to Access Your Credit Report",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Free annual reports through AnnualCreditReport.com.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Additional monitoring services and tools (e.g., Credit Karma, Experian).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "How to Interpret Your Credit Report",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Identifying positive and negative factors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Assessing patterns that affect your credit health.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Recognizing accounts with errors that may need to be disputed.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "1.3",
+          "title": "The Importance of Credit in Financial Health",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "How Credit Impacts Your Life",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Real-life scenarios where credit scores matter (renting an apartment, securing a loan, getting lower interest rates).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The long-term benefits of good credit health.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "The Consequences of Bad Credit",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Higher interest rates and fees.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Difficulty securing credit or housing.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Increased financial stress.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Building a Credit Repair Mindset",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Adopting the Guild's motto: \"Preparation is the key to victory.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Understanding that credit repair is a long-term process requiring patience and strategy.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "1.4",
+          "title": "Common Myths About Credit",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Debunking Popular Misconceptions",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Checking your credit score will hurt your credit.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Carrying a small balance on your credit card is better than paying it off.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Closing old accounts will improve your score.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Facts vs. Fiction",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Real-world examples to clarify common misunderstandings.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How myths can lead to poor credit decisions.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "1.5",
+          "title": "Setting Goals for Credit Repair",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Identifying Your Starting Point",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Analyzing your current credit score and report.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Determining your short-term and long-term goals.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Defining Credit Repair Success",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Setting benchmarks (e.g., improving your score by 50 points in 6 months).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Celebrating small wins to stay motivated.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Creating a Credit Repair Plan",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Building a timeline for disputes, payments, and rebuilding steps.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tools and resources to stay organized.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "1.6",
+          "title": "Exclusive Guild Tools and Resources",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Credit Score Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A Guild-themed tracker to monitor your score progress over time.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Pre-built templates to log changes and patterns.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Report Review Checklist",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A step-by-step checklist for analyzing your credit report for errors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Built-in tips for what to prioritize when starting disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "The Credit Fundamentals Handbook",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A downloadable Guild guide summarizing key points from the module.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Interactive visuals to reinforce learning.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Thematic Guild Integration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Module Title: \"The Foundation of Credit Repair -- Laying the Stones of Success.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Language and Branding",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Your credit score is your shield; keep it polished and strong.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"The credit report is your battlefield map. Study it well.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Visuals and Design",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Illustrations of shields, scrolls, and maps to represent credit scores, reports, and plans.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gamified badges for completing quizzes and tracking progress.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Module Deliverables",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Fully explain the importance of understanding credit fundamentals.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Provide actionable steps to analyze and interpret credit scores and reports.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Equip participants with the mindset and tools for success.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Prepare members to begin their credit repair journey with confidence.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Preparing for Battle -- Foundation for Credit Repair",
+      "slug": "preparing-for-battle",
+      "meta": {
+        "tier": "APPRENTICE",
+        "minutes": 30,
+        "badge": "Tactical"
+      },
+      "intro_blocks": [
+        {
+          "kind": "paragraph",
+          "text": "This module focuses on laying the groundwork for effective credit repair by addressing errors, cleaning up personal information, and understanding the legal rights that protect you during the process. It introduces actionable steps and Guild-themed tools to set participants up for success.",
+          "level": 3,
+          "items": []
+        }
+      ],
+      "lessons": [
+        {
+          "number": "2.1",
+          "title": "Cleaning Up Personal Information -- The First Line of Defense",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Why It Matters",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How outdated or inaccurate personal information can hinder disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The connection between incorrect data and unverifiable negative accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Steps to Clean Up Personal Information",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Reviewing the \"Personal Information\" section of your credit report.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Identifying alternate names, outdated addresses, and incorrect employer details.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using \"Attack Letters\" to request corrections and deletions.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "The Ripple Effect",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How removing unnecessary personal information can delete verification links to negative accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Real-world examples of successful clean-ups leading to account deletions.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "2.2",
+          "title": "Identifying and Prioritizing Errors",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Common Credit Report Errors",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Duplicate accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Incorrect balances or payment histories.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Accounts that don't belong to you.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Prioritizing Disputes",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Ranking errors by impact on your credit score.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Focusing on high-priority items first (e.g., late payments, charge-offs).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Using the Guild Error Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A themed spreadsheet or tool for logging errors, dispute deadlines, and outcomes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Pre-filled dispute templates for common errors.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "2.3",
+          "title": "Crafting Effective Dispute Letters",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "What Makes a Good Dispute Letter?",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Clear, concise language.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Supporting documentation (e.g., copies of reports, ID, proof of address).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using the FCRA and FDCPA to support your case.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Themed Dispute Templates",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Knight's Personal Defense Letter\": For personal information disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Archer's Precision Attack Letter\": For challenging specific account inaccuracies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Siege the Bureau Letter\": For unresponsive bureaus or creditors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Best Practices for Sending Disputes",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Certified mail with return receipt requested.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Keeping detailed records of all correspondence.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "2.4",
+          "title": "Understanding Legal Rights in Debt Collection",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "The Fair Credit Reporting Act (FCRA)",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Overview of your rights under the FCRA.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to use the FCRA to challenge unverifiable accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "The Fair Debt Collection Practices Act (FDCPA)",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Understanding your protections against abusive or deceptive debt collection practices.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Writing \"Defense Letters\" to stop harassment and demand validation.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Using the Law as a Shield",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to cite legal violations in disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Steps to file complaints with the Consumer Financial Protection Bureau (CFPB).",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "2.5",
+          "title": "Negotiating with Creditors -- Strategies and Tools",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "When to Negotiate",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Identifying debts worth negotiating (e.g., verified debts with no dispute options).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Evaluating settlement offers versus paying in full.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Strategies for Successful Negotiation",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to approach creditors with confidence.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Leveraging the \"pay-for-delete\" strategy.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Themed Negotiation Tools",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Barterman's Agreement Letter\": For pay-for-delete negotiations.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Guild-approved scripts for phone calls with creditors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Avoiding Pitfalls",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Understanding re-aging of debts and how to avoid it.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Never admitting to ownership of debt during negotiations.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "2.6",
+          "title": "Establishing Your Defense System",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Organizing Your Documents",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Creating a Guild-worthy filing system for correspondence, proof, and reports.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using the Guild Dispute Journal for tracking progress and results.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Setting a Timeline",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Understanding dispute response deadlines (30-45 days for bureaus).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Planning follow-ups to ensure accountability.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Staying Proactive",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Monitoring credit reports for updates and inaccuracies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Continuing to clean up new errors as they arise.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "2.7",
+          "title": "Exclusive Tools and Resources",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Guild Attack & Defense Letter Templates",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Personal Information Disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Account Inaccuracy Challenges.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Creditor and Bureau Follow-Ups.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Error Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A themed tool to log errors, deadlines, and dispute progress.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Pre-built sections for prioritizing disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Legal Rights Handbook",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A downloadable guide summarizing your FCRA and FDCPA rights.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Step-by-step instructions for leveraging these laws.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Thematic Guild Integration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Module Title: \"Preparing for Battle -- Strengthen Your Position.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Language and Branding",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Every successful battle begins with preparation. Sharpen your tools, know your rights, and clean your battlefield.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Dispute templates named after medieval tools and strategies (e.g., Knight, Archer, Siege).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Visuals and Design",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Illustrations of scrolls, quills, and shields to symbolize organization and defense.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gamified progress bars to track module completion and dispute success.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Module Deliverables",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Teach participants how to clean up personal information for a stronger starting position.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Provide actionable steps and templates for disputing errors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Equip members with the knowledge of their legal rights.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Help participants build confidence in negotiations with creditors.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Building Your Arsenal -- Essential Tools & Techniques",
+      "slug": "building-your-arsenal",
+      "meta": {
+        "tier": "APPRENTICE",
+        "minutes": 45,
+        "badge": "Defensive"
+      },
+      "intro_blocks": [
+        {
+          "kind": "paragraph",
+          "text": "This module is designed to equip participants with the tools, techniques, and strategies to rebuild and strengthen their credit. It focuses on budgeting, improving credit utilization, using credit cards wisely, and understanding the impact of inquiries. Participants will leave this module with actionable strategies to establish a strong foundation for credit rebuilding.",
+          "level": 3,
+          "items": []
+        }
+      ],
+      "lessons": [
+        {
+          "number": "3.1",
+          "title": "Effective Budgeting Techniques",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Why Budgeting is Critical",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Budgeting as the backbone of financial stability and credit rebuilding.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The Guild mantra: \"A disciplined knight always accounts for their resources.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Creating a Guild-Worthy Budget",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Step-by-step guide to building a zero-based budget.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using the \"50/30/20 Rule\" to allocate income.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Identifying and reducing unnecessary expenses.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Tools and Resources",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The Guild Budget Tracker: A themed spreadsheet to track income, expenses, and savings.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Example scenarios for budgeting in various income brackets.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "3.2",
+          "title": "Improving Credit Utilization",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "What is Credit Utilization?",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Definition and why it accounts for 30% of your credit score.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Ideal utilization rates and how they impact your score.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Strategies for Reducing Utilization",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Paying down high balances systematically (Avalanche vs. Snowball methods).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Timing credit card payments to optimize reported balances.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Requesting credit limit increases (when and how to do it safely).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Tools",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The Credit Utilization Shield: A calculator to help manage balances and target optimal utilization rates.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Step-by-step walkthrough of balancing credit limits.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "3.3",
+          "title": "Secured vs. Unsecured Credit Cards",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Understanding Secured Credit Cards",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How secured cards work and their role in credit rebuilding.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Selecting the best secured cards (low fees, reporting to all bureaus).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Transitioning to Unsecured Cards",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "When and how to graduate to unsecured credit cards.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Identifying red flags in predatory credit card offers.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "The Guild Credit Card Mastery Guide",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A visual comparison of secured vs. unsecured cards.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tips for using credit cards responsibly to avoid future debt traps.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "3.4",
+          "title": "The Impact of Credit Inquiries",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Hard vs. Soft Inquiries",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Definitions and examples of each.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How hard inquiries affect your credit score.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Managing Inquiries",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Strategies to limit unnecessary hard inquiries.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to dispute unauthorized inquiries using \"Precision Archer Letters.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Inquiry Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A tool to log and monitor credit inquiries.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Templates for challenging unauthorized hard pulls.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "3.5",
+          "title": "Establishing New Credit Lines",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "When to Open New Accounts",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Timing new credit lines to optimize your credit score.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Choosing the right types of credit (credit cards, loans, etc.).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Building a Diverse Credit Mix",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How a mix of installment loans and revolving credit can improve your score.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Common mistakes to avoid when opening new accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Tools",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The \"Lending Tree Map\": A guide to choosing the right lenders and credit types.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Sample scripts for contacting creditors or banks.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "3.6",
+          "title": "Monitoring Your Progress",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Regular Credit Monitoring",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tools for tracking your credit score (free vs. paid services).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to spot changes in your report quickly.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "The Importance of Consistency",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Staying proactive with regular reviews.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Celebrating milestones to stay motivated.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Progress Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A themed tool to log credit improvements over time.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gamified badges for reaching credit milestones (e.g., first 50-point increase).",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "3.7",
+          "title": "Exclusive Tools and Resources",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Guild Budget Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A customizable tool for income and expense tracking.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Built-in tips for saving and paying down debt.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Credit Utilization Shield",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A calculator and guide to manage balances and utilization rates.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Credit Mastery Guide",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A downloadable booklet comparing secured vs. unsecured cards.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Practical advice for using credit responsibly.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Inquiry Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A tool to log, monitor, and dispute hard inquiries.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Thematic Guild Integration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Module Title: \"Building Your Arsenal -- Tools for Credit Success.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Language and Branding",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Your credit is your fortress--each tool strengthens its walls.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tools and trackers named after Guild roles (e.g., Archer, Shield, Tracker).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Visuals and Design",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Imagery of armory rooms, shields, and precision tools.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gamified elements like badges and progress bars for completed actions.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Module Deliverables",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Equip participants with practical tools for improving their credit.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Teach strategies for managing credit utilization, secured cards, and inquiries.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Provide trackers and calculators to monitor and maintain progress.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Lay the foundation for long-term credit success.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "The Attack Plan -- Repairing Your Credit",
+      "slug": "the-attack-plan",
+      "meta": {
+        "tier": "APPRENTICE",
+        "minutes": 60,
+        "badge": "Offensive"
+      },
+      "intro_blocks": [
+        {
+          "kind": "paragraph",
+          "text": "This module focuses on the active steps of credit repair, providing participants with actionable strategies to dispute negative items, protect their rights, and clean up their credit report. Through detailed templates, examples, and Guild-themed tools, participants will learn how to take charge of their credit repair journey.",
+          "level": 3,
+          "items": []
+        }
+      ],
+      "lessons": [
+        {
+          "number": "4.1",
+          "title": "Identifying Negative Accounts",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "What Are Negative Accounts?",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Late payments, charge-offs, collections, and bankruptcies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How these items impact your credit score and financial opportunities.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Assessing Negative Items",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Reviewing the \"Accounts\" and \"Public Records\" sections of your credit report.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Differentiating between valid, invalid, and unverifiable accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Prioritizing Disputes",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Targeting high-impact items first (e.g., recent late payments vs. older ones).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using the Guild Dispute Priority List to rank items by importance.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "4.2",
+          "title": "Crafting Effective Dispute Strategies",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "The Guild Dispute Philosophy",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Attack the weak points first, and the strong will crumble.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Why challenging inaccuracies in personal information first weakens the foundation of negative accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Step-by-Step Dispute Process",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Identifying inaccurate or unverifiable items.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Writing Attack Letters to dispute with credit bureaus.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Following up with creditors directly when necessary.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Templates for Every Scenario",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Precision Archer Letter\": For disputing late payments and small errors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Siege Engine Letter\": For collections, charge-offs, and larger disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Follow-Up Warrior Letter\": For challenging unresponsive bureaus or creditors.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "4.3",
+          "title": "Understanding the Dispute Timeline",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Key Deadlines",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "30--45 days for credit bureaus to investigate disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Timelines for follow-ups if no response is received.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Tracking Progress",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using the Guild Dispute Journal to log disputes, dates, and responses.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Monitoring changes to your credit report after disputes.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "4.4",
+          "title": "Challenging Collection Accounts",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Debt Validation",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to request debt validation from collection agencies under the FDCPA.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Templates for \"Debt Validation Defense Letters.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Pay-for-Delete Strategies",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Negotiating with collection agencies to remove accounts upon payment.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to structure \"Barterman's Agreement Letters.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Disputing Collections Directly with Bureaus",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Steps to challenge unverifiable or inaccurate collection accounts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Real-world examples of successful collection disputes.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "4.5",
+          "title": "Tackling Charge-Offs and Public Records",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "What Are Charge-Offs?",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Understanding how charge-offs occur and their impact on your credit.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Strategies to dispute or settle charge-offs.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Handling Public Records",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Bankruptcy, tax liens, and judgments: What you can and cannot dispute.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Steps to ensure public records are reported accurately.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Templates for Advanced Disputes",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Warrior's Tax Lien Dispute Letter\": For tax liens and judgments.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Bankruptcy Shield Letter\": For ensuring accurate reporting post-bankruptcy.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "4.6",
+          "title": "Protecting Your Rights During Disputes",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Common Creditor and Bureau Tactics",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Ignoring disputes or failing to provide adequate proof.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Reporting previously removed items.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "How to Respond",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Writing \"Follow-Up Warrior Letters\" to hold bureaus accountable.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Filing complaints with the CFPB and FTC for unresolved issues.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Escalating to Arbitration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "When and how to escalate disputes to arbitration if necessary.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using arbitration as a negotiation tool against creditors or bureaus.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "4.7",
+          "title": "Exclusive Tools and Resources",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Guild Dispute Priority List",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A themed tool to rank and prioritize negative items for disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Attack Letter Templates",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Precision Archer Letters, Siege Engine Letters, and more.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Dispute Journal",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A tracker for logging disputes, deadlines, and outcomes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Debt Validation Toolkit",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A guide and templates for requesting validation from collection agencies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Thematic Guild Integration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Module Title: \"The Attack Plan -- Defeating Negative Accounts.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Language and Branding",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"A true Guild warrior knows that every attack must be strategic.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Letters and tools named after medieval siege weapons and tactics.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Visuals and Design",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Illustrations of trebuchets, battering rams, and shields to symbolize dispute letters and strategies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Progress bars for tracking disputes and results.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Module Deliverables",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Provide participants with step-by-step instructions to challenge negative items.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Equip members with themed templates and tools to streamline the dispute process.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Build confidence by teaching participants how to protect their rights and escalate disputes when necessary.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Long-Term Strategies for Credit Restoration",
+      "slug": "long-term-credit-restoration",
+      "meta": {
+        "tier": "JOURNEYMAN",
+        "minutes": 60,
+        "badge": "Growth"
+      },
+      "intro_blocks": [
+        {
+          "kind": "paragraph",
+          "text": "This module emphasizes building and maintaining a strong credit profile after completing the credit repair process. It focuses on actionable strategies to establish long-term credit health, prevent future setbacks, and use credit responsibly. Participants will learn how to protect their credit, maximize opportunities, and build a solid foundation for financial success.",
+          "level": 3,
+          "items": []
+        }
+      ],
+      "lessons": [
+        {
+          "number": "5.1",
+          "title": "Establishing a Strong Credit Profile",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "What is a Strong Credit Profile?",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Characteristics of a healthy credit report (e.g., diverse accounts, no negative items, low utilization).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How lenders view a strong credit profile.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Steps to Strengthen Your Credit",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Keeping old accounts open to maintain credit history.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gradually increasing credit limits without overspending.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using credit responsibly to build trust with creditors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Tools",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The \"Credit Profile Builder\" checklist to guide participants step-by-step.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "5.2",
+          "title": "Preventing Future Credit Issues",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "How to Monitor Your Credit Regularly",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using free credit monitoring tools and paid services for advanced tracking.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Setting up alerts for changes in your report or score.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Avoiding Common Pitfalls",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Overborrowing and maxing out credit cards.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Co-signing loans and the risks it involves.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Strategies for Staying Ahead",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Monthly \"Credit Health Checkups\" to catch issues early.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using the Guild Progress Tracker to log ongoing improvements.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "5.3",
+          "title": "Protecting Your Credit and Identity",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "The Importance of Identity Protection",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How identity theft can damage your credit.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Common methods of identity theft and how to recognize them.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Tools for Safeguarding Your Identity",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Credit freezes and fraud alerts: How and when to use them.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Monitoring for breaches and scams.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Tools",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The \"Identity Shield\" guide for protecting personal and financial information.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "5.4",
+          "title": "Maximizing Credit Card Rewards",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Choosing the Right Rewards Card",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Understanding points, cashback, and travel rewards programs.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Selecting cards that align with your financial habits and goals.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Using Rewards Responsibly",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Strategies to avoid overspending while maximizing rewards.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to leverage rewards for travel, cashback, and other benefits.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Credit Card Guide",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A curated list of the best rewards cards for rebuilding and strong credit profiles.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "5.5",
+          "title": "Maintaining a Low Credit Utilization Rate",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Why Utilization Matters for Long-Term Success",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How utilization rates influence your score even after repairs.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Strategies for keeping utilization consistently low.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Balancing Multiple Credit Cards",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Rotating usage among cards to maintain activity.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Avoiding high balances on any single card.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Utilization Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A tool to monitor and optimize credit card balances.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "5.6",
+          "title": "Building Financial Resilience",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "The Role of Emergency Savings",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How savings can prevent reliance on credit in emergencies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tips for building and maintaining a strong savings cushion.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Planning for Major Purchases",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Steps to prepare your credit for large purchases (e.g., mortgages, car loans).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Timing applications to minimize credit score impact.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Financial Resilience Plan",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A customizable guide to balancing credit use and savings goals.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "5.7",
+          "title": "Long-Term Credit Repair Philosophy",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Adopting a Growth Mindset",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Viewing credit repair as a lifelong journey, not a one-time fix.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Learning from past mistakes to prevent future setbacks.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Celebrating Milestones",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Recognizing and rewarding progress (e.g., reaching a credit score of 700+).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Setting new goals to build on success.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "5.8",
+          "title": "Exclusive Tools and Resources",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Guild Progress Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A themed tool to log ongoing credit improvements and milestones.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gamified rewards for maintaining good credit practices.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Identity Shield Guide",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Step-by-step instructions for safeguarding personal and financial information.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Credit Profile Builder Checklist",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A roadmap for establishing and maintaining a strong credit profile.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Financial Resilience Plan",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Templates and calculators for balancing credit and savings.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Thematic Guild Integration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Module Title: \"Building the Kingdom -- Strategies for Long-Term Credit Success.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Language and Branding",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"A true Guild leader knows that the strongest defenses are built to last.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tools and strategies named after defensive structures (e.g., Shield, Fortress, Tracker).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Visuals and Design",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Illustrations of castles, shields, and treasure to represent long-term credit health.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gamified progress meters and badges for achieving credit milestones.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Module Deliverables",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Teach participants how to build and maintain a strong credit profile.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Provide strategies for preventing identity theft and future credit issues.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Equip members with tools to monitor credit, maximize rewards, and balance finances.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Empower participants to view credit health as an ongoing journey.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Enrichment & Support for Credit Success",
+      "slug": "enrichment-and-support",
+      "meta": {
+        "tier": "JOURNEYMAN",
+        "minutes": 45,
+        "badge": "Advanced"
+      },
+      "intro_blocks": [
+        {
+          "kind": "paragraph",
+          "text": "This module provides participants with additional tools, interactive resources, and community support to sustain and enhance their credit journey. It emphasizes ongoing education, interactive mini-guides, and access to exclusive Guild resources to ensure long-term success.",
+          "level": 3,
+          "items": []
+        }
+      ],
+      "lessons": [
+        {
+          "number": "6.1",
+          "title": "Interactive Tools for Credit Success",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "The Guild Credit Score Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Interactive tool to track credit score changes over time.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Includes milestone rewards for achieving credit goals.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Visualization of progress with gamified elements (e.g., leveling up).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "The Dispute & Resolution Journal",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A customizable Guild-themed tracker for monitoring disputes, deadlines, and resolutions.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tips for effective record-keeping during the credit repair process.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Credit Budget Calculator",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A calculator to plan and allocate payments effectively.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Helps participants visualize how paying down debts impacts their score.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "6.2",
+          "title": "Mini-Guides and Tutorials",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "How to Stay Ahead of Credit Issues",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A short, interactive guide on identifying and addressing small issues before they escalate.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Includes quizzes and real-life scenarios to reinforce lessons.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Step-by-Step Tutorials",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tutorials for managing credit card rewards programs.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Video tutorials for creating effective Attack and Defense Letters.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How-to guides for disputing errors and negotiating with creditors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild-Exclusive Strategy Tips",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Secrets to success in credit restoration only available to Guild members.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Personalized credit-building strategies based on credit profiles.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "6.3",
+          "title": "Leveraging DebtGPT and AI Tools",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Using AI to Optimize Credit Repair",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to use DebtGPT to generate personalized dispute letters and follow-up templates.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Automating tracking and reminders for dispute deadlines.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Interactive Examples",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Sample scenarios of using AI to analyze credit reports.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Case studies showing successful use of DebtGPT for disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Exclusive Access",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Members-only integration guides for using DebtGPT with Guild tools.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Additional AI-driven tools to assist with ongoing credit health management.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "6.4",
+          "title": "Community and Support",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Guilded Member Forums",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Access to a private forum for sharing experiences and strategies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Opportunities to ask questions and receive advice from peers and mentors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Live Workshops and Webinars",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Monthly sessions on advanced credit repair techniques.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Q&A with credit experts and financial advisors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Leaderboards",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Friendly competition with other members to stay motivated.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Points awarded for completing tasks like disputes, reducing balances, or attending workshops.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "6.5",
+          "title": "Motivational Content and Stories",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Success Stories from Guild Members",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Real-life examples of members who overcame credit challenges.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Interviews and testimonials to inspire and guide participants.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Weekly Motivational Quotes",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"The road to strong credit is paved with persistence and strategy.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Every step forward strengthens your financial shield.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Achievements and Badges",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Digital rewards for milestones like reaching a 700+ credit score, completing disputes, or clearing collections.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "6.6",
+          "title": "Exclusive Tools and Resources",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Guild Credit Score Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A dynamic tracker to visualize credit score changes and progress.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Includes fields for notes and reminders.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Dispute & Resolution Journal",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Pre-built templates to document disputes and outcomes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Helps participants stay organized during the credit repair journey.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Budget Calculator",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Interactive calculator for managing payments and planning for credit-building expenses.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "DebtGPT Integration Guide",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Step-by-step instructions for using AI tools effectively.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Member Directory",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Access to a network of Guild members for support and collaboration.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "6.7",
+          "title": "Continuous Learning Opportunities",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "New Credit Challenges",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Periodic challenges to reinforce key credit strategies (e.g., reducing utilization, disputing errors).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Access to Updated Resources",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Ongoing updates to templates, guides, and AI tools.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Notifications of changes in credit laws or best practices.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Academy",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Advanced courses for those looking to deepen their credit knowledge.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Topics like mortgage readiness, business credit building, and leveraging credit for investments.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Thematic Guild Integration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Module Title: \"Enrichment & Support -- The Guild's Shield of Success.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Language and Branding",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Every Guild member is stronger with the support of their allies.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tools and resources branded as Guild assets (e.g., Score Tracker, Resolution Journal).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Visuals and Design",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Illustrations of scrolls, shields, and banners to represent education and progress.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gamified elements like leaderboards, badges, and achievements.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Module Deliverables",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Provide participants with interactive tools for managing their credit journey.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Offer access to community support, live workshops, and ongoing education.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Inspire participants through motivational content and real-life success stories.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Equip members with AI-powered resources for maximizing efficiency and results.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Mastering Debt Arbitration -- Advanced Guild Strategies",
+      "slug": "mastering-debt-arbitration",
+      "meta": {
+        "tier": "MASTER",
+        "minutes": 90,
+        "badge": "Elite"
+      },
+      "intro_blocks": [
+        {
+          "kind": "paragraph",
+          "text": "(Exclusive to Journeyman and Hero Membership Tiers)",
+          "level": 3,
+          "items": []
+        },
+        {
+          "kind": "paragraph",
+          "text": "This advanced module equips participants with the knowledge and tools to use debt arbitration as a strategic weapon to defend against aggressive collection agencies. Members will learn how to navigate the arbitration process, challenge creditors effectively, and secure favorable outcomes while leveraging advanced Guild strategies.",
+          "level": 3,
+          "items": []
+        }
+      ],
+      "lessons": [
+        {
+          "number": "7.1",
+          "title": "Understanding Debt Arbitration",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "What is Debt Arbitration?",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Overview of arbitration as an alternative to court litigation.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The role of arbitration clauses in contracts with creditors.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Advantages of arbitration for consumers over traditional lawsuits.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "When to Use Arbitration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Identifying situations where arbitration is the best strategy (e.g., harassment from collection agencies, disputes over debt amounts).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Assessing your eligibility to pursue arbitration.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Knowledge",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The Guild Arbitration Map: A guide to navigating arbitration rules and laws.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "7.2",
+          "title": "Reviewing and Identifying Arbitration Clauses",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Understanding Arbitration Agreements",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to locate and interpret arbitration clauses in credit contracts.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Recognizing the difference between binding and non-binding arbitration.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Requesting Arbitration Agreements",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Templates for requesting original contracts from creditors to confirm arbitration terms.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "What to do if creditors cannot produce the original agreement.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Tools",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Contract Summoner Template\": A pre-drafted request for arbitration clauses.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "7.3",
+          "title": "Initiating Arbitration Proceedings",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Steps to Demand Arbitration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Writing a formal arbitration demand letter (Attack Letter template included).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Selecting the appropriate arbitration forum (e.g., AAA, JAMS).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Submitting your arbitration demand and required fees.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Drafting the Perfect Arbitration Demand Letter",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Key elements to include: identifying the dispute, citing the arbitration agreement, and demanding relief.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Example: The \"Knight's Arbitration Demand Letter.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Arbitration Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A tool for logging arbitration proceedings, deadlines, and documents.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "7.4",
+          "title": "Challenging Creditors and Collectors",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Making the Collector Prove Their Case",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Using arbitration to demand full documentation of the debt.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Strategies for challenging incomplete or unverifiable claims.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Shifting the Burden of Proof",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to force collection agencies to justify their actions.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Templates for response letters when creditors fail to meet their obligations.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Tools",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The \"Evidence Shield Checklist\" to evaluate creditor claims.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Templates for follow-up letters to creditors.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "7.5",
+          "title": "Negotiating During Arbitration",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Turning Arbitration into a Settlement Tool",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How arbitration proceedings create leverage for favorable settlements.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Writing effective settlement offers during arbitration.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Pay-for-Delete and Other Settlement Options",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Structuring settlements to remove negative items from credit reports.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "The \"Guild Peace Accord Letter\": A template for drafting settlements.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "When to Walk Away",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Recognizing bad-faith settlement offers and protecting yourself.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "7.6",
+          "title": "Navigating the Arbitration Process",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "The Arbitration Hearing",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "What to expect during an arbitration session.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Preparing your evidence and arguments.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Key phrases and strategies for presenting your case effectively.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Final Decisions and Awards",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Understanding arbitration rulings and their enforceability.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Steps to enforce an award if a creditor refuses to comply.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Post-Arbitration Follow-Up",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Filing arbitration outcomes with credit bureaus.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Templates for follow-up letters to clean up credit reports.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "7.7",
+          "title": "Handling Complex Arbitration Scenarios",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "What to Do if Arbitration Fails",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Options for escalating unresolved disputes to federal or state regulators.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Writing complaints to agencies like the CFPB or FTC.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Dealing with Retaliatory Debt Practices",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "How to monitor and respond if creditors resell debts after arbitration.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Guild strategies for repeat offenders.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        },
+        {
+          "number": "7.8",
+          "title": "Exclusive Tools and Resources",
+          "blocks": [
+            {
+              "kind": "heading",
+              "text": "Guild Arbitration Tracker",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A themed tracker for logging arbitration demands, deadlines, and outcomes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Built-in reminders and tips for staying on schedule.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Knight's Arbitration Demand Letter",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A template for initiating arbitration with creditors or collection agencies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Evidence Shield Checklist",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A comprehensive checklist for evaluating and challenging creditor claims.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Guild Peace Accord Letter",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A settlement letter template tailored for arbitration scenarios.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Arbitration Success Handbook",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "A downloadable guide summarizing arbitration strategies, common pitfalls, and tips for success.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Thematic Guild Integration",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Module Title: \"Mastering Debt Arbitration -- The Final Defense.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Language and Branding",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "\"Every Guild warrior must be prepared for the ultimate battle--arbitration.\"",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Tools and letters named after strategic elements (e.g., Knight, Shield, Peace Accord).",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Visuals and Design",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Imagery of courtrooms, banners, and scales of justice to represent arbitration.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Gamified elements like badges for completed arbitration cases or successful settlements.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "heading",
+              "text": "Module Deliverables",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Teach participants the fundamentals of arbitration and its benefits in debt disputes.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Provide detailed instructions for initiating arbitration proceedings.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Equip members with advanced templates and tools for challenging creditors and collection agencies.",
+              "level": 3,
+              "items": []
+            },
+            {
+              "kind": "paragraph",
+              "text": "Empower participants to negotiate settlements and enforce arbitration awards effectively.",
+              "level": 3,
+              "items": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

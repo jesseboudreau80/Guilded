@@ -1,0 +1,65 @@
+
+> guilded-web@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.5
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+ ⨯ ESLint: Failed to load config "next/typescript" to extend from. Referenced from: /home/jesse/infra/apps/Guilded/web/.eslintrc.json
+Failed to compile.
+
+./app/api/auth/[...nextauth]/route.ts:4:17
+Type error: This expression is not callable.
+  Type 'typeof import("next-auth")' has no call signatures.
+
+[0m [90m 2 |[39m [36mimport[39m { authOptions } [36mfrom[39m [32m"@/lib/auth"[39m[33m;[39m[0m
+[0m [90m 3 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 4 |[39m [36mconst[39m handler [33m=[39m [33mNextAuth[39m(authOptions)[33m;[39m[0m
+[0m [90m   |[39m                 [31m[1m^[22m[39m[0m
+[0m [90m 5 |[39m[0m
+[0m [90m 6 |[39m [36mexport[39m { handler [36mas[39m [33mGET[39m[33m,[39m handler [36mas[39m [33mPOST[39m }[33m;[39m[0m
+[0m [90m 7 |[39m[0m
+
+> guilded-web@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.5
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/13) ...
+   Generating static pages (3/13) 
+   Generating static pages (6/13) 
+   Generating static pages (9/13) 
+ ✓ Generating static pages (13/13)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    1.77 kB         112 kB
+├ ○ /_not-found                          871 B            88 kB
+├ ƒ /api/auth/[...nextauth]              0 B                0 B
+├ ƒ /dashboard                           155 B          87.3 kB
+├ ƒ /dashboard/account                   155 B          87.3 kB
+├ ○ /dashboard/ai                        1.54 kB         111 kB
+├ ƒ /dashboard/arbitration               155 B          87.3 kB
+├ ƒ /dashboard/journey                   155 B          87.3 kB
+├ ƒ /dashboard/modules                   155 B          87.3 kB
+├ ƒ /dashboard/strategy-session          1.01 kB        88.1 kB
+├ ƒ /dashboard/templates                 155 B          87.3 kB
+└ ○ /dashboard/upgrade                   1.44 kB        98.4 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/23-17d109591ec31f31.js        31.5 kB
+  ├ chunks/fd9d1056-be48aeae6e94b8d1.js  53.6 kB
+  └ other shared chunks (total)          1.95 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,397 @@
+INFO:     Started server process [904885]
+INFO:     Waiting for application startup.
+2026-05-09 18:52:55,023 INFO app.main: CORS allowed origins: ['https://guilded.jesseboudreau.com']
+2026-05-09 18:52:55,110 INFO app.main: Database tables verified/created
+2026-05-09 18:52:55,152 INFO app.domains.academy.service: Academy curriculum up to date (7 modules). Skipping seed.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8100 (Press CTRL+C to quit)
+INFO:     127.0.0.1:34588 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34106 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34120 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34132 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2605:a142:2300:2990::1:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     2605:a142:2300:2990::1:0 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/modules HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/audit/ HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/progress HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/modules HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/progress HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/audit/ HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/recommended/e7e409ba-2ced-4cb2-8158-b3a65d66af89 HTTP/1.1" 200 OK
+2026-05-09 18:53:12,888 INFO app.domains.academy.service: Audit e7e409ba-2ced-4cb2-8158-b3a65d66af89 fired triggers: ['critical_risk_score', 'fcra_violation', 'has_collections', 'has_negative_accounts', 'high_risk_score', 'high_utilization', 'rebuild_credit']
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/recommended/e7e409ba-2ced-4cb2-8158-b3a65d66af89 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37272 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37288 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37298 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41022 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41024 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41034 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/modules HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/progress HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/modules HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/progress HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/progress/a187b31c-421f-4311-ba91-35bfd20c8983/start HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "POST /api/academy/progress/a187b31c-421f-4311-ba91-35bfd20c8983/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58952 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58958 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58968 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35572 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35574 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35590 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53760 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53770 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53784 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41064 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41074 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41082 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/modules HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/xp/summary HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/progress HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/modules HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/progress HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/xp/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48740 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48742 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48752 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33610 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33622 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33634 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:32928 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:32932 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54252 - "GET / HTTP/1.1" 404 Not Found
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/audit/ HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/progress HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/modules HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/audit/ HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/modules HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/progress HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/academy/recommended/e7e409ba-2ced-4cb2-8158-b3a65d66af89 HTTP/1.1" 200 OK
+2026-05-09 19:02:49,831 INFO app.domains.academy.service: Audit e7e409ba-2ced-4cb2-8158-b3a65d66af89 fired triggers: ['critical_risk_score', 'fcra_violation', 'has_collections', 'has_negative_accounts', 'high_risk_score', 'high_utilization', 'rebuild_credit']
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/academy/recommended/e7e409ba-2ced-4cb2-8158-b3a65d66af89 HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "OPTIONS /api/audit/ HTTP/1.1" 200 OK
+INFO:     2600:1702:db0:1be0:c579:8d42:847b:afc9:0 - "GET /api/audit/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57184 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57194 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57202 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39472 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39476 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39478 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58642 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58656 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58658 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47596 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47612 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47618 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42832 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42840 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42848 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57850 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57862 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57864 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51142 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51156 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51172 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45848 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45854 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45862 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44610 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44612 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44620 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35902 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35914 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35920 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57046 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57058 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57066 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42348 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42352 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42364 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54954 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54956 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54970 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56866 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56880 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56896 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47872 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47886 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47898 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51928 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51944 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51950 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43096 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43104 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43120 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47578 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47592 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47598 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37708 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37714 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37726 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42614 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42626 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42642 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41754 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41758 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41770 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43632 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43642 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43648 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45460 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45472 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45474 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48534 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48536 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48538 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34918 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34922 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34926 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54020 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54026 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54036 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52052 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52060 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52072 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39962 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39970 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39980 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33002 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33010 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33024 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43456 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43460 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43464 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41726 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41740 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41748 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33900 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33908 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33920 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58104 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58110 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58114 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34146 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34148 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34154 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35424 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35430 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35440 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35048 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35056 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35062 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59696 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59698 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59704 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43470 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43486 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43500 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59298 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59310 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59326 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45028 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45040 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45044 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55910 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55916 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55920 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49828 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49842 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49858 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34570 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34580 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34588 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44932 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44940 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44950 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60290 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60302 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60308 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54928 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54930 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54942 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45708 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45712 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45718 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58108 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58120 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58134 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35398 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35408 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35416 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34442 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35466 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35470 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43304 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43312 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43314 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46648 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46654 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46670 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56064 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56072 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56082 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34680 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34696 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34698 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51662 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51676 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51688 - "GET / HTTP/1.1" 404 Not Found
+2026-05-09 19:59:17,159 INFO app.domains.stripe.router: Stripe webhook received: invoice.updated evt_1TVKm8KKUUjkHBcxpXrRGnP5
+INFO:     3.130.192.231:0 - "POST /api/stripe/webhook HTTP/1.1" 200 OK
+2026-05-09 19:59:17,377 INFO app.domains.stripe.router: Stripe webhook received: invoice.voided evt_1TVKm9KKUUjkHBcx66Vz1nZt
+INFO:     52.15.183.38:0 - "POST /api/stripe/webhook HTTP/1.1" 200 OK
+2026-05-09 19:59:17,821 INFO app.domains.stripe.router: Stripe webhook received: customer.subscription.updated evt_1TVKm9KKUUjkHBcxOr72jT2D
+INFO:     52.15.183.38:0 - "POST /api/stripe/webhook HTTP/1.1" 200 OK
+2026-05-09 19:59:20,276 INFO app.domains.stripe.router: Stripe webhook received: checkout.session.expired evt_1TVKmCKKUUjkHBcxExDctZF5
+INFO:     3.18.12.63:0 - "POST /api/stripe/webhook HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48212 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48216 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48222 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35696 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46704 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46706 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53780 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53790 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53800 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51194 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51210 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51226 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55120 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55136 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55148 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35930 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35936 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35946 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57862 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57872 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57878 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35448 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35462 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35478 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58692 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58704 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42676 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47878 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47892 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47906 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55538 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55548 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55564 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52780 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52782 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52798 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33002 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33014 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33030 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36034 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36044 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36056 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42458 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42468 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42478 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38342 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38348 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38364 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59850 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59856 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59872 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40410 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40414 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40418 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41636 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41638 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41644 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41800 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41810 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41824 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34254 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34266 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34268 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56016 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56022 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56026 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35286 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35298 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35302 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55448 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55464 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55478 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38986 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38996 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49354 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39336 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39346 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39360 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44280 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44284 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44290 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49876 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49886 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49890 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40146 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40158 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40172 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39030 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39042 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39050 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47280 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47282 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47284 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49130 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49140 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59780 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42120 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42124 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42140 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36708 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36712 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36724 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36646 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36662 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36678 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48722 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48728 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48740 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45016 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45026 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45040 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40202 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40206 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40214 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59330 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57904 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57906 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58708 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58720 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58724 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36670 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36684 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36698 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44414 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44424 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44436 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46666 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54580 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54584 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35180 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35184 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35194 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39988 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40004 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40008 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56112 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56116 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56130 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34348 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34354 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34362 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43058 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43068 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43070 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45754 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45768 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45774 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38582 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38588 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:38590 - "GET / HTTP/1.1" 404 Not Found

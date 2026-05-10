@@ -1,0 +1,31 @@
+INFO:     Started server process [3676363]
+INFO:     Waiting for application startup.
+2026-05-08 20:20:01,716 INFO app.main: CORS allowed origins: ['https://guilded.jesseboudreau.com']
+2026-05-08 20:20:01,838 INFO app.main: Database tables verified/created
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8100 (Press CTRL+C to quit)
+INFO:     127.0.0.1:56788 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56300 - "GET /health HTTP/1.1" 200 OK
+2026-05-08 20:20:10,352 INFO stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-05-08 20:20:10,532 INFO stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=400
+2026-05-08 20:20:10,532 INFO stripe: error_code=email_invalid error_message='Invalid email address: User.email' error_param=customer_email error_type=invalid_request_error message='Stripe v1 API error received'
+2026-05-08 20:20:10,533 ERROR app.domains.stripe.router: Stripe checkout creation failed for user User.id: Request req_55e29Gpj8h9QX3: Invalid email address: User.email
+INFO:     127.0.0.1:56306 - "POST /api/stripe/checkout HTTP/1.1" 502 Bad Gateway
+2026-05-08 20:20:10,553 INFO stripe: message='Request to Stripe api' method=post url=https://api.stripe.com/v1/checkout/sessions
+2026-05-08 20:20:10,653 INFO stripe: message='Stripe API response' path=https://api.stripe.com/v1/checkout/sessions response_code=400
+2026-05-08 20:20:10,653 INFO stripe: error_code=email_invalid error_message='Invalid email address: User.email' error_param=customer_email error_type=invalid_request_error message='Stripe v1 API error received'
+2026-05-08 20:20:10,653 ERROR app.domains.stripe.router: Stripe checkout creation failed for user User.id: Request req_TwUYkWxe0Bon2v: Invalid email address: User.email
+INFO:     127.0.0.1:56322 - "POST /api/stripe/checkout HTTP/1.1" 502 Bad Gateway
+INFO:     127.0.0.1:43232 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43246 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43252 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43460 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43470 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43476 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41212 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41224 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41228 - "GET / HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3676363]
