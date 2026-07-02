@@ -33,8 +33,11 @@ export default function HomePage() {
 
   return (
     <main className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-5xl font-bold">Guilded</h1>
-      <p className="mt-4 max-w-2xl text-slate-300">Educational credit literacy SaaS platform.</p>
+      <h1 className="text-5xl font-bold">Plutus</h1>
+      <p className="mt-4 max-w-2xl text-slate-300">
+        The consumer&apos;s solution to bad credit. Learn to read your reports, dispute errors, handle collectors,
+        and rebuild — with education, not empty promises.
+      </p>
       <form className="mt-8 grid w-full max-w-md gap-3 text-left" onSubmit={register}>
         <input className="rounded bg-card p-3" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
         <input className="rounded bg-card p-3" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />

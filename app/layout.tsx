@@ -2,8 +2,8 @@ import "./globals.css";
 import { ReactNode } from "react";
 
 export const metadata = {
-  title: "Guilded",
-  description: "Educational credit literacy platform",
+  title: "Plutus",
+  description: "The consumer's solution to bad credit — education-first credit literacy platform",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

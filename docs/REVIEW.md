@@ -1,6 +1,7 @@
-# Guilded — Full Review, Monetization Roadmap, and Naming Decision
+# Plutus (formerly Guilded) — Full Review, Monetization Roadmap, and Naming Decision
 
-_Reviewed July 2026 against commit `15118f8` (post-scaffold merge)._
+_Reviewed July 2026 against commit `15118f8` (post-scaffold merge); naming
+decision and curriculum build-out recorded in later updates._
 
 ## 1. Where the product actually stands
 
@@ -116,35 +117,47 @@ Short answer: **no — rename it.** Two independent reasons:
    the umbrella brand, this product reads like it wandered in from a
    different franchise.
 
-The good news: the aegis is literally the shield of Zeus and Athena —
-*protection* — which is a better metaphor for credit defense than guild
-membership ever was. Candidates, most-recommended first:
+**DECIDED: the product is Plutus** — "the consumer's solution to bad
+credit" — after the founder's own research beat this doc's original
+shield/armor candidates (Aegis Academy, Athena, Panoply, Argus — retired).
+Plutus is the Greek god of wealth: aspirational rather than defensive, which
+matches what customers are actually buying, and still squarely inside the
+Aegis Greek-mythology brand family. The founding-story hook: Zeus blinded
+Plutus so wealth would be distributed without regard to merit; Aristophanes'
+*Plutus* is about restoring his sight so prosperity reaches the deserving.
+"We restore sight to wealth."
 
-| Name | Rationale | Notes |
-| --- | --- | --- |
-| **Aegis Academy** | Education arm of the Aegis brand; shield = credit protection | Cleanest umbrella fit; "Academy" signals education-only, which helps the CROA posture |
-| **Athena** (by Aegis) | Goddess of wisdom and strategy — learning + tactics | Common product name; check clearance in fintech/edtech |
-| **Panoply** | The full suit of Greek armor — "everything you need to defend yourself" | Distinctive, likely clearable, slightly obscure |
-| **Argus** | The hundred-eyed watchman — vigilance over your report | Better fit if the product leans toward monitoring |
+Clearance caveat: an active UK fintech named Plutus (plutus.it, crypto
+rewards Visa card) has announced US expansion. Different trademark class
+(education vs. financial services) and a compound mark ("Plutus Academy" /
+"Plutus by Aegis") likely distinguish it — run a real clearance search
+before printing anything.
 
-Tier ladder to match (display labels only — keep the Prisma enum values and
-Stripe products as-is to avoid a risky migration; map labels in one place in
-the UI):
+Companion name: **Horkos** — the daimon who punishes broken financial
+oaths — was considered for the product and correctly rejected (its energy
+points at debtors, i.e., the customers). It is reserved instead as the name
+of the dispute-letter **compliance-review engine**: every generated letter
+"passes the Horkos check" before a user sees it.
 
-- APPRENTICE → **Initiate**
-- JOURNEYMAN → **Hoplite**
-- MASTER → **Strategos**
-- HERO → **Olympian**
-
-That preserves the rank-progression feel the guild names had, in the right
-mythology, and fixes the "Hero" inconsistency for free.
+Tier ladder: display labels are centralized in `TIER_LABELS`
+(`lib/tiers.ts`) so a rename is a one-file change; currently they remain
+Apprentice/Journeyman/Master/Hero pending a decision on a wealth-themed
+ladder. Keep the Prisma enum values and Stripe products as-is regardless —
+renaming display labels must not require a migration.
 
 ## 5. Suggested order of attack
 
 1. Run the migration, wire CI to `npm test` + `tsc --noEmit` (suite is fast).
-2. Write/port the actual content: templates library, arbitration module,
-   lesson bodies. Hand beta testers the fixture `.txt` reports to work from.
+2. ~~Write/port the actual content: arbitration module, lesson bodies.~~
+   **Done:** six-module curriculum in `content/curriculum.ts` (foundations,
+   disputes, collections, bankruptcy, arbitration, rebuilding capstone) with
+   a lesson viewer, progress tracking, and locked-module upsells. Remaining
+   content gap: the Templates library page (letter templates as a browsable,
+   fill-in-able library — natural precursor to the generator).
 3. Billing portal + password reset + rate limiting.
-4. Dispute-letter generator on top of the report schema (monetization #1).
-5. Rebrand (name, tier labels, landing copy) before public launch — cheaper
-   now than after SEO and printed materials exist.
+4. Dispute-letter generator on top of the report schema (monetization #1),
+   with the Horkos compliance-review pass.
+5. ~~Rebrand before public launch.~~ **Done in-app:** Plutus name, tagline,
+   and copy shipped; tier display labels centralized. Still to do outside
+   the repo: trademark clearance search, domain, Stripe product names in the
+   dashboard, and any social handles.

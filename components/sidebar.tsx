@@ -15,7 +15,7 @@ const items = [
 export function Sidebar() {
   return (
     <aside className="min-h-screen w-64 border-r border-slate-800 bg-card p-5">
-      <h2 className="mb-8 text-xl font-bold text-white">Guilded</h2>
+      <h2 className="mb-8 text-xl font-bold text-white">Plutus</h2>
       <nav className="space-y-1">
         {items.map(([label, href]) => (
           <Link key={href} href={href} className="block rounded px-3 py-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white">

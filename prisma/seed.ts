@@ -1,35 +1,39 @@
-import { PrismaClient, Tier } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+import { curriculum } from "../content/curriculum";
 
 const prisma = new PrismaClient();
 
-const modules: Array<{ title: string; requiredTier: Tier; lessons: string[] }> = [
-  { title: "Credit Literacy Foundations", requiredTier: "APPRENTICE", lessons: ["Credit Score Basics", "Reading Your Report"] },
-  { title: "Dispute Letter Templates", requiredTier: "JOURNEYMAN", lessons: ["Template Selection", "Supporting Evidence"] },
-  { title: "Arbitration Essentials", requiredTier: "MASTER", lessons: ["Arbitration Readiness", "Process Timeline"] },
-];
-
 async function main() {
-  for (const [index, module] of modules.entries()) {
-    const created = await prisma.module.upsert({
-      where: { id: `module-${index}` },
-      update: { title: module.title, requiredTier: module.requiredTier, order: index + 1 },
-      create: { id: `module-${index}`, title: module.title, requiredTier: module.requiredTier, order: index + 1 },
+  for (const mod of curriculum) {
+    const moduleId = `module-${mod.slug}`;
+    const data = {
+      title: mod.title,
+      description: mod.description,
+      requiredTier: mod.requiredTier,
+      order: mod.order,
+    };
+    await prisma.module.upsert({
+      where: { id: moduleId },
+      update: data,
+      create: { id: moduleId, ...data },
     });
 
-    for (const [lessonIndex, lesson] of module.lessons.entries()) {
+    for (const [index, lesson] of mod.lessons.entries()) {
+      const lessonId = `lesson-${mod.slug}-${lesson.slug}`;
+      const lessonData = { title: lesson.title, content: lesson.content, order: index + 1 };
       await prisma.lesson.upsert({
-        where: { id: `lesson-${index}-${lessonIndex}` },
-        update: { title: lesson, content: `${lesson} educational content`, order: lessonIndex + 1 },
-        create: {
-          id: `lesson-${index}-${lessonIndex}`,
-          moduleId: created.id,
-          title: lesson,
-          content: `${lesson} educational content`,
-          order: lessonIndex + 1,
-        },
+        where: { id: lessonId },
+        update: lessonData,
+        create: { id: lessonId, moduleId, ...lessonData },
       });
     }
+    console.log(`seeded ${moduleId} (${mod.lessons.length} lessons)`);
   }
 }
 
-main().finally(async () => prisma.$disconnect());
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exitCode = 1;
+  })
+  .finally(async () => prisma.$disconnect());

@@ -35,7 +35,7 @@ export async function POST(request: Request) {
         quantity: 1,
         price_data: {
           currency: "usd",
-          product_data: { name: "Guilded Strategy Session" },
+          product_data: { name: "Plutus Strategy Session" },
           unit_amount: eligibility.price,
         },
       },

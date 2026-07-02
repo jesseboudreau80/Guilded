@@ -1,9 +1,9 @@
 "use client";
 
 const tiers = [
-  ["JOURNEYMAN", "$9/month"],
-  ["MASTER", "$39/month"],
-  ["HERO", "$79/month"],
+  ["JOURNEYMAN", "Journeyman", "$9/month", "Disputes & collections modules, 15 AI messages/month"],
+  ["MASTER", "Master", "$39/month", "Bankruptcy & arbitration modules, 100 AI messages/month, $150 strategy sessions"],
+  ["HERO", "Hero", "$79/month", "Full curriculum incl. the prosperity capstone, 300 AI messages/month, $100 strategy sessions"],
 ] as const;
 
 export default function UpgradePage() {
@@ -17,13 +17,17 @@ export default function UpgradePage() {
     <div>
       <h1 className="text-2xl font-semibold">Upgrade Plan</h1>
       <div className="mt-6 grid gap-4 md:grid-cols-3">
-        {tiers.map(([tier, price]) => (
-          <button key={tier} onClick={() => checkout(tier)} className="rounded border border-slate-700 bg-card p-4 text-left">
-            <p className="font-semibold">{tier}</p>
+        {tiers.map(([tier, label, price, blurb]) => (
+          <button key={tier} onClick={() => checkout(tier)} className="rounded border border-slate-700 bg-card p-4 text-left hover:border-slate-500">
+            <p className="font-semibold">{label}</p>
             <p className="text-slate-300">{price}</p>
+            <p className="mt-2 text-xs text-slate-400">{blurb}</p>
           </button>
         ))}
       </div>
+      <p className="mt-4 text-xs text-slate-500">
+        Discounted strategy sessions require an active subscription and at least 2 successful billing cycles.
+      </p>
     </div>
   );
 }

@@ -83,6 +83,7 @@ model VerificationToken {
 model Module {
   id           String   @id @default(cuid())
   title        String
+  description  String   @default("")
   requiredTier Tier     @default(APPRENTICE)
   order        Int
   lessons      Lesson[]

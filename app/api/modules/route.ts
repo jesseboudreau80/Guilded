@@ -12,9 +12,16 @@ export async function GET() {
     include: { lessons: { orderBy: { order: "asc" } } },
   });
 
-  const visible = modules
-    .filter((m) => canAccess(user.tier, m.requiredTier))
-    .map((m) => ({ ...m, lessons: m.lessons.map((l) => ({ id: l.id, title: l.title, order: l.order })) }));
+  // Locked modules stay visible (titles only) so users can see what an upgrade unlocks.
+  const visible = modules.map((m) => ({
+    id: m.id,
+    title: m.title,
+    description: m.description,
+    order: m.order,
+    requiredTier: m.requiredTier,
+    locked: !canAccess(user.tier, m.requiredTier),
+    lessons: m.lessons.map((l) => ({ id: l.id, title: l.title, order: l.order })),
+  }));
 
   return NextResponse.json({ modules: visible });
 }

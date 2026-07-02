@@ -14,6 +14,14 @@ export const AI_LIMITS: Record<Tier, { messages: number; maxTokens: number }> = 
   HERO: { messages: 300, maxTokens: 2000 },
 };
 
+// Display names live here so a future tier rebrand is a one-file change.
+export const TIER_LABELS: Record<Tier, string> = {
+  APPRENTICE: "Apprentice",
+  JOURNEYMAN: "Journeyman",
+  MASTER: "Master",
+  HERO: "Hero",
+};
+
 export function canAccess(userTier: Tier, required: Tier) {
   return TIER_LEVEL[userTier] >= TIER_LEVEL[required];
 }

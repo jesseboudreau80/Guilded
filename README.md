@@ -1,12 +1,14 @@
-# Guilded
+# Plutus
 
-Guilded is a production-oriented educational credit literacy platform built with Next.js App Router, Prisma, PostgreSQL, NextAuth, Stripe, and OpenAI.
+Plutus — the consumer's solution to bad credit — is a production-oriented educational credit literacy platform built with Next.js App Router, Prisma, PostgreSQL, NextAuth, Stripe, and OpenAI. (Formerly "Guilded"; renamed after the platform joined the Aegis brand family.)
 
 ## Features included
 
 - Tiered SaaS memberships (Apprentice, Journeyman, Master, Hero)
 - RBAC middleware + server-side gating for modules and arbitration
-- LMS scaffold (Module, Lesson, Progress)
+- Full LMS (Module, Lesson, Progress) with a six-module curriculum in
+  `content/curriculum.ts`: foundations, disputes, collections, bankruptcy,
+  arbitration, and a rebuilding capstone — seeded via `npx prisma db seed`
 - AI assistant with monthly cap enforcement by tier
 - Mandatory educational disclaimer prepended to every AI response
 - Subscription checkout + Stripe webhook synchronization

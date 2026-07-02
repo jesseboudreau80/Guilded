@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /**
- * Synthetic credit report schema used for testing Guilded's educational
+ * Synthetic credit report schema used for testing Plutus's educational
  * tooling (dispute-letter templates, report-reading lessons, AI assistant
  * prompts). Every report produced with this schema is fictitious:
  * `synthetic` must be true, SSNs must use the never-issued 999 area
