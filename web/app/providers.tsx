@@ -18,8 +18,9 @@
  *   3. Wire Sentry.captureException() into ErrorBoundary.tsx onError prop
  */
 
-import { SessionProvider } from "next-auth/react";
+import { SessionProvider, useSession } from "next-auth/react";
 import { useEffect, type ReactNode } from "react";
+import { identify, reset } from "@/lib/analytics";
 // import posthog from "posthog-js";                        // ← Step 1
 // import { PostHogProvider } from "posthog-js/react";      // ← Step 1
 
@@ -31,12 +32,33 @@ function SessionExpiryHandler() {
         localStorage.removeItem("guilded:counsel");
         localStorage.removeItem("guilded:first-audit-done");
       } catch { /* ignore */ }
-      // Hard redirect to login — clears the NextAuth session via middleware
+      reset(); // clear PostHog identity
       window.location.href = "/";
     };
     window.addEventListener("guilded:session-expired", handle);
     return () => window.removeEventListener("guilded:session-expired", handle);
   }, []);
+  return null;
+}
+
+/**
+ * Calls analytics.identify() once per session after NextAuth resolves.
+ * Runs as a child of SessionProvider so useSession() is available.
+ */
+function AnalyticsIdentify() {
+  const { data: session, status } = useSession();
+
+  const userId  = (session?.user as { id?: string } | undefined)?.id;
+  const email   = session?.user?.email;
+  const name    = session?.user?.name;
+  const tier    = (session?.user as { tier?: string } | undefined)?.tier;
+
+  useEffect(() => {
+    if (status !== "authenticated" || (!userId && !email)) return;
+    identify(userId ?? email ?? "unknown", { email: email ?? undefined, name: name ?? undefined, tier });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, userId, email]);
+
   return null;
 }
 
@@ -84,6 +106,7 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <SessionProvider>
       <SessionExpiryHandler />
+      <AnalyticsIdentify />
       <AnalyticsInit />
       {/* <PostHogProvider client={posthog}> */}
       {children}

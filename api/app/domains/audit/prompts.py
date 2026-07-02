@@ -4,6 +4,7 @@ Return ONLY valid JSON. No explanation, no markdown, no extra text."""
 
 EXTRACTION_USER = """Extract every credit account from this credit report. For each account identify:
 - creditor_name: exact name as shown
+- account_number: last 4 digits of account number if visible (e.g. "4821"), or null
 - account_type: one of Credit Card, Auto Loan, Mortgage, Student Loan, Personal Loan, Collection, Medical, Retail, Other
 - balance: current balance as a number (dollars, no symbols), or null if not present
 - status: one of Current, Late 30, Late 60, Late 90, Derogatory, Charge-off, Collection, Closed, Unknown
@@ -14,6 +15,7 @@ Return this exact JSON structure:
   "accounts": [
     {{
       "creditor_name": "string",
+      "account_number": "4_digits_or_null",
       "account_type": "string",
       "balance": number_or_null,
       "status": "string",
@@ -27,12 +29,12 @@ Credit report text:
 
 
 ANALYSIS_SYSTEM = """You are a senior credit analyst and consumer credit strategy expert.
-Generate a comprehensive, actionable credit audit.
+Generate a comprehensive, actionable credit audit with account-specific recommendations.
 Return ONLY valid JSON. No explanation, no markdown, no extra text."""
 
 ANALYSIS_USER = """Analyze this credit profile and generate a complete audit report.
 
-Accounts on file:
+Accounts on file (include the account "id" in recommendations that target a specific account):
 {accounts_json}
 
 Additional context:
@@ -46,6 +48,7 @@ For each recommendation:
 - severity: "high" (immediate action required), "medium" (address within 60 days), or "low" (long-term optimization)
 - title: concise title under 60 characters
 - description: 2-4 sentences of specific, actionable guidance referencing credit law where appropriate (FCRA, FDCPA, FCBA)
+- account_id: the exact "id" value from the accounts list above if this recommendation targets a specific account, or null for general recommendations
 
 Required coverage areas across your recommendations:
 1. Any collection accounts (validation letters, statute of limitations)
@@ -73,7 +76,8 @@ Return this exact JSON structure:
     {{
       "severity": "high|medium|low",
       "title": "string",
-      "description": "string"
+      "description": "string",
+      "account_id": "account_id_string_or_null"
     }}
   ]
 }}"""

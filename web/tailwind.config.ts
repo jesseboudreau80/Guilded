@@ -15,8 +15,9 @@ const config: Config = {
         gold: "#bfa03a",
       },
       animation: {
-        "fade-in":  "fade-in 150ms ease-out",
-        "scale-in": "scale-in 150ms ease-out",
+        "fade-in":   "fade-in 150ms ease-out",
+        "scale-in":  "scale-in 150ms ease-out",
+        "slide-up":  "slide-up 220ms ease-out",
       },
       keyframes: {
         "fade-in": {
@@ -26,6 +27,10 @@ const config: Config = {
         "scale-in": {
           from: { opacity: "0", transform: "scale(0.95)" },
           to:   { opacity: "1", transform: "scale(1)" },
+        },
+        "slide-up": {
+          from: { transform: "translateY(100%)" },
+          to:   { transform: "translateY(0)" },
         },
       },
     },

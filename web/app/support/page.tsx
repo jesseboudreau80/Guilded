@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import { Shield, Mail, BookOpen, MessageSquare, ExternalLink } from "lucide-react";
 
@@ -37,10 +39,10 @@ export default function SupportPage() {
             For account issues, billing questions, or anything you can&apos;t find in the platform:
           </p>
           <a
-            href="mailto:support@guilded.finance"
+            href="mailto:guilded@jesseboudreau.com"
             className="inline-flex items-center gap-2 rounded-xl border border-gold/30 bg-gold/10 px-4 py-2.5 text-sm font-medium text-gold hover:bg-gold/20 transition-colors"
           >
-            support@guilded.finance <ExternalLink size={12} />
+            guilded@jesseboudreau.com <ExternalLink size={12} />
           </a>
           <p className="mt-3 text-xs text-slate-600">
             Response time: typically within 24 hours · Beta access: direct founder response

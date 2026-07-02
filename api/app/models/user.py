@@ -2,7 +2,7 @@ import enum
 from datetime import datetime
 from uuid import uuid4
 
-from sqlalchemy import DateTime, Enum as SAEnum, Integer, String
+from sqlalchemy import Boolean, DateTime, Enum as SAEnum, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
@@ -35,10 +35,25 @@ class User(Base):
                             )
     stripe_customer_id:     Mapped[str | None]      = mapped_column(String, unique=True, nullable=True)
     stripe_subscription_id: Mapped[str | None]      = mapped_column(String, unique=True, nullable=True)
+    stripe_payment_intent_id: Mapped[str | None]    = mapped_column(String, unique=True, nullable=True)
     subscription_start_date: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     successful_billing_count: Mapped[int]           = mapped_column(Integer, default=0, nullable=False)
     ai_usage_count:          Mapped[int]            = mapped_column(Integer, default=0, nullable=False)
     ai_usage_reset_date:     Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+    # ── Founders Pass / Lifetime Access ─────────────────────────────────────────
+    # founders_pass=True means the user paid once for lifetime access.
+    # lifetime_access is the enforcement flag; it mirrors founders_pass but can
+    # also be set by admin grant (beta tester rewards, etc.).
+    # founders_pass_type distinguishes pricing tiers: STANDARD ($195) / PARTNER ($97).
+    founders_pass:      Mapped[bool]          = mapped_column(Boolean, default=False, nullable=False)
+    lifetime_access:    Mapped[bool]          = mapped_column(Boolean, default=False, nullable=False)
+    founders_pass_type: Mapped[str | None]    = mapped_column(String, nullable=True)  # STANDARD | PARTNER
+    founders_pass_date: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+    # ── Promo / Fair Use ────────────────────────────────────────────────────────
+    promo_code_used:    Mapped[str | None]    = mapped_column(String, nullable=True)
+
     created_at:              Mapped[datetime]        = mapped_column(DateTime(timezone=True), default=datetime.utcnow, nullable=False)
     updated_at:              Mapped[datetime]        = mapped_column(DateTime(timezone=True), default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 

@@ -4,6 +4,8 @@ import { DashboardTopBar } from "@/components/dashboard/DashboardTopBar";
 import { CounselLayout } from "@/components/counsel/CounselLayout";
 import { WithErrorBoundary } from "@/components/ui/ErrorBoundary";
 import { OnboardingFlow } from "@/components/onboarding/OnboardingFlow";
+import { BetaBanner } from "@/components/ui/BetaBanner";
+import { SessionExpiryToast } from "@/components/ui/SessionExpiryToast";
 import { getGuildedSession } from "@/lib/auth";
 import { authApi } from "@/lib/api";
 
@@ -17,23 +19,20 @@ export default async function DashboardLayout({ children }: { children: ReactNod
   }
 
   return (
-    <div className="flex min-h-screen bg-slate-950">
+    <div className="flex min-h-dvh bg-slate-950">
       <Sidebar tier={user?.tier} />
 
-      {/*
-        CounselLayout wraps the entire right side with CounselContext.
-        Passing DashboardTopBar as a slot prop means client components
-        inside it (CounselTopBarButton) can access the counsel context.
-        Conversation + open/close state persist across client navigation.
-      */}
       <CounselLayout topBar={<DashboardTopBar user={user} />}>
-        <main className="flex-1 p-4 md:p-8">
+        <BetaBanner />
+        <main className="flex-1 px-4 py-5 md:px-8 md:py-8">
           <WithErrorBoundary>
             {children}
           </WithErrorBoundary>
         </main>
         {/* First-time user onboarding — shows once, tracked in localStorage */}
         <OnboardingFlow />
+        {/* Session expiry countdown toast */}
+        <SessionExpiryToast />
       </CounselLayout>
     </div>
   );

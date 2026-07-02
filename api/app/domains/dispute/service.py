@@ -36,6 +36,9 @@ async def generate_dispute(
     audit_id: str,
     recommendation_ids: list[str],
     strategy: str,
+    context_flags:  list[str] | None = None,
+    context_notes:  str | None = None,
+    bureau_targets: list[str] | None = None,
 ) -> DisputeDraft:
     logger.info(
         "Dispute draft generation started — user=%s audit=%s recs=%d strategy=%s",
@@ -67,7 +70,12 @@ async def generate_dispute(
     )
 
     today = date.today().strftime("%B %d, %Y")
-    user_prompt = build_dispute_user(recs_text, strategy, user_name, today)
+    user_prompt = build_dispute_user(
+        recs_text, strategy, user_name, today,
+        context_flags=context_flags,
+        context_notes=context_notes,
+        bureau_targets=bureau_targets,
+    )
 
     letter = _call_llm_text(DISPUTE_SYSTEM, user_prompt, max_tokens=2048)
 

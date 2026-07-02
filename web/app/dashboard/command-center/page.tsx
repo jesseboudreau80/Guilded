@@ -55,7 +55,7 @@ const TIMELINE_ICONS: Record<string, typeof Shield> = {
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function CommandCenterPage() {
-  const { data: session } = useGuildedSession();
+  const { data: session, status: sessionStatus } = useGuildedSession();
 
   const [xp,       setXP]       = useState<XPData | null>(null);
   const [modules,  setModules]  = useState<AcademyModuleInput[]>([]);
@@ -64,8 +64,9 @@ export default function CommandCenterPage() {
   const [loading,  setLoading]  = useState(true);
 
   useEffect(() => {
+    if (sessionStatus === "loading") return;
     const token = session?.user?.accessToken;
-    if (!token) return;
+    if (!token) { setLoading(false); return; }
     Promise.all([
       academyApi.xpSummary(token).then((r) => r.json()),
       academyApi.modules(token).then((r) => r.json()),
@@ -79,7 +80,7 @@ export default function CommandCenterPage() {
       setProgress(pm);
       setAudits(Array.isArray(auds) ? auds : []);
     }).finally(() => setLoading(false));
-  }, [session?.user?.accessToken]);
+  }, [session?.user?.accessToken, sessionStatus]);
 
   // ── Engine-derived state ──────────────────────────────────────────────────
   const events        = xp?.recent_events ?? [];

@@ -62,8 +62,8 @@ function RiskDial({ score }: { score: number }) {
 }
 
 export default function AuditSnapshotPage() {
-  const { id }            = useParams<{ id: string }>();
-  const { data: session } = useGuildedSession();
+  const { id }                                    = useParams<{ id: string }>();
+  const { data: session, status: sessionStatus } = useGuildedSession();
 
   const [results,  setResults]  = useState<AuditResults | null>(null);
   const [modules,  setModules]  = useState<AcademyModuleInput[]>([]);
@@ -72,8 +72,9 @@ export default function AuditSnapshotPage() {
   const [error,    setError]    = useState<string | null>(null);
 
   useEffect(() => {
+    if (sessionStatus === "loading") return;
     const token = session?.user?.accessToken;
-    if (!token) return;
+    if (!token) { setLoading(false); return; }
 
     Promise.allSettled([
       auditApi.results(id, token).then((r) => r.json()),
@@ -91,7 +92,7 @@ export default function AuditSnapshotPage() {
       }
       setLoading(false);
     });
-  }, [id, session?.user?.accessToken]);
+  }, [id, session?.user?.accessToken, sessionStatus]);
 
   const completedMods = modules.filter((m) => progress[m.id]?.status === "completed");
   const inProgressMod = modules.find((m) => progress[m.id]?.status === "in_progress") ?? null;
@@ -136,7 +137,7 @@ export default function AuditSnapshotPage() {
   }
 
   return (
-    <section className="max-w-2xl space-y-6">
+    <section className="space-y-6">
       {/* ── Header ─────────────────────────────────────────────────────── */}
       <div>
         <div className="flex items-center gap-2 mb-2">

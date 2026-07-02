@@ -8,4 +8,44 @@
 
 body {
   @apply bg-bg text-slate-100;
+  /* Prevent horizontal overflow globally */
+  overflow-x: hidden;
+}
+
+/* iOS safe area support for sticky/fixed bottom elements */
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Improve text rendering */
+body, input, textarea, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent iOS tap highlight on interactive elements */
+button, a, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure minimum tap target size on mobile */
+@media (max-width: 640px) {
+  button:not(.no-min-tap), a.btn {
+    min-height: 44px;
+  }
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Print styles — clean letter view for disputes */
+@media print {
+  body { background: white !important; color: black !important; }
+  .print-hidden, nav, aside { display: none !important; }
 }

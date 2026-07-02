@@ -143,7 +143,7 @@ export default function QAChecklistPage() {
   const readyToLaunch = critPass === critical.length;
 
   return (
-    <section className="max-w-2xl space-y-6">
+    <section className="space-y-6">
       <div>
         <Link href="/dashboard/admin" className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 mb-3 transition-colors">
           <ChevronLeft size={12} /> Admin

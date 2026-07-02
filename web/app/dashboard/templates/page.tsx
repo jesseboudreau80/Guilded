@@ -31,7 +31,7 @@ export default async function TemplatesPage() {
   ];
 
   return (
-    <section className="max-w-2xl space-y-6">
+    <section className="space-y-6">
       <div>
         <div className="flex items-center gap-2 mb-2">
           <Shield size={14} className="text-gold" />
@@ -44,7 +44,9 @@ export default async function TemplatesPage() {
         </p>
       </div>
 
-      {/* How it works */}
+      {/* How it works + shortcut — side-by-side on desktop */}
+      <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
+
       <div className="rounded-xl border border-gold/20 bg-gold/5 px-5 py-5">
         <div className="flex items-center gap-2 mb-3">
           <Shield size={13} className="text-gold" />
@@ -76,7 +78,7 @@ export default async function TemplatesPage() {
         <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">
           Available Strategies
         </p>
-        <div className="space-y-3">
+        <div className="grid gap-3 sm:grid-cols-2">
           {STRATEGIES.map((s) => (
             <div key={s.title} className="rounded-xl border border-slate-800 bg-slate-900/60 px-5 py-4">
               <div className="flex items-start gap-3">
@@ -94,7 +96,7 @@ export default async function TemplatesPage() {
         </div>
       </div>
 
-      {/* Existing audits shortcut */}
+      {/* Existing audits shortcut (second item in the 2-col grid) */}
       <div className="rounded-xl border border-slate-800 bg-slate-900/40 px-5 py-4">
         <p className="text-sm font-medium text-slate-300 mb-1">Have a completed audit?</p>
         <p className="text-xs text-slate-500 mb-3">
@@ -107,6 +109,8 @@ export default async function TemplatesPage() {
           View My Audits <ChevronRight size={11} />
         </Link>
       </div>
+
+      </div>{/* end 2-col grid */}
 
       <p className="text-xs text-slate-600 leading-relaxed border-t border-slate-800 pt-4">
         All generated letters are educational examples. Review carefully before submitting to

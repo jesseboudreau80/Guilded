@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { consultationsApi } from "@/lib/api";
+import { Calendar } from "lucide-react";
 
 export default function ConsultationCheckout({ token }: { token: string }) {
   const [loading, setLoading] = useState(false);
@@ -14,7 +15,7 @@ export default function ConsultationCheckout({ token }: { token: string }) {
       const res  = await consultationsApi.checkout(token);
       const data = await res.json();
       if (!res.ok) {
-        setError(data.detail ?? "Checkout failed");
+        setError(data.detail ?? "Checkout failed. Please try again.");
         return;
       }
       window.location.href = data.url;
@@ -26,14 +27,19 @@ export default function ConsultationCheckout({ token }: { token: string }) {
   };
 
   return (
-    <div className="mt-6">
-      {error && <p className="mb-4 text-sm text-red-400">{error}</p>}
+    <div className="mt-5">
+      {error && (
+        <p className="mb-3 text-xs text-red-400 bg-red-400/10 border border-red-400/20 rounded-lg px-3 py-2">
+          {error}
+        </p>
+      )}
       <button
         onClick={handleCheckout}
         disabled={loading}
-        className="rounded-xl bg-slate-600 px-6 py-3 font-medium text-white transition-colors hover:bg-slate-500 disabled:opacity-50"
+        className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-2.5 text-sm font-semibold text-slate-950 transition-opacity hover:opacity-90 disabled:opacity-50"
       >
-        {loading ? "Redirecting…" : "Book Session"}
+        <Calendar size={14} />
+        {loading ? "Redirecting to checkout…" : "Book Session"}
       </button>
     </div>
   );

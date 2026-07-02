@@ -38,15 +38,17 @@ function formatDate(iso: string): string {
 }
 
 export default function AuditsPage() {
-  const { data: session } = useGuildedSession();
+  const { data: session, status: sessionStatus } = useGuildedSession();
 
   const [audits,  setAudits]  = useState<AuditItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error,   setError]   = useState<string | null>(null);
 
   useEffect(() => {
-    if (!session?.user?.accessToken) return;
-    auditApi.list(session.user.accessToken)
+    if (sessionStatus === "loading") return;
+    const token = session?.user?.accessToken;
+    if (!token) { setLoading(false); return; }
+    auditApi.list(token)
       .then((r) => r.json())
       .then((data) => {
         if (data.detail) { setError(data.detail); return; }
@@ -54,7 +56,7 @@ export default function AuditsPage() {
       })
       .catch(() => setError("Failed to load audit history."))
       .finally(() => setLoading(false));
-  }, [session?.user?.accessToken]);
+  }, [session?.user?.accessToken, sessionStatus]);
 
   return (
     <section>
@@ -73,7 +75,11 @@ export default function AuditsPage() {
 
       <div className="mt-8">
         {loading && (
-          <p className="text-sm text-slate-400">Loading…</p>
+          <div className="space-y-2 animate-pulse">
+            {[1,2,3].map(i => (
+              <div key={i} className="h-12 rounded-xl bg-slate-800/60" />
+            ))}
+          </div>
         )}
 
         {error && (
@@ -81,17 +87,34 @@ export default function AuditsPage() {
         )}
 
         {!loading && !error && audits.length === 0 && (
-          <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-800/30 px-8 py-14 text-center">
-            <FileText size={32} className="mx-auto text-slate-600" />
-            <p className="mt-4 text-sm font-medium text-slate-300">No audits yet</p>
-            <p className="mt-1 text-xs text-slate-500">
-              Upload a credit report to generate your first analysis.
+          <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-800/20 px-8 py-14 text-center">
+            <div className="h-12 w-12 rounded-2xl border border-slate-700 bg-slate-800/60 flex items-center justify-center mx-auto mb-5">
+              <FileText size={22} className="text-slate-500" />
+            </div>
+            <p className="text-base font-semibold text-slate-200">No audits yet</p>
+            <p className="mt-2 text-sm text-slate-500 leading-relaxed max-w-sm mx-auto">
+              Upload your credit report PDF to generate your recovery intelligence brief —
+              risk score, dispute targets, and strategic recommendations.
             </p>
+            <div className="mt-6 space-y-2 text-xs text-slate-600 max-w-xs mx-auto text-left">
+              <p className="flex items-center gap-2">
+                <span className="h-1 w-1 rounded-full bg-slate-600 shrink-0" />
+                Download your free report from AnnualCreditReport.com
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="h-1 w-1 rounded-full bg-slate-600 shrink-0" />
+                Digital PDF only — scanned images can&apos;t be parsed
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="h-1 w-1 rounded-full bg-slate-600 shrink-0" />
+                All three bureaus work — Equifax, Experian, or TransUnion
+              </p>
+            </div>
             <Link
               href="/dashboard/audit/start"
-              className="mt-5 inline-block rounded-xl bg-gold px-5 py-2 text-sm font-semibold text-slate-950 transition-opacity hover:opacity-90"
+              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-5 py-2.5 text-sm font-semibold text-slate-950 transition-opacity hover:opacity-90"
             >
-              Start Audit
+              Run First Audit
             </Link>
           </div>
         )}

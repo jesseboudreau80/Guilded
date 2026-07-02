@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import { Shield } from "lucide-react";
 
@@ -42,7 +44,7 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="4. AI and Third-Party Services">
-          <p>AI responses are generated using OpenAI's API. Your prompts and our responses are transmitted to OpenAI for processing. Review OpenAI's privacy policy at openai.com/privacy for how they handle this data.</p>
+          <p>AI responses are generated using OpenAI&apos;s API. Your prompts and our responses are transmitted to OpenAI for processing. Review OpenAI&apos;s privacy policy at openai.com/privacy for how they handle this data.</p>
           <p>We use Stripe for payment processing and NextAuth for authentication session management.</p>
         </Section>
 
@@ -55,11 +57,11 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="7. Your Rights">
-          <p>You have the right to access, correct, or delete your personal information. Contact us at <a href="mailto:support@guilded.finance" className="text-gold hover:underline">support@guilded.finance</a> to exercise these rights. Residents of certain states (California, Virginia, etc.) may have additional rights under applicable privacy law.</p>
+          <p>You have the right to access, correct, or delete your personal information. Contact us at <a href="mailto:guilded@jesseboudreau.com" className="text-gold hover:underline">guilded@jesseboudreau.com</a> to exercise these rights. Residents of certain states (California, Virginia, etc.) may have additional rights under applicable privacy law.</p>
         </Section>
 
         <Section title="8. Contact">
-          <p>Privacy questions or requests: <a href="mailto:support@guilded.finance" className="text-gold hover:underline">support@guilded.finance</a></p>
+          <p>Privacy questions or requests: <a href="mailto:guilded@jesseboudreau.com" className="text-gold hover:underline">guilded@jesseboudreau.com</a></p>
         </Section>
 
         <div className="mt-12 border-t border-slate-800 pt-6 text-xs text-slate-600">

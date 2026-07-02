@@ -3,45 +3,53 @@
 import { useState } from "react";
 import { ThumbsUp, ThumbsDown, Check } from "lucide-react";
 import { track } from "@/lib/analytics";
+import { feedbackApi } from "@/lib/api";
+import { useGuildedSession } from "@/lib/session";
 
 type Props = {
   label?:   string;
-  context?: string;  // used in analytics (e.g. "audit-results", "module-page")
+  /** page identifier sent to the feedback API, e.g. "audit-results" */
+  context?: string;
 };
 
-type State = "idle" | "thumbs_up" | "thumbs_down" | "feedback" | "done";
+type State = "idle" | "feedback" | "done";
 
-/**
- * Lightweight "Was this helpful?" widget.
- * Tracks feedback via analytics and optionally collects a brief text note.
- * No backend persistence — Phase 4 can add an endpoint.
- */
-export function FeedbackWidget({ label = "Was this helpful?", context }: Props) {
-  const [state,    setState]    = useState<State>("idle");
-  const [feedbackText, setText] = useState("");
+export function FeedbackWidget({ label = "Was this helpful?", context = "unknown" }: Props) {
+  const { data: session } = useGuildedSession();
+  const [state,   setState]   = useState<State>("idle");
+  const [notes,   setNotes]   = useState("");
+  const [saving,  setSaving]  = useState(false);
 
-  const handleThumb = (positive: boolean) => {
-    track(positive ? "onboarding_completed" : "onboarding_skipped", {
-      context, positive,
-    });
+  const persist = async (rating: number, feedbackNotes?: string) => {
+    const token = session?.user?.accessToken;
+    if (!token) return;
+    try {
+      await feedbackApi.submit({ page: context, rating, notes: feedbackNotes }, token);
+    } catch { /* non-critical */ }
+  };
+
+  const handleThumb = async (positive: boolean) => {
+    track("feedback_submitted", { context, positive });
     if (positive) {
+      await persist(1);
       setState("done");
     } else {
       setState("feedback");
     }
   };
 
-  const handleSubmitFeedback = () => {
-    if (feedbackText.trim()) {
-      track("onboarding_skipped", { context, feedback: feedbackText.trim() });
-    }
+  const handleSubmit = async () => {
+    setSaving(true);
+    track("feedback_submitted", { context, positive: false, has_notes: !!notes.trim() });
+    await persist(-1, notes.trim() || undefined);
+    setSaving(false);
     setState("done");
   };
 
   if (state === "done") {
     return (
       <div className="flex items-center gap-1.5 text-xs text-emerald-400">
-        <Check size={12} /> Thank you for your feedback.
+        <Check size={12} /> Thank you — feedback recorded.
       </div>
     );
   }
@@ -49,25 +57,23 @@ export function FeedbackWidget({ label = "Was this helpful?", context }: Props) 
   if (state === "feedback") {
     return (
       <div className="space-y-2">
-        <p className="text-xs text-slate-500">What could be improved?</p>
+        <p className="text-xs text-slate-500">What could be improved? (optional)</p>
         <textarea
-          value={feedbackText}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Optional — any feedback helps us improve"
+          value={notes}
+          onChange={(e) => setNotes(e.target.value)}
+          placeholder="Any detail helps us improve the experience"
           rows={2}
           className="w-full max-w-xs rounded-lg border border-slate-700 bg-slate-800/60 px-3 py-2 text-xs text-slate-200 placeholder-slate-600 outline-none focus:border-slate-600 resize-none"
         />
         <div className="flex gap-2">
           <button
-            onClick={handleSubmitFeedback}
-            className="rounded-lg border border-slate-700 px-3 py-1.5 text-xs text-slate-400 hover:text-slate-200 transition-colors"
+            onClick={handleSubmit}
+            disabled={saving}
+            className="rounded-lg border border-slate-700 px-3 py-1.5 text-xs text-slate-400 hover:text-slate-200 transition-colors disabled:opacity-40"
           >
-            Submit
+            {saving ? "Saving…" : "Submit"}
           </button>
-          <button
-            onClick={() => setState("done")}
-            className="text-xs text-slate-600 hover:text-slate-400 transition-colors"
-          >
+          <button onClick={() => setState("done")} className="text-xs text-slate-600 hover:text-slate-400">
             Skip
           </button>
         </div>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { Copy, Check, Printer, ArrowLeft, FileText, AlertTriangle, AlertCircle, Info } from "lucide-react";
+import { disputeEvents } from "@/lib/analytics";
 import Link from "next/link";
 import { disputeApi } from "@/lib/api";
 import { useGuildedSession } from "@/lib/session";
@@ -50,8 +51,8 @@ function formatDate(iso: string): string {
 }
 
 export default function DisputeDraftPage() {
-  const { id }            = useParams<{ id: string }>();
-  const { data: session } = useGuildedSession();
+  const { id }                                    = useParams<{ id: string }>();
+  const { data: session, status: sessionStatus } = useGuildedSession();
 
   const [draft,   setDraft]   = useState<DisputeDraft | null>(null);
   const [loading, setLoading] = useState(true);
@@ -59,8 +60,10 @@ export default function DisputeDraftPage() {
   const [copied,  setCopied]  = useState(false);
 
   useEffect(() => {
-    if (!session?.user?.accessToken) return;
-    disputeApi.get(id, session.user.accessToken)
+    if (sessionStatus === "loading") return;
+    const token = session?.user?.accessToken;
+    if (!token) { setLoading(false); return; }
+    disputeApi.get(id, token)
       .then((r) => r.json())
       .then((data) => {
         if (data.detail) { setError(data.detail); return; }
@@ -68,23 +71,33 @@ export default function DisputeDraftPage() {
       })
       .catch(() => setError("Failed to load dispute draft."))
       .finally(() => setLoading(false));
-  }, [id, session?.user?.accessToken]);
+  }, [id, session?.user?.accessToken, sessionStatus]);
 
   const handleCopy = () => {
     if (!draft) return;
     navigator.clipboard.writeText(draft.content).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      disputeEvents.copied(draft.id);
     });
   };
 
-  const handlePrint = () => window.print();
+  const handlePrint = () => {
+    if (draft) disputeEvents.printed(draft.id);
+    window.print();
+  };
 
   if (loading) {
     return (
       <section>
-        <h1 className="text-2xl font-semibold tracking-tight">Dispute Draft</h1>
-        <p className="mt-6 text-sm text-slate-400">Loading your dispute letter…</p>
+        <Link href="/dashboard/disputes" className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors">
+          <ArrowLeft size={12} /> My Disputes
+        </Link>
+        <div className="mt-6 space-y-4 animate-pulse">
+          <div className="h-6 w-48 rounded bg-slate-800" />
+          <div className="h-4 w-32 rounded bg-slate-800" />
+          <div className="mt-8 h-64 rounded-xl bg-slate-800/60" />
+        </div>
       </section>
     );
   }
@@ -92,14 +105,20 @@ export default function DisputeDraftPage() {
   if (error || !draft) {
     return (
       <section>
-        <h1 className="text-2xl font-semibold tracking-tight">Dispute Draft</h1>
-        <p className="mt-6 text-sm text-red-400">{error ?? "Draft not found."}</p>
-        <Link
-          href="/dashboard/audits"
-          className="mt-4 inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-slate-200 transition-colors"
-        >
-          <ArrowLeft size={14} /> My Audits
+        <Link href="/dashboard/disputes" className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors mb-6">
+          <ArrowLeft size={12} /> My Disputes
         </Link>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/40 px-8 py-14 text-center">
+          <FileText size={22} className="text-slate-600 mx-auto mb-4" />
+          <p className="text-base font-semibold text-slate-200">Dispute draft not found</p>
+          <p className="mt-2 text-sm text-red-400">{error ?? "This draft may have been deleted or the link is invalid."}</p>
+          <Link
+            href="/dashboard/disputes"
+            className="mt-6 inline-flex items-center gap-1.5 rounded-xl border border-slate-700 px-4 py-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
+          >
+            <ArrowLeft size={13} /> View All Disputes
+          </Link>
+        </div>
       </section>
     );
   }
@@ -180,8 +199,21 @@ export default function DisputeDraftPage() {
         </div>
       )}
 
+      {/* ── Review reminder ───────────────────────────────────────────────── */}
+      <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-amber-500/15 bg-amber-500/5 px-4 py-3 print:hidden">
+        <Info size={13} className="text-amber-400 shrink-0 mt-0.5" />
+        <div>
+          <p className="text-xs font-semibold text-amber-400">Review before sending</p>
+          <p className="mt-0.5 text-xs text-slate-500 leading-relaxed">
+            This is an AI-generated educational framework. Read the letter carefully and verify all account details,
+            creditor names, and dates against your actual credit report before mailing.
+            This is not legal advice — results vary by situation.
+          </p>
+        </div>
+      </div>
+
       {/* ── Document ──────────────────────────────────────────────────────── */}
-      <div className="mt-6 overflow-hidden rounded-xl border border-slate-700 bg-slate-900 print:border-0 print:rounded-none print:bg-white print:shadow-none">
+      <div className="mt-4 overflow-hidden rounded-xl border border-slate-700 bg-slate-900 print:border-0 print:rounded-none print:bg-white print:shadow-none">
         {/* Document label bar */}
         <div className="flex items-center gap-2 border-b border-slate-800 bg-slate-800/60 px-5 py-3 print:hidden">
           <FileText size={14} className="text-slate-500" />

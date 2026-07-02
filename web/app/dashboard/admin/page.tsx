@@ -25,6 +25,20 @@ type Stats = {
   ai:     { total_messages: number };
 };
 
+type FunnelStep = { label: string; count: number; rate_from_top: number; rate_from_prev: number | null };
+type Funnel     = { steps: FunnelStep[]; key_rates: Record<string, number> };
+type Costs          = { total_estimated_usd: number; monthly_projection_usd: number; disclaimer?: string; pricing_model?: string; breakdown: Record<string, { count: number; estimated_usd: number }> };
+type AtRiskUser     = { id: string; email: string; name: string; created_at: string };
+type AtRisk         = { never_uploaded: { count: number; users: AtRiskUser[] }; incomplete_audit: { count: number; users: AtRiskUser[] }; audit_no_dispute: { count: number; users: AtRiskUser[] } };
+type OcrCorrections  = { total_correction_events: number; field_correction_frequency: { field: string; corrections: number; pct: number }[]; insight: string };
+type WebhookHealth   = {
+  stripe_mode: string; mode_consistent: boolean; mode_warnings: string[]; webhook_set: boolean;
+  events: { total: number; last_24h: number; last_7d: number; last_event: { id: string; type: string; processed_at: string } | null; by_type_7d: { type: string; count: number }[] };
+  price_ids: { mode: string; journeyman_set: boolean; master_set: boolean; founders_standard_set: boolean; founders_partner_set: boolean };
+};
+type FounderUser = { id: string; email: string; name: string; founders_pass_type: string | null; founders_pass_date: string | null; tier: string };
+type FoundersStats = { total: number; standard: number; partner: number; users: FounderUser[] };
+
 type Recent = {
   recent_signups:    { id: string; email: string; name: string; tier: string; created_at: string }[];
   recent_audits:     { id: string; status: string; risk_score: number | null; created_at: string }[];
@@ -56,31 +70,46 @@ function StatCard({ label, value, sub, icon: Icon, color = "text-slate-400" }: {
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function AdminPage() {
-  const { data: session } = useGuildedSession();
+  const { data: session, status: sessionStatus } = useGuildedSession();
 
-  const [stats,   setStats]   = useState<Stats | null>(null);
-  const [recent,  setRecent]  = useState<Recent | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [denied,  setDenied]  = useState(false);
-  const [error,   setError]   = useState<string | null>(null);
+  const [stats,    setStats]    = useState<Stats | null>(null);
+  const [recent,   setRecent]   = useState<Recent | null>(null);
+  const [funnel,   setFunnel]   = useState<Funnel | null>(null);
+  const [costs,    setCosts]    = useState<Costs | null>(null);
+  const [atRisk,   setAtRisk]   = useState<AtRisk | null>(null);
+  const [ocrCorr,  setOcrCorr]  = useState<OcrCorrections | null>(null);
+  const [webhook,  setWebhook]  = useState<WebhookHealth | null>(null);
+  const [founders, setFounders] = useState<FoundersStats | null>(null);
+  const [loading,  setLoading]  = useState(true);
+  const [denied,   setDenied]   = useState(false);
+  const [error,    setError]    = useState<string | null>(null);
 
   useEffect(() => {
+    if (sessionStatus === "loading") return;
     const token = session?.user?.accessToken;
-    if (!token) return;
+    if (!token) { setLoading(false); return; }
 
     Promise.allSettled([
-      apiFetch("/api/admin/stats",  {}, token).then((r) => {
-        if (r.status === 403) { setDenied(true); return null; }
-        if (!r.ok) throw new Error("stats failed");
-        return r.json();
-      }),
-      apiFetch("/api/admin/recent", {}, token).then((r) => r.ok ? r.json() : null),
-    ]).then(([statsR, recentR]) => {
-      if (statsR.status === "fulfilled" && statsR.value) setStats(statsR.value);
-      if (recentR.status === "fulfilled" && recentR.value) setRecent(recentR.value);
+      apiFetch("/api/admin/stats",           {}, token).then((r) => { if (r.status === 403) { setDenied(true); return null; } return r.ok ? r.json() : null; }),
+      apiFetch("/api/admin/recent",          {}, token).then((r) => r.ok ? r.json() : null),
+      apiFetch("/api/admin/funnel",          {}, token).then((r) => r.ok ? r.json() : null),
+      apiFetch("/api/admin/costs",           {}, token).then((r) => r.ok ? r.json() : null),
+      apiFetch("/api/admin/at-risk",         {}, token).then((r) => r.ok ? r.json() : null),
+      apiFetch("/api/admin/ocr-corrections", {}, token).then((r) => r.ok ? r.json() : null),
+      apiFetch("/api/admin/webhook-health",  {}, token).then((r) => r.ok ? r.json() : null),
+      apiFetch("/api/admin/founders",        {}, token).then((r) => r.ok ? r.json() : null),
+    ]).then(([statsR, recentR, funnelR, costsR, atRiskR, ocrR, webhookR, foundersR]) => {
+      if (statsR.status   === "fulfilled" && statsR.value)   setStats(statsR.value);
+      if (recentR.status  === "fulfilled" && recentR.value)  setRecent(recentR.value);
+      if (funnelR.status  === "fulfilled" && funnelR.value)  setFunnel(funnelR.value);
+      if (costsR.status   === "fulfilled" && costsR.value)   setCosts(costsR.value);
+      if (atRiskR.status  === "fulfilled" && atRiskR.value)  setAtRisk(atRiskR.value);
+      if (ocrR.status     === "fulfilled" && ocrR.value)     setOcrCorr(ocrR.value);
+      if (webhookR.status   === "fulfilled" && webhookR.value)   setWebhook(webhookR.value);
+      if (foundersR.status  === "fulfilled" && foundersR.value)  setFounders(foundersR.value);
     }).catch(() => setError("Failed to load admin data."))
       .finally(() => setLoading(false));
-  }, [session?.user?.accessToken]);
+  }, [session?.user?.accessToken, sessionStatus]);
 
   if (loading) return (
     <section>
@@ -280,6 +309,245 @@ export default function AdminPage() {
           </TacticalPanel>
         </div>
       </div>
+
+      {/* ── Conversion Funnel ───────────────────────────────────────── */}
+      {funnel && (
+        <div className="space-y-3">
+          <SectionHeader label="Conversion Funnel" />
+          <TacticalPanel noPad>
+            <div className="divide-y divide-slate-800">
+              {funnel.steps.map((step, i) => (
+                <div key={step.label} className="px-5 py-3">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-sm text-slate-300">{step.label}</span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-semibold text-slate-200 tabular-nums">{step.count}</span>
+                      <span className={`text-xs font-medium tabular-nums w-14 text-right ${
+                        i === 0 ? "text-slate-500" :
+                        step.rate_from_prev && step.rate_from_prev >= 70 ? "text-emerald-400" :
+                        step.rate_from_prev && step.rate_from_prev >= 40 ? "text-amber-400" : "text-red-400"
+                      }`}>
+                        {i === 0 ? "100%" : `${step.rate_from_prev?.toFixed(1) ?? "—"}%`}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-800">
+                    <div
+                      className={`h-full rounded-full transition-all ${i === 0 ? "bg-slate-600" : "bg-gold/60"}`}
+                      style={{ width: `${step.rate_from_top}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="border-t border-slate-800 px-5 py-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {Object.entries(funnel.key_rates).map(([key, rate]) => (
+                <div key={key}>
+                  <p className="text-xs text-slate-600">{key.replace(/_/g, " ")}</p>
+                  <p className={`text-sm font-bold ${Number(rate) >= 60 ? "text-emerald-400" : Number(rate) >= 30 ? "text-amber-400" : "text-red-400"}`}>
+                    {Number(rate).toFixed(1)}%
+                  </p>
+                </div>
+              ))}
+            </div>
+          </TacticalPanel>
+        </div>
+      )}
+
+      {/* ── AI Cost Telemetry ────────────────────────────────────────── */}
+      {costs && (
+        <div className="space-y-3">
+          <SectionHeader label="AI Cost Intelligence" />
+          <div className="grid gap-3 sm:grid-cols-3">
+            {Object.entries(costs.breakdown).map(([key, data]) => (
+              <TacticalPanel key={key}>
+                <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">{key.replace(/_/g, " ")}</p>
+                <p className="text-xl font-bold text-slate-100">${data.estimated_usd.toFixed(4)}</p>
+                <p className="text-xs text-slate-600 mt-0.5">{data.count} events</p>
+              </TacticalPanel>
+            ))}
+          </div>
+          <TacticalPanel>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs text-slate-500 mb-1">Total estimated spend</p>
+                <p className="text-2xl font-bold text-slate-100">${costs.total_estimated_usd.toFixed(4)}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs text-slate-500 mb-1">30-day projection</p>
+                <p className="text-lg font-bold text-amber-400">${costs.monthly_projection_usd.toFixed(2)}</p>
+              </div>
+            </div>
+            <p className="mt-2 text-xs text-slate-700">{costs.disclaimer}</p>
+          </TacticalPanel>
+        </div>
+      )}
+
+      {/* ── At-Risk Users ─────────────────────────────────────────────── */}
+      {atRisk && (
+        <div className="space-y-3">
+          <SectionHeader label="At-Risk Users" />
+          <div className="grid gap-4 lg:grid-cols-3">
+            {([
+              { key: "never_uploaded",   label: "Never Uploaded",          desc: "Registered 3+ days, no audit" },
+              { key: "incomplete_audit", label: "Upload Never Completed",   desc: "Started but didn't finish" },
+              { key: "audit_no_dispute", label: "Audit — No Action Taken",  desc: "Completed audit, no disputes" },
+            ] as const).map(({ key, label, desc }) => {
+              const seg = atRisk[key];
+              return (
+                <TacticalPanel key={key} noPad>
+                  <div className="px-4 py-3 border-b border-slate-800">
+                    <p className="text-xs font-semibold text-slate-300">{label}</p>
+                    <p className="text-xs text-slate-600">{desc}</p>
+                    <p className="text-lg font-bold text-slate-100 mt-1">{seg.count} user{seg.count !== 1 ? "s" : ""}</p>
+                  </div>
+                  <div className="divide-y divide-slate-800">
+                    {seg.users.slice(0, 5).map((u) => (
+                      <div key={u.id} className="px-4 py-2.5 flex items-center justify-between">
+                        <div>
+                          <p className="text-xs text-slate-300">{u.email}</p>
+                          <p className="text-xs text-slate-600">{fmt(u.created_at)}</p>
+                        </div>
+                      </div>
+                    ))}
+                    {seg.users.length === 0 && <p className="px-4 py-3 text-xs text-slate-600">No users in this segment</p>}
+                  </div>
+                </TacticalPanel>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* ── OCR Correction Intelligence ───────────────────────────────── */}
+      {ocrCorr && ocrCorr.total_correction_events > 0 && (
+        <div className="space-y-3">
+          <SectionHeader label="OCR Correction Intelligence" count={`${ocrCorr.total_correction_events} total corrections`} />
+          <TacticalPanel noPad>
+            <div className="px-5 py-3 border-b border-slate-800">
+              <p className="text-xs text-slate-400 leading-relaxed">{ocrCorr.insight}</p>
+            </div>
+            <div className="divide-y divide-slate-800">
+              {ocrCorr.field_correction_frequency.map((f) => (
+                <div key={f.field} className="flex items-center justify-between px-5 py-3">
+                  <span className="text-sm text-slate-300 font-medium">{f.field.replace(/_/g, " ")}</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-24 h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                      <div className="h-full rounded-full bg-amber-400/60" style={{ width: `${Math.min(f.pct, 100)}%` }} />
+                    </div>
+                    <span className="text-xs text-slate-400 tabular-nums w-10 text-right">{f.corrections}×</span>
+                    <span className="text-xs text-slate-600 tabular-nums w-12 text-right">{f.pct.toFixed(1)}%</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TacticalPanel>
+        </div>
+      )}
+
+      {/* ── Founders Pass Users ──────────────────────────────────────── */}
+      {founders && (
+        <div className="space-y-3">
+          <SectionHeader label="Founders Pass" />
+          <div className="grid gap-3 sm:grid-cols-3">
+            <StatCard label="Total Founders" value={founders.total}    icon={Shield} color="text-gold" />
+            <StatCard label="Standard Pass"  value={founders.standard} icon={Shield} color="text-gold" sub="$195 one-time" />
+            <StatCard label="Partner Pass"   value={founders.partner}  icon={Shield} color="text-slate-400" sub="$97 one-time" />
+          </div>
+          {founders.users.length > 0 && (
+            <TacticalPanel noPad>
+              <div className="divide-y divide-slate-800">
+                {founders.users.map((u) => (
+                  <div key={u.id} className="flex items-center justify-between px-4 py-3 gap-4">
+                    <div className="min-w-0">
+                      <p className="text-sm text-slate-200 truncate">{u.email}</p>
+                      <p className="text-xs text-slate-600">{u.name || "—"}</p>
+                    </div>
+                    <div className="flex items-center gap-3 shrink-0">
+                      <span className="text-xs text-slate-500">{u.founders_pass_type ?? "—"}</span>
+                      {u.founders_pass_date && (
+                        <span className="text-xs text-slate-700">{new Date(u.founders_pass_date).toLocaleDateString()}</span>
+                      )}
+                      <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[9px] font-semibold text-gold">
+                        LIFETIME
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </TacticalPanel>
+          )}
+        </div>
+      )}
+
+      {/* ── Stripe Webhook Health ─────────────────────────────────────── */}
+      {webhook && (
+        <div className="space-y-3">
+          <SectionHeader label="Stripe Billing Health" />
+          <div className="grid gap-3 sm:grid-cols-3">
+            <TacticalPanel>
+              <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">Mode</p>
+              <p className={`text-xl font-bold ${webhook.stripe_mode === "live" ? "text-gold" : "text-blue-400"}`}>
+                {webhook.stripe_mode.toUpperCase()}
+              </p>
+              <p className={`text-xs mt-0.5 ${webhook.mode_consistent ? "text-emerald-400" : "text-red-400"}`}>
+                {webhook.mode_consistent ? "Config consistent" : "⚠ Config mismatch"}
+              </p>
+            </TacticalPanel>
+            <TacticalPanel>
+              <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">Events (24h)</p>
+              <p className="text-xl font-bold text-slate-100">{webhook.events.last_24h}</p>
+              <p className="text-xs text-slate-500 mt-0.5">{webhook.events.last_7d} this week</p>
+            </TacticalPanel>
+            <TacticalPanel>
+              <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">Price IDs</p>
+              <div className="space-y-1">
+                {[
+                  { label: "Journeyman",        set: webhook.price_ids.journeyman_set },
+                  { label: "Master",            set: webhook.price_ids.master_set },
+                  { label: "Founders Standard", set: webhook.price_ids.founders_standard_set },
+                  { label: "Founders Partner",  set: webhook.price_ids.founders_partner_set },
+                ].map(({ label, set }) => (
+                  <div key={label} className="flex items-center gap-1.5">
+                    <span className={`inline-block w-1.5 h-1.5 rounded-full ${set ? "bg-emerald-400" : "bg-amber-400"}`} />
+                    <span className="text-xs text-slate-400">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </TacticalPanel>
+          </div>
+          {webhook.mode_warnings.length > 0 && (
+            <TacticalPanel>
+              <p className="text-xs font-semibold text-amber-400 uppercase tracking-wide mb-2">Config Warnings</p>
+              <ul className="space-y-1">
+                {webhook.mode_warnings.map((w, i) => (
+                  <li key={i} className="text-xs text-amber-300">{w}</li>
+                ))}
+              </ul>
+            </TacticalPanel>
+          )}
+          {webhook.events.last_event && (
+            <TacticalPanel>
+              <p className="text-xs text-slate-500 uppercase tracking-wide mb-2">Last Webhook Event</p>
+              <p className="text-sm font-medium text-slate-200">{webhook.events.last_event.type}</p>
+              <p className="text-xs text-slate-500 mt-0.5">{new Date(webhook.events.last_event.processed_at).toLocaleString()}</p>
+            </TacticalPanel>
+          )}
+          {webhook.events.by_type_7d.length > 0 && (
+            <TacticalPanel noPad>
+              <p className="text-xs text-slate-500 uppercase tracking-wide px-4 pt-3 pb-2">Events by Type (7d)</p>
+              <div className="divide-y divide-slate-800">
+                {webhook.events.by_type_7d.map((row) => (
+                  <div key={row.type} className="flex items-center justify-between px-4 py-2.5">
+                    <span className="text-xs text-slate-300">{row.type}</span>
+                    <span className="text-xs font-semibold text-slate-200 tabular-nums">{row.count}</span>
+                  </div>
+                ))}
+              </div>
+            </TacticalPanel>
+          )}
+        </div>
+      )}
     </section>
   );
 }

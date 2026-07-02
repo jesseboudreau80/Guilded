@@ -1,5 +1,40 @@
-node_modules
-.next
+# ── Dependencies ──────────────────────────────────────────────
+node_modules/
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# ── Build output ──────────────────────────────────────────────
+.next/
+dist/
+build/
+
+# ── Environment files — NEVER commit these ────────────────────
 .env
-.prisma
+.env.local
+.env.production
+.env.staging
+.env.*.local
+api/.env
+web/.env
+web/.env.local
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
 npm-debug.log*
+.logs/
+
+# ── Databases ─────────────────────────────────────────────────
+*.db
+*.sqlite
+prisma/dev.db
+prisma/*.db
+
+# ── Misc ──────────────────────────────────────────────────────
+.DS_Store
+.prisma/
+.pids
+*.pem
+*.key

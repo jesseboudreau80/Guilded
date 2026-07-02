@@ -22,7 +22,7 @@ function OpsSection({ title, items }: { title: string; items: string[] }) {
 
 export default function OpsGuidePage() {
   return (
-    <section className="max-w-2xl space-y-6">
+    <section className="space-y-6">
       <div>
         <Link href="/dashboard/admin" className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 mb-3 transition-colors">
           <ChevronLeft size={12} /> Admin
@@ -36,9 +36,11 @@ export default function OpsGuidePage() {
         </p>
       </div>
 
+      <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+
       <OpsSection title="Daily Checklist (5 min)" items={[
         "Open /dashboard/admin — check signups_today and any incomplete audits",
-        "Check support@guilded.finance inbox — respond to any messages within 24h",
+        "Check guilded@jesseboudreau.com inbox — respond to any messages within 24h",
         "Review recent_signups feed — if any user hasn't run an audit in 48h, consider a personal outreach email",
         "Check Stripe dashboard for any failed payments or subscription issues",
         "Review PostHog (if enabled) for any unusual drop-off in the audit funnel",
@@ -58,7 +60,7 @@ export default function OpsGuidePage() {
 
       <OpsSection title="First 10 Users Strategy" items={[
         "Invite 1-2 trusted testers first — get feedback before opening to more",
-        "Send each user a personal welcome email from support@guilded.finance",
+        "Send each user a personal welcome email from guilded@jesseboudreau.com",
         "Ask every user to run an audit within 24h of signup — follow up personally if they haven't",
         "After each user's first audit, email them their risk score interpretation and next recommended module",
         "Collect feedback via FounderFeedback widget and direct email after first full flow completion",
@@ -98,6 +100,8 @@ export default function OpsGuidePage() {
         "Confusion about educational-only nature: ensure AI disclaimer is visible and tone is clear",
         "Mobile friction: test every flow on iPhone 12 and Pixel 6 before first user invite",
       ]} />
+
+      </div>{/* end 2-col grid */}
     </section>
   );
 }

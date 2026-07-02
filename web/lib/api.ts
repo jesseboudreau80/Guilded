@@ -5,40 +5,63 @@
  */
 const BASE = process.env.NEXT_PUBLIC_API_URL!;
 
+// Default timeout for API calls (30 seconds). Prevents silent hangs.
+const DEFAULT_TIMEOUT_MS = 30_000;
+
 export async function apiFetch(
   path: string,
   options: RequestInit = {},
-  token?: string
+  token?: string,
+  timeoutMs = DEFAULT_TIMEOUT_MS,
 ): Promise<Response> {
-  const response = await fetch(`${BASE}${path}`, {
-    ...options,
-    headers: {
-      "Content-Type": "application/json",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...options.headers,
-    },
-    cache: "no-store",
-  });
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
 
-  // Session expiry — dispatch event so Providers can trigger logout.
-  // Guard is client-only; server components handle 401 via redirect() in page code.
-  if (response.status === 401 && typeof window !== "undefined") {
-    window.dispatchEvent(new CustomEvent("guilded:session-expired"));
+  try {
+    const response = await fetch(`${BASE}${path}`, {
+      ...options,
+      signal: controller.signal,
+      headers: {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...options.headers,
+      },
+      cache: "no-store",
+    });
+
+    // Session expiry — dispatch event so Providers can trigger logout.
+    if (response.status === 401 && typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("guilded:session-expired"));
+    }
+
+    return response;
+  } catch (err: unknown) {
+    // Convert AbortError to a friendlier timeout error
+    if (err instanceof Error && err.name === "AbortError") {
+      throw new Error(`Request to ${path} timed out after ${timeoutMs / 1000}s`);
+    }
+    throw err;
+  } finally {
+    clearTimeout(timer);
   }
-
-  return response;
 }
 
 // ── Auth ──────────────────────────────────────────────────────────────────────
 
 export const authApi = {
-  register: (name: string, email: string, password: string) =>
+  register: (name: string, email: string, password: string, invite_code?: string) =>
     apiFetch("/api/auth/register", {
       method: "POST",
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name, email, password, ...(invite_code ? { invite_code } : {}) }),
     }),
 
   me: (token: string) => apiFetch("/api/auth/me", {}, token),
+
+  forgotPassword: (email: string) =>
+    apiFetch("/api/auth/forgot-password", { method: "POST", body: JSON.stringify({ email }) }),
+
+  resetPassword: (token: string, new_password: string) =>
+    apiFetch("/api/auth/reset-password", { method: "POST", body: JSON.stringify({ token, new_password }) }),
 };
 
 // ── AI ────────────────────────────────────────────────────────────────────────
@@ -82,10 +105,17 @@ export const consultationsApi = {
 // ── Stripe ────────────────────────────────────────────────────────────────────
 
 export const stripeApi = {
-  subscriptionCheckout: (tier: string, token: string) =>
+  subscriptionCheckout: (tier: string, token: string, promo_code?: string) =>
     apiFetch(
       "/api/stripe/checkout",
-      { method: "POST", body: JSON.stringify({ tier }) },
+      { method: "POST", body: JSON.stringify({ tier, promo_code: promo_code || null }) },
+      token
+    ),
+
+  foundersPassCheckout: (pass_type: string, token: string, promo_code?: string) =>
+    apiFetch(
+      "/api/stripe/founders-pass/checkout",
+      { method: "POST", body: JSON.stringify({ pass_type, promo_code: promo_code || null }) },
       token
     ),
 };
@@ -152,9 +182,27 @@ export const academyApi = {
 
 // ── Dispute ───────────────────────────────────────────────────────────────────
 
+// ── Feedback ──────────────────────────────────────────────────────────────────
+
+export const feedbackApi = {
+  submit: (
+    body: { page: string; rating: number; notes?: string; context?: Record<string, unknown> },
+    token: string,
+  ) => apiFetch("/api/feedback", { method: "POST", body: JSON.stringify(body) }, token),
+};
+
 export const disputeApi = {
+  list: (token: string) => apiFetch("/api/dispute/", {}, token),
+
   generate: (
-    body: { audit_id: string; recommendation_ids: string[]; strategy: string },
+    body: {
+      audit_id:           string;
+      recommendation_ids: string[];
+      strategy:           string;
+      context_flags?:     string[];
+      context_notes?:     string;
+      bureau_targets?:    string[];
+    },
     token: string,
   ) => apiFetch("/api/dispute/generate", { method: "POST", body: JSON.stringify(body) }, token),
 
@@ -196,4 +244,11 @@ export const auditApi = {
 
   list: (token: string) =>
     apiFetch("/api/audit/", {}, token),
+
+  updateAccount: (
+    auditId:   string,
+    accountId: string,
+    body:      { creditor_name?: string; account_type?: string; account_number?: string; balance?: number; status?: string },
+    token:     string,
+  ) => apiFetch(`/api/audit/${auditId}/accounts/${accountId}`, { method: "PATCH", body: JSON.stringify(body) }, token),
 };

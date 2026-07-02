@@ -340,25 +340,16 @@ export function MobileCounselDrawer() {
 
   return (
     <div className="fixed inset-0 z-50 md:hidden">
-      {/* Backdrop */}
+      {/* Backdrop — touch-action:none prevents scroll from bleeding through on iOS */}
       <div
         className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"
+        style={{ touchAction: "none" }}
         onClick={close}
       />
       {/* Sheet */}
-      <div
-        className="absolute inset-x-0 bottom-0 flex h-[75vh] flex-col rounded-t-2xl border-t border-slate-800 bg-slate-900 shadow-2xl"
-        style={{ animation: "slideUp 220ms ease-out" }}
-      >
+      <div className="absolute inset-x-0 bottom-0 flex h-[75vh] flex-col rounded-t-2xl border-t border-slate-800 bg-slate-900 shadow-2xl animate-slide-up">
         <DrawerContent onClose={close} />
       </div>
-
-      <style>{`
-        @keyframes slideUp {
-          from { transform: translateY(100%); }
-          to   { transform: translateY(0); }
-        }
-      `}</style>
     </div>
   );
 }
@@ -372,8 +363,15 @@ export function CounselTriggerButton() {
     <button
       onClick={toggle}
       aria-label="Open Guild Counsel"
+      // bottom uses env(safe-area-inset-bottom) so the FAB clears the iOS
+      // home indicator. On pages with a fixed sticky CTA (z-[41]) the FAB
+      // sits beneath it intentionally — the CTA takes priority.
+      style={{
+        bottom: "calc(max(1.25rem, env(safe-area-inset-bottom, 0px)) + 0.5rem)",
+        right: "max(1.25rem, env(safe-area-inset-right, 0px))",
+      }}
       className={`
-        fixed bottom-5 right-5 z-40 flex items-center gap-2
+        fixed z-40 flex items-center gap-2
         rounded-2xl border border-gold/30 bg-slate-900
         px-4 py-2.5 text-xs font-semibold text-gold
         shadow-xl transition-all duration-200

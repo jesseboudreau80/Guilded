@@ -24,7 +24,8 @@ from app.domains.audit.router import router as audit_router
 from app.domains.dispute.router import router as dispute_router
 from app.domains.academy.router import router as academy_router
 from app.domains.admin.router  import router as admin_router
-from app.domains.aegis.router  import router as aegis_router
+from app.domains.aegis.router    import router as aegis_router
+from app.domains.feedback.router import router as feedback_router
 from app.domains.academy.service import seed_academy_curriculum
 
 logger = logging.getLogger(__name__)
@@ -46,10 +47,12 @@ def _check_env() -> None:
         "OPENAI_API_KEY":         (settings.openai_api_key,         not settings.openai_api_key),
     }
     BILLING = {
-        "STRIPE_SECRET_KEY":            (settings.stripe_secret_key,            not settings.stripe_secret_key),
-        "STRIPE_WEBHOOK_SECRET":        (settings.stripe_webhook_secret,        not settings.stripe_webhook_secret),
-        "STRIPE_JOURNEYMAN_PRICE_ID":   (settings.stripe_journeyman_price_id,   not settings.stripe_journeyman_price_id),
-        "STRIPE_MASTER_PRICE_ID":       (settings.stripe_master_price_id,       not settings.stripe_master_price_id),
+        "STRIPE_SECRET_KEY":                    (settings.stripe_secret_key,                    not settings.stripe_secret_key),
+        "STRIPE_WEBHOOK_SECRET":                (settings.stripe_webhook_secret,                not settings.stripe_webhook_secret),
+        "STRIPE_JOURNEYMAN_PRICE_ID":           (settings.stripe_journeyman_price_id,           not settings.stripe_journeyman_price_id),
+        "STRIPE_MASTER_PRICE_ID":               (settings.stripe_master_price_id,               not settings.stripe_master_price_id),
+        "STRIPE_FOUNDERS_STANDARD_PRICE_ID":    (settings.stripe_founders_standard_price_id,    not settings.stripe_founders_standard_price_id),
+        "STRIPE_FOUNDERS_PARTNER_PRICE_ID":     (settings.stripe_founders_partner_price_id,     not settings.stripe_founders_partner_price_id),
     }
     OPTIONAL = {
         "RESEND_API_KEY":  settings.resend_api_key,
@@ -71,6 +74,15 @@ def _check_env() -> None:
     for name, val in OPTIONAL.items():
         status = "set" if val else "not set (optional)"
         lines.append(f"  💡  {name:<36} — {status}")
+
+    # Stripe mode consistency check
+    stripe_warnings = settings.stripe_mode_warnings()
+    lines.append("  —" * 26)
+    lines.append(f"  Stripe mode: {settings.stripe_mode.upper()}")
+    for w in stripe_warnings:
+        lines.append(f"  ⚠️  {w}")
+    if not stripe_warnings:
+        lines.append(f"  ✅  Stripe configuration appears consistent with {settings.stripe_mode} mode.")
 
     lines.append("=" * 52)
     if all_ok:
@@ -96,6 +108,37 @@ async def lifespan(app: FastAPI):
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
         logger.info("Database tables verified/created")
+
+        # Safe column additions for existing deployments.
+        # ALTER TABLE ... ADD COLUMN IF NOT EXISTS is idempotent — safe every startup.
+        _MIGRATIONS = [
+            # audit_accounts — OCR confidence fields
+            "ALTER TABLE audit_accounts ADD COLUMN IF NOT EXISTS account_number VARCHAR",
+            "ALTER TABLE audit_accounts ADD COLUMN IF NOT EXISTS confidence VARCHAR(10)",
+            "ALTER TABLE audit_accounts ADD COLUMN IF NOT EXISTS extraction_flags JSONB",
+            # audits — OCR metadata
+            "ALTER TABLE audits ADD COLUMN IF NOT EXISTS ocr_char_count INTEGER",
+            "ALTER TABLE audits ADD COLUMN IF NOT EXISTS ocr_page_count INTEGER",
+            # audit_recommendations — account traceability
+            "ALTER TABLE audit_recommendations ADD COLUMN IF NOT EXISTS account_id VARCHAR",
+            "ALTER TABLE audits ADD COLUMN IF NOT EXISTS pii_scan_json JSONB",
+            # users — founders pass + lifetime access
+            "ALTER TABLE users ADD COLUMN IF NOT EXISTS founders_pass BOOLEAN NOT NULL DEFAULT FALSE",
+            "ALTER TABLE users ADD COLUMN IF NOT EXISTS lifetime_access BOOLEAN NOT NULL DEFAULT FALSE",
+            "ALTER TABLE users ADD COLUMN IF NOT EXISTS founders_pass_type VARCHAR",
+            "ALTER TABLE users ADD COLUMN IF NOT EXISTS founders_pass_date TIMESTAMPTZ",
+            "ALTER TABLE users ADD COLUMN IF NOT EXISTS stripe_payment_intent_id VARCHAR",
+            "ALTER TABLE users ADD COLUMN IF NOT EXISTS promo_code_used VARCHAR",
+        ]
+        from sqlalchemy import text as _sql_text
+        try:
+            async with engine.begin() as conn:
+                for stmt in _MIGRATIONS:
+                    await conn.execute(_sql_text(stmt))
+            logger.info("Column migrations applied (%d statements)", len(_MIGRATIONS))
+        except Exception as _col_exc:
+            logger.warning("Column migration warning (non-fatal): %s", _col_exc)
+
         # Seed academy curriculum (idempotent — no-op after first run)
         async with AsyncSessionLocal() as seed_db:
             await seed_academy_curriculum(seed_db)
@@ -141,8 +184,29 @@ app.include_router(dispute_router)
 app.include_router(academy_router)
 app.include_router(admin_router)
 app.include_router(aegis_router)
+app.include_router(feedback_router)
 
 
 @app.get("/health")
 async def health():
-    return {"status": "ok"}
+    return {"status": "ok", "version": "2.0.0", "service": "guilded"}
+
+
+@app.get("/whoami")
+async def whoami():
+    return {"app": "Guilded API", "version": "2.0.0", "port": 8100, "environment": "production", "owner": "jesse"}
+
+
+@app.get("/.well-known/aegis-meta")
+async def aegis_meta():
+    import os, time
+    return {
+        "pack_id": "guilded", "pack_name": "Guilded", "version": "2.0.0",
+        "environment": "production", "frontend_port": 3000, "backend_port": 8100,
+        "auth_required": True, "governance_enabled": False, "replay_supported": False,
+        "observability_supported": False, "systemd_service": None,
+        "tunnel_name": "reselleros", "uptime_s": None,
+        "build_sha": os.environ.get("GIT_SHA"), "owner": "jesse",
+        "doctrine_version": "2026-05-18", "runtime_type": "nextjs+fastapi",
+        "capabilities": ["guild_management", "ai_tutoring", "billing", "academy"],
+    }

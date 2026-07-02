@@ -237,14 +237,14 @@ export default function AiPage() {
 
       {/* ── Error ──────────────────────────────────────────────────────── */}
       {error && (
-        <div className="mx-auto max-w-2xl mb-3 rounded-xl bg-red-900/30 px-4 py-2.5 text-sm text-red-400">
+        <div className="mb-3 rounded-xl bg-red-900/30 px-4 py-2.5 text-sm text-red-400">
           {error}
         </div>
       )}
 
       {/* ── At limit warning ───────────────────────────────────────────── */}
       {atLimit && (
-        <div className="mx-auto max-w-2xl mb-3 rounded-xl border border-amber-500/20 bg-amber-900/20 px-4 py-2.5 text-sm text-amber-400">
+        <div className="mb-3 rounded-xl border border-amber-500/20 bg-amber-900/20 px-4 py-2.5 text-sm text-amber-400">
           You&apos;ve reached your {period} AI limit. Advance your rank to continue.{" "}
           <button onClick={() => setShowUpgrade(true)} className="font-semibold underline">
             Upgrade

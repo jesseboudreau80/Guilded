@@ -238,7 +238,7 @@ function CampaignPath({
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function AcademyPage() {
-  const { data: session } = useGuildedSession();
+  const { data: session, status: sessionStatus } = useGuildedSession();
 
   const [modules,     setModules]     = useState<AcademyModule[]>([]);
   const [progMap,     setProgMap]     = useState<Record<string, ModuleProgress>>({});
@@ -247,8 +247,9 @@ export default function AcademyPage() {
   const [loading,     setLoading]     = useState(true);
 
   useEffect(() => {
+    if (sessionStatus === "loading") return; // wait for session to resolve
     const token = session?.user?.accessToken;
-    if (!token) return;
+    if (!token) { setLoading(false); return; }
 
     Promise.all([
       academyApi.modules(token).then((r) => r.json()),
@@ -280,7 +281,7 @@ export default function AcademyPage() {
 
       setLoading(false);
     }).catch(() => setLoading(false));
-  }, [session?.user?.accessToken]);
+  }, [session?.user?.accessToken, sessionStatus]);
 
   const completedCount  = Object.values(progMap).filter((p) => p.status === "completed").length;
   const inProgressMod   = modules.find((m) => progMap[m.id]?.status === "in_progress");

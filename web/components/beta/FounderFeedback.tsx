@@ -34,7 +34,7 @@ export function FounderFeedback() {
     // MVP: pre-filled mailto (replace with API call in Phase 4)
     const subject = encodeURIComponent(`[Guilded Beta Feedback] ${CATEGORIES.find((c) => c.value === category)?.label}`);
     const body    = encodeURIComponent(`Category: ${category}\n\n${message}`);
-    window.open(`mailto:support@guilded.finance?subject=${subject}&body=${body}`, "_blank");
+    window.open(`mailto:guilded@jesseboudreau.com?subject=${subject}&body=${body}`, "_blank");
 
     setDone(true);
     setMessage("");

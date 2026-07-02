@@ -5,11 +5,12 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import {
   ArrowLeft, BookOpen, Clock, CheckCircle,
-  Lock, ChevronRight, ChevronLeft, Shield,
+  Lock, ChevronRight, ChevronLeft, Shield, AlertCircle,
 } from "lucide-react";
 import { academyApi } from "@/lib/api";
 import { useGuildedSession } from "@/lib/session";
 import { parseMarkdown, type Block, type FrontMatter } from "@/lib/markdown";
+import { track } from "@/lib/analytics";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -48,7 +49,7 @@ const BADGE_COLORS: Record<string, string> = {
 
 // ── Block renderer ────────────────────────────────────────────────────────────
 
-function RenderBlock({ block, moduleTitle }: { block: Block; moduleTitle: string }) {
+function RenderBlock({ block }: { block: Block }) {
   switch (block.kind) {
     case "h2":
       return (
@@ -92,7 +93,6 @@ function RenderBlock({ block, moduleTitle }: { block: Block; moduleTitle: string
       );
     case "callout":
       return (
-        // Styled as "Guild Insight" — every callout gets the Guild treatment
         <div className="relative my-6 overflow-hidden rounded-xl border border-gold/20 bg-gold/5 px-5 pt-3.5 pb-4">
           <div className="absolute inset-y-0 left-0 w-[3px] rounded-l-xl bg-gold" />
           <div className="flex items-center gap-1.5 mb-2">
@@ -138,55 +138,105 @@ function LockedState({ tierRequired }: { tierRequired: string }) {
   );
 }
 
+// ── Content unavailable fallback ──────────────────────────────────────────────
+
+function ContentUnavailable({ slug }: { slug: string }) {
+  return (
+    <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/40 px-8 py-14 text-center">
+      <div className="h-12 w-12 rounded-2xl border border-slate-700 bg-slate-800/60 flex items-center justify-center mx-auto mb-5">
+        <AlertCircle size={20} className="text-slate-600" />
+      </div>
+      <p className="text-base font-semibold text-slate-200">Module content unavailable</p>
+      <p className="mt-2 text-sm text-slate-500 max-w-sm mx-auto">
+        The content for this module couldn&apos;t be loaded. This is likely a temporary issue.
+      </p>
+      <p className="mt-1 text-xs text-slate-700 font-mono">{slug}</p>
+      <Link
+        href="/dashboard/academy"
+        className="mt-6 inline-flex items-center gap-2 rounded-xl border border-slate-700 px-5 py-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
+      >
+        <ArrowLeft size={13} /> Back to Academy
+      </Link>
+    </div>
+  );
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function AcademyModulePage() {
-  const { slug }          = useParams<{ slug: string }>();
-  const { data: session } = useGuildedSession();
+  const { slug }             = useParams<{ slug: string }>();
+  const { data: session, status: sessionStatus } = useGuildedSession();
 
   const [fm,         setFm]         = useState<FrontMatter | null>(null);
   const [blocks,     setBlocks]     = useState<Block[]>([]);
   const [module,     setModule]     = useState<AcademyModule | null>(null);
   const [allModules, setAllModules] = useState<AcademyModule[]>([]);
   const [progress,   setProgress]   = useState<ModuleProgress | null>(null);
+
+  // Separate loading flags so each completes independently
   const [loadingMd,  setLoadingMd]  = useState(true);
   const [loadingApi, setLoadingApi] = useState(true);
-  const [completing, setCompleting] = useState(false);
   const [mdError,    setMdError]    = useState(false);
+  const [completing, setCompleting] = useState(false);
   const [justDone,   setJustDone]   = useState(false);
 
-  // Fetch markdown (numbered filename discovery)
+  // ── Track page view ─────────────────────────────────────────────────────────
   useEffect(() => {
+    if (slug) track("academy_module_page_viewed", { slug });
+  }, [slug]);
+
+  // ── Markdown fetch ──────────────────────────────────────────────────────────
+  useEffect(() => {
+    if (!slug) return;
     setLoadingMd(true);
     setMdError(false);
+    setFm(null);
+    setBlocks([]);
 
     const tryFetch = async () => {
+      // Try numbered files 01-07 first, then bare slug as fallback
       for (let n = 1; n <= 7; n++) {
-        const res = await fetch(`/academy-content/${String(n).padStart(2, "0")}-${slug}.md`);
+        try {
+          const res = await fetch(`/academy-content/${String(n).padStart(2, "0")}-${slug}.md`);
+          if (res.ok) {
+            const text   = await res.text();
+            const parsed = parseMarkdown(text);
+            setFm(parsed.frontmatter);
+            setBlocks(parsed.blocks);
+            return;
+          }
+        } catch { /* network error on this attempt, try next */ }
+      }
+      // Final fallback: bare slug
+      try {
+        const res = await fetch(`/academy-content/${slug}.md`);
         if (res.ok) {
           const parsed = parseMarkdown(await res.text());
           setFm(parsed.frontmatter);
           setBlocks(parsed.blocks);
           return;
         }
-      }
-      const res = await fetch(`/academy-content/${slug}.md`);
-      if (res.ok) {
-        const parsed = parseMarkdown(await res.text());
-        setFm(parsed.frontmatter);
-        setBlocks(parsed.blocks);
-        return;
-      }
+      } catch { /* fallback also failed */ }
       setMdError(true);
     };
 
     tryFetch().catch(() => setMdError(true)).finally(() => setLoadingMd(false));
   }, [slug]);
 
-  // Fetch module metadata + progress
+  // ── API fetch — depends on session ─────────────────────────────────────────
+  // Key fix: if session is still loading, keep loadingApi true.
+  // Once session resolves (authenticated OR unauthenticated), act.
   useEffect(() => {
+    if (sessionStatus === "loading") return; // wait for session to resolve
+
     const token = session?.user?.accessToken;
-    if (!token) return;
+    if (!token) {
+      // Not authenticated — release the loading gate so content still renders
+      setLoadingApi(false);
+      return;
+    }
+
+    setLoadingApi(true);
 
     Promise.all([
       academyApi.modules(token).then((r) => r.json()),
@@ -200,17 +250,28 @@ export default function AcademyModulePage() {
       setModule(found);
 
       if (found) {
-        const myProg = (Array.isArray(prog) ? prog : []).find((p: ModuleProgress) => p.module_id === found.id) ?? null;
+        const myProg = (Array.isArray(prog) ? prog : []).find(
+          (p: ModuleProgress) => p.module_id === found.id
+        ) ?? null;
         setProgress(myProg);
 
+        // Auto-start: mark in_progress if not yet started and not locked
         if (!myProg && !found.is_locked) {
           academyApi.startModule(found.id, token).catch(() => {});
-          setProgress({ module_id: found.id, status: "in_progress", started_at: new Date().toISOString(), completed_at: null });
+          setProgress({
+            module_id:    found.id,
+            status:       "in_progress",
+            started_at:   new Date().toISOString(),
+            completed_at: null,
+          });
         }
       }
+    }).catch(() => {
+      // API failed — release the gate so content still renders from markdown
     }).finally(() => setLoadingApi(false));
-  }, [slug, session?.user?.accessToken]);
+  }, [slug, session?.user?.accessToken, sessionStatus]);
 
+  // ── Complete handler ────────────────────────────────────────────────────────
   const handleComplete = async () => {
     const token = session?.user?.accessToken;
     if (!token || !module || completing) return;
@@ -218,10 +279,16 @@ export default function AcademyModulePage() {
     try {
       const res = await academyApi.completeModule(module.id, token);
       if (res.ok) {
-        setProgress((p) => ({ module_id: module.id, status: "completed", started_at: p?.started_at ?? new Date().toISOString(), completed_at: new Date().toISOString() }));
+        setProgress((p) => ({
+          module_id:    module.id,
+          status:       "completed",
+          started_at:   p?.started_at ?? new Date().toISOString(),
+          completed_at: new Date().toISOString(),
+        }));
         setJustDone(true);
       }
-    } finally {
+    } catch { /* silent — user can retry */ }
+    finally {
       setCompleting(false);
     }
   };
@@ -229,49 +296,66 @@ export default function AcademyModulePage() {
   const prevModule = allModules.find((m) => module && m.order_index === module.order_index - 1) ?? null;
   const nextModule = allModules.find((m) => module && m.order_index === module.order_index + 1) ?? null;
 
-  // ── Loading ───────────────────────────────────────────────────────────────
-  if (loadingMd || loadingApi) {
+  // ── Loading state ───────────────────────────────────────────────────────────
+  // Show loading while markdown is loading OR while session + API is still pending.
+  // Once markdown resolves, show a lighter skeleton rather than a blank screen.
+  if (loadingMd) {
     return (
       <section>
-        <Link href="/dashboard/academy" className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors">
+        <Link
+          href="/dashboard/academy"
+          className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors"
+        >
           <ArrowLeft size={12} /> Guild Academy
         </Link>
-        <p className="mt-8 text-sm text-slate-400">Loading module…</p>
+        <div className="mt-8 space-y-4 animate-pulse">
+          <div className="h-4 w-40 rounded bg-slate-800" />
+          <div className="h-8 w-2/3 rounded bg-slate-800" />
+          <div className="h-3 w-32 rounded bg-slate-800" />
+          <div className="mt-8 space-y-3">
+            <div className="h-3 w-full rounded bg-slate-800/70" />
+            <div className="h-3 w-5/6 rounded bg-slate-800/70" />
+            <div className="h-3 w-4/6 rounded bg-slate-800/70" />
+          </div>
+        </div>
       </section>
     );
   }
 
+  // ── Markdown error state ────────────────────────────────────────────────────
   if (mdError) {
     return (
       <section>
-        <Link href="/dashboard/academy" className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors">
+        <Link
+          href="/dashboard/academy"
+          className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors"
+        >
           <ArrowLeft size={12} /> Guild Academy
         </Link>
-        <p className="mt-8 text-sm text-red-400">Module content not found.</p>
-        <Link href="/dashboard/academy" className="mt-3 inline-flex items-center gap-1.5 text-sm text-gold hover:underline">
-          Browse all modules <ChevronRight size={12} />
-        </Link>
+        <ContentUnavailable slug={slug} />
       </section>
     );
   }
 
-  const title    = fm?.title       ?? module?.title       ?? slug;
-  const badge    = fm?.badge       ?? module?.badge_label;
-  const mins     = fm?.estimated_minutes ?? String(module?.estimated_minutes ?? "");
-  const tier     = fm?.tier_required     ?? module?.tier_required ?? "APPRENTICE";
-  const locked   = module?.is_locked ?? false;
-  const status   = progress?.status ?? "not_started";
-  const num      = module?.order_index;
-  const total    = allModules.length || 7;
-  const h2Count  = blocks.filter((b) => b.kind === "h2").length;
+  // ── Resolved values ─────────────────────────────────────────────────────────
+  const title      = fm?.title            ?? module?.title       ?? slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  const badge      = fm?.badge            ?? module?.badge_label ?? null;
+  const mins       = fm?.estimated_minutes ?? String(module?.estimated_minutes ?? "");
+  const tier       = fm?.tier_required    ?? module?.tier_required ?? "APPRENTICE";
+  const locked     = module?.is_locked    ?? false;
+  const status     = progress?.status     ?? "not_started";
+  const num        = module?.order_index;
+  const total      = allModules.length    || 7;
+  const h2Count    = blocks.filter((b) => b.kind === "h2").length;
   const badgeColor = badge ? (BADGE_COLORS[badge] ?? "border-slate-600 text-slate-400") : "";
 
   return (
     <section className="relative">
-      {/* ── Sticky progress bar ───────────────────────────────────────────── */}
+
+      {/* ── Sticky progress bar ────────────────────────────────────────────── */}
       {num && !locked && (
         <div className="sticky top-0 z-20 -mx-4 md:-mx-8 px-4 md:px-8 py-2 bg-slate-950/90 backdrop-blur-sm border-b border-slate-800/50">
-          <div className="flex items-center gap-3 max-w-2xl">
+          <div className="flex items-center gap-3">
             <span className="text-xs font-mono text-slate-600 shrink-0">
               {String(num).padStart(2, "0")}/{String(total).padStart(2, "0")}
             </span>
@@ -291,7 +375,7 @@ export default function AcademyModulePage() {
         </div>
       )}
 
-      {/* ── Navigation ────────────────────────────────────────────────────── */}
+      {/* ── Breadcrumb navigation ──────────────────────────────────────────── */}
       <div className="mt-4 flex items-center justify-between">
         <div className="flex items-center gap-3 text-xs text-slate-500">
           <Link href="/dashboard/academy" className="inline-flex items-center gap-1 hover:text-slate-300 transition-colors">
@@ -300,7 +384,10 @@ export default function AcademyModulePage() {
           {prevModule && (
             <>
               <span className="text-slate-800">·</span>
-              <Link href={`/dashboard/academy/${prevModule.slug}`} className="inline-flex items-center gap-1 hover:text-slate-300 transition-colors max-w-[140px] truncate">
+              <Link
+                href={`/dashboard/academy/${prevModule.slug}`}
+                className="inline-flex items-center gap-1 hover:text-slate-300 transition-colors max-w-[140px] truncate"
+              >
                 <ChevronLeft size={11} className="shrink-0" />
                 {prevModule.title}
               </Link>
@@ -308,7 +395,10 @@ export default function AcademyModulePage() {
           )}
         </div>
         {nextModule && (
-          <Link href={`/dashboard/academy/${nextModule.slug}`} className="text-xs text-slate-500 hover:text-slate-300 transition-colors inline-flex items-center gap-1 max-w-[140px] truncate">
+          <Link
+            href={`/dashboard/academy/${nextModule.slug}`}
+            className="text-xs text-slate-500 hover:text-slate-300 transition-colors inline-flex items-center gap-1 max-w-[140px] truncate"
+          >
             {nextModule.title}
             <ChevronRight size={11} className="shrink-0" />
           </Link>
@@ -317,7 +407,7 @@ export default function AcademyModulePage() {
 
       {/* ── Module header ──────────────────────────────────────────────────── */}
       <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-        <div>
+        <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2">
             {num && (
               <span className="font-mono text-xs font-semibold tracking-widest text-slate-600">
@@ -345,16 +435,23 @@ export default function AcademyModulePage() {
           </h1>
           <div className="mt-2 flex items-center gap-4 text-xs text-slate-500">
             {h2Count > 0 && (
-              <span className="flex items-center gap-1"><BookOpen size={11} /> {h2Count} sections</span>
+              <span className="flex items-center gap-1.5">
+                <BookOpen size={11} /> {h2Count} section{h2Count !== 1 ? "s" : ""}
+              </span>
             )}
             {mins && (
-              <span className="flex items-center gap-1"><Clock size={11} /> {mins} min</span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={11} /> {mins} min
+              </span>
+            )}
+            {loadingApi && (
+              <span className="text-slate-700">Loading progress…</span>
             )}
           </div>
         </div>
 
-        {/* Complete button */}
-        {!locked && status !== "completed" && (
+        {/* Complete button — shown when not locked and API has resolved */}
+        {!locked && !loadingApi && status !== "completed" && session?.user?.accessToken && (
           <button
             onClick={handleComplete}
             disabled={completing}
@@ -371,35 +468,46 @@ export default function AcademyModulePage() {
         )}
       </div>
 
-      {/* ── In-progress bar ─────────────────────────────────────────────────── */}
+      {/* ── Reading progress bar ──────────────────────────────────────────── */}
       {status === "in_progress" && (
         <div className="mt-4 h-0.5 w-full overflow-hidden rounded-full bg-slate-800">
           <div className="h-full w-2/5 rounded-full bg-gold/60 transition-all" />
         </div>
       )}
 
-      {/* ── XP awarded flash ─────────────────────────────────────────────── */}
+      {/* ── XP flash ─────────────────────────────────────────────────────── */}
       {justDone && (
         <div className="mt-4 rounded-xl border border-gold/20 bg-gold/5 px-4 py-3 text-sm text-gold flex items-center gap-2">
           <Shield size={14} /> +50 XP awarded · Module complete
         </div>
       )}
 
-      {/* ── Content or Locked ────────────────────────────────────────────── */}
+      {/* ── Content ──────────────────────────────────────────────────────── */}
       {locked ? (
         <LockedState tierRequired={tier} />
       ) : (
         <>
+          {/* Main body — rendered from markdown */}
           <div className="mt-8 max-w-2xl">
-            {blocks.map((block, i) => (
-              <RenderBlock key={i} block={block} moduleTitle={title} />
-            ))}
+            {blocks.length > 0 ? (
+              blocks.map((block, i) => (
+                <RenderBlock key={i} block={block} />
+              ))
+            ) : (
+              // Markdown parsed but no blocks — graceful empty state
+              <div className="rounded-xl border border-slate-800 bg-slate-900/40 px-6 py-10 text-center">
+                <BookOpen size={20} className="text-slate-700 mx-auto mb-3" />
+                <p className="text-sm text-slate-500">Module content is being prepared.</p>
+                <p className="mt-1 text-xs text-slate-700">Check back soon — this content is actively being developed.</p>
+              </div>
+            )}
           </div>
 
-          {/* ── Bottom nav ──────────────────────────────────────────────────── */}
+          {/* ── Bottom navigation ──────────────────────────────────────────── */}
           <div className="mt-10 border-t border-slate-800 pt-8 max-w-2xl">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              {status !== "completed" ? (
+              {/* Complete CTA — bottom of content */}
+              {!loadingApi && status !== "completed" && session?.user?.accessToken ? (
                 <button
                   onClick={handleComplete}
                   disabled={completing}
@@ -408,10 +516,12 @@ export default function AcademyModulePage() {
                   <CheckCircle size={16} />
                   {completing ? "Saving…" : "Mark Module Complete"}
                 </button>
-              ) : (
+              ) : status === "completed" ? (
                 <div className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400">
                   <CheckCircle size={16} /> Training Complete
                 </div>
+              ) : (
+                <div /> /* placeholder to maintain flex layout */
               )}
 
               {nextModule && (
@@ -428,7 +538,7 @@ export default function AcademyModulePage() {
               )}
             </div>
 
-            {/* Prev/Next bar */}
+            {/* Prev / Next bar */}
             {(prevModule || nextModule) && (
               <div className="mt-4 flex items-center justify-between">
                 {prevModule ? (
@@ -445,15 +555,21 @@ export default function AcademyModulePage() {
               </div>
             )}
 
-            {/* Guild audit nudge */}
-            <div className="mt-6 flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-3">
-              <Shield size={12} className="text-gold shrink-0" />
-              <p className="text-xs text-slate-500">
-                Run a{" "}
-                <Link href="/dashboard/audit/start" className="text-gold hover:underline">
-                  Credit Audit
-                </Link>
-                {" "}to identify which modules are highest priority for your specific credit profile.
+            {/* Educational disclaimer + audit nudge */}
+            <div className="mt-6 space-y-2">
+              <div className="flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-3">
+                <Shield size={12} className="text-gold shrink-0" />
+                <p className="text-xs text-slate-500">
+                  Run a{" "}
+                  <Link href="/dashboard/audit/start" className="text-gold hover:underline">
+                    Credit Audit
+                  </Link>
+                  {" "}to identify which modules are highest priority for your specific credit profile.
+                </p>
+              </div>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                All content is for educational purposes only and does not constitute legal or financial advice.
+                Guild Counsel AI can make mistakes — review all AI-generated output before acting.
               </p>
             </div>
           </div>

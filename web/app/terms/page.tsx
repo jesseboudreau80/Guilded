@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import { Shield } from "lucide-react";
 
@@ -54,7 +56,7 @@ export default function TermsPage() {
         </Section>
 
         <Section title="7. Limitation of Liability">
-          <p>To the maximum extent permitted by law, Guilded's total liability for any claim arising from or related to the service is limited to the amount you paid for the service in the 30 days preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
+          <p>To the maximum extent permitted by law, Guilded&apos;s total liability for any claim arising from or related to the service is limited to the amount you paid for the service in the 30 days preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
         </Section>
 
         <Section title="8. Changes to Terms">
@@ -63,7 +65,7 @@ export default function TermsPage() {
 
         <div className="mt-12 border-t border-slate-800 pt-6 text-xs text-slate-600">
           Questions? Contact us at{" "}
-          <a href="mailto:support@guilded.finance" className="text-gold hover:underline">support@guilded.finance</a>
+          <a href="mailto:guilded@jesseboudreau.com" className="text-gold hover:underline">guilded@jesseboudreau.com</a>
           {" · "}
           <Link href="/privacy" className="hover:text-slate-400">Privacy Policy</Link>
           {" · "}

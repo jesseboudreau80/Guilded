@@ -80,7 +80,8 @@ function loadFromStorage(): Partial<State> {
     if (!raw) return {};
     const parsed = JSON.parse(raw);
     return {
-      isOpen:   Boolean(parsed.isOpen),
+      // Never restore open state — always start closed to prevent surprise
+      // full-screen overlays on mobile after navigation or refresh.
       messages: Array.isArray(parsed.messages) ? parsed.messages.slice(-15) : [],
     };
   } catch {

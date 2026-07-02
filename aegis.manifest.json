@@ -1,0 +1,41 @@
+{
+  "app_id": "guilded",
+  "canonical_name": "Guilded",
+  "description": "Guild management platform",
+  "version": "1.0.0",
+  "owner": "jesse",
+  "repo_path": "/home/jesse/infra/apps/Guilded",
+  "environment": "local",
+
+  "frontend_port": 3000,
+  "backend_port": 8100,
+  "frontend_url": "http://127.0.0.1:3000",
+  "backend_url": "http://127.0.0.1:8100",
+  "frontend_domain": "guilded.jesseboudreau.com",
+  "backend_domain": "guilded-api.jesseboudreau.com",
+
+  "health_endpoint": "/health",
+  "whoami_endpoint": "/whoami",
+  "aegis_meta_endpoint": null,
+
+  "cloudflare_domains": ["guilded.jesseboudreau.com", "guilded-api.jesseboudreau.com"],
+  "cloudflare_tunnel": "reselleros",
+
+  "runtime_manager": "manual",
+  "systemd_service": null,
+  "lifecycle_phase": "active",
+  "support_tier": "standard",
+
+  "database_type": "unknown",
+  "auth_type": "unknown",
+  "ai_enabled": false,
+  "model_providers": [],
+
+  "aegis_connected": false,
+  "audit_logging": false,
+  "cost_tracking": false,
+
+  "compliance_scope": ["internal"],
+  "tags": ["guild", "management"],
+  "last_updated": "2026-05-11"
+}

@@ -1,5 +1,5 @@
 ---
-title: Preparing for Battle -- Foundation for Credit Repair
+title: Preparing for Battle
 slug: preparing-for-battle
 module_number: 2
 tier_required: APPRENTICE
@@ -7,186 +7,58 @@ estimated_minutes: 30
 badge: Tactical
 ---
 
-This module focuses on laying the groundwork for effective credit repair by addressing errors, cleaning up personal information, and understanding the legal rights that protect you during the process. It introduces actionable steps and Guild-themed tools to set participants up for success.
+## Pull All Three Reports — Your Intelligence Brief
 
-## Lesson 2.1: Cleaning Up Personal Information -- The First Line of Defense
+You cannot fix what you can't see. Before you dispute a single item, close a single account, or write a single letter, you need all three of your credit reports in front of you. Not one. Not two. All three.
 
-### Why It Matters
+**Equifax, Experian, and TransUnion** operate independently. They are private companies that receive data from creditors and lenders who voluntarily report to them. Because reporting is voluntary and not synchronized, the same account can appear on all three reports, only two of them, or just one. A collection account from a small medical provider might only appear on Equifax. An old credit card might have slightly different balance history on Experian vs. TransUnion. This is why working from only one report gives you an incomplete picture.
 
-How outdated or inaccurate personal information can hinder disputes.
+Pull your reports from **AnnualCreditReport.com** — this is the federally authorized source under the FCRA. Download each as a PDF and save them with the date in the filename: `equifax-2025-01-15.pdf`. Keep every version you pull — they become your evidence log over time.
 
-The connection between incorrect data and unverifiable negative accounts.
+> **Guild Insight:** Third-party monitoring services like Credit Karma are useful for tracking changes, but they don't always show complete tradeline detail. For actual dispute work, use the full reports from AnnualCreditReport.com. The Date of First Delinquency — which determines the 7-year reporting clock — may only appear on the full bureau report.
 
-### Steps to Clean Up Personal Information
+### What to Do When You Don't Recognize an Account
 
-Reviewing the "Personal Information" section of your credit report.
+If you see an account you don't recognize, don't panic and don't immediately dispute it as fraud. First, investigate. Check for name variations — a joint account under a former name might show differently than you expect. Search the creditor name — many collections show under the collection agency's name, not the original creditor. Consider authorized user accounts. If after investigation you genuinely don't recognize it, document everything and treat it as a potential mixed file — where someone else's accounts have been merged with yours due to similar names or Social Security numbers.
 
-Identifying alternate names, outdated addresses, and incorrect employer details.
+---
 
-Using "Attack Letters" to request corrections and deletions.
+## Clean Your Personal Information First
 
-### The Ripple Effect
+This step is underestimated by most people. The Personal Information section of your credit report — your name variations, addresses, employers — seems unimportant. It isn't.
 
-How removing unnecessary personal information can delete verification links to negative accounts.
+Here's why it matters: when you dispute a negative account, the bureau forwards your dispute to the data furnisher (the creditor or collection agency). The furnisher verifies the account by matching the information they have on file against your credit report — your name, SSN, and address. If your report has five different address variations and two name spelling variations, those extra data points give the furnisher more ways to match their records and verify the account.
 
-Real-world examples of successful clean-ups leading to account deletions.
+**Removing unnecessary personal information reduces the furnisher's verification surface.** This is legal, legitimate, and standard practice in serious credit repair work.
 
-## Lesson 2.2: Identifying and Prioritizing Errors
+### How to Clean Personal Information
 
-### Common Credit Report Errors
+Write a letter to each bureau requesting removal of name variations you've never used, addresses that are more than two years old, and employer information you no longer need. Keep this letter simple — you're requesting cleanup of inaccurate or outdated records, not disputing fraud. The bureau has 30 days to respond.
 
-Duplicate accounts.
+> **Guild Insight:** Don't remove your current address or your most common name spelling — you need those to match when you file future disputes. The goal is to trim unnecessary data points, not create a mismatch with your own identity.
 
-Incorrect balances or payment histories.
+---
 
-Accounts that don't belong to you.
+## Build Your Battle Map
 
-### Prioritizing Disputes
+A Battle Map is your organized record of every negative account on your report, sorted by priority. Before you write a dispute letter, you need to know exactly what you're dealing with.
 
-Ranking errors by impact on your credit score.
+Create a spreadsheet. For every negative account, record the creditor name, the original creditor (if it's a collection), the account balance, the account status, the date opened, the **date of first delinquency** (this determines the 7-year reporting clock), which bureaus it appears on, and your planned dispute strategy.
 
-Focusing on high-priority items first (e.g., late payments, charge-offs).
+Now sort by priority. **Highest priority:** accounts with verifiable inaccuracies (wrong balance, wrong status, wrong date, account that isn't yours), and accounts past the 7-year reporting window — these must be removed and you have the strongest legal standing. **Second priority:** collection accounts that may be unverifiable, especially older debts sold multiple times. **Third priority:** goodwill requests for isolated late payments on accounts you still actively use. **Lower priority:** accurate, recent, verifiable negative information — this is harder to remove and takes the most time.
 
-### Using the Guild Error Tracker
+> **Guild Insight:** Don't blast 20 disputes at once hoping some stick. That approach overwhelms your documentation system and can actually flag you as a credit repair mill, causing bureaus to slow their responses. Work methodically — your strongest cases first, then build from there.
 
-A themed spreadsheet or tool for logging errors, dispute deadlines, and outcomes.
+---
 
-Pre-filled dispute templates for common errors.
+## Know the 30-Day Cycle Before You Start
 
-## Lesson 2.3: Crafting Effective Dispute Letters
+Credit repair runs on 30-day investigation cycles driven by the FCRA. Disputes sent by mail arrive at the bureau, get logged, get forwarded to the furnisher, get investigated, and result in a written response — all within 30 days. Here's what to track:
 
-### What Makes a Good Dispute Letter?
+Send your dispute on Day 1 via certified mail with return receipt. The bureau receives it within a few days and begins the 30-day clock. The furnisher gets the dispute, checks their records, and reports back. On or around Day 30–35, you receive the investigation result: verified (stays), modified (corrected), or deleted.
 
-Clear, concise language.
+If verified, you can re-dispute with additional evidence, file a CFPB complaint, or escalate to a direct dispute with the furnisher. If modified or deleted, document the change and check the other two bureaus separately — a deletion on Equifax doesn't automatically remove it from Experian.
 
-Supporting documentation (e.g., copies of reports, ID, proof of address).
+Most meaningful credit repair happens over 3–12 months of consistent dispute cycles. Set realistic expectations. You're running a campaign, not a single skirmish.
 
-Using the FCRA and FDCPA to support your case.
-
-### Themed Dispute Templates
-
-"Knight's Personal Defense Letter": For personal information disputes.
-
-"Archer's Precision Attack Letter": For challenging specific account inaccuracies.
-
-"Siege the Bureau Letter": For unresponsive bureaus or creditors.
-
-### Best Practices for Sending Disputes
-
-Certified mail with return receipt requested.
-
-Keeping detailed records of all correspondence.
-
-## Lesson 2.4: Understanding Legal Rights in Debt Collection
-
-### The Fair Credit Reporting Act (FCRA)
-
-Overview of your rights under the FCRA.
-
-How to use the FCRA to challenge unverifiable accounts.
-
-### The Fair Debt Collection Practices Act (FDCPA)
-
-Understanding your protections against abusive or deceptive debt collection practices.
-
-Writing "Defense Letters" to stop harassment and demand validation.
-
-### Using the Law as a Shield
-
-How to cite legal violations in disputes.
-
-Steps to file complaints with the Consumer Financial Protection Bureau (CFPB).
-
-## Lesson 2.5: Negotiating with Creditors -- Strategies and Tools
-
-### When to Negotiate
-
-Identifying debts worth negotiating (e.g., verified debts with no dispute options).
-
-Evaluating settlement offers versus paying in full.
-
-### Strategies for Successful Negotiation
-
-How to approach creditors with confidence.
-
-Leveraging the "pay-for-delete" strategy.
-
-### Themed Negotiation Tools
-
-"Barterman's Agreement Letter": For pay-for-delete negotiations.
-
-Guild-approved scripts for phone calls with creditors.
-
-### Avoiding Pitfalls
-
-Understanding re-aging of debts and how to avoid it.
-
-Never admitting to ownership of debt during negotiations.
-
-## Lesson 2.6: Establishing Your Defense System
-
-### Organizing Your Documents
-
-Creating a Guild-worthy filing system for correspondence, proof, and reports.
-
-Using the Guild Dispute Journal for tracking progress and results.
-
-### Setting a Timeline
-
-Understanding dispute response deadlines (30-45 days for bureaus).
-
-Planning follow-ups to ensure accountability.
-
-### Staying Proactive
-
-Monitoring credit reports for updates and inaccuracies.
-
-Continuing to clean up new errors as they arise.
-
-## Lesson 2.7: Exclusive Tools and Resources
-
-### Guild Attack & Defense Letter Templates
-
-Personal Information Disputes.
-
-Account Inaccuracy Challenges.
-
-Creditor and Bureau Follow-Ups.
-
-### Guild Error Tracker
-
-A themed tool to log errors, deadlines, and dispute progress.
-
-Pre-built sections for prioritizing disputes.
-
-### Guild Legal Rights Handbook
-
-A downloadable guide summarizing your FCRA and FDCPA rights.
-
-Step-by-step instructions for leveraging these laws.
-
-### Thematic Guild Integration
-
-Module Title: "Preparing for Battle -- Strengthen Your Position."
-
-### Language and Branding
-
-"Every successful battle begins with preparation. Sharpen your tools, know your rights, and clean your battlefield."
-
-Dispute templates named after medieval tools and strategies (e.g., Knight, Archer, Siege).
-
-### Visuals and Design
-
-Illustrations of scrolls, quills, and shields to symbolize organization and defense.
-
-Gamified progress bars to track module completion and dispute success.
-
-### Module Deliverables
-
-Teach participants how to clean up personal information for a stronger starting position.
-
-Provide actionable steps and templates for disputing errors.
-
-Equip members with the knowledge of their legal rights.
-
-Help participants build confidence in negotiations with creditors.
+> **Guild Insight:** Send disputes via certified mail with return receipt. This creates a legal record of delivery and starts the clock with documentation. If a bureau fails to respond within 30 days, they must remove the disputed item. That paper trail matters if you ever need to enforce your rights through the CFPB or in court.

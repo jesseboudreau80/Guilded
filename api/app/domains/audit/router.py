@@ -20,10 +20,10 @@ _UNLOCK_LIMIT: dict[int, int | None] = {
 }
 
 from .schemas import (
-    AccountOut, AuditListItem, AuditResultsResponse, AuditSummary,
-    RecommendationOut, UploadResponse, VerifyRequest, VerifyResponse,
+    AccountOut, AccountUpdate, AuditListItem, AuditResultsResponse, AuditSummary,
+    PiiScanSummary, RecommendationOut, UploadResponse, VerifyRequest, VerifyResponse,
 )
-from .service import extract_accounts, get_audit_results, run_audit, verify_accounts
+from .service import extract_accounts, get_audit_results, run_audit, update_account, verify_accounts
 
 logger = logging.getLogger(__name__)
 
@@ -66,10 +66,19 @@ async def upload_audit(
     )
     accounts = accs_result.scalars().all()
 
+    # Build PII scan summary from stored audit data
+    pii_scan = None
+    if audit.pii_scan_json:
+        try:
+            pii_scan = PiiScanSummary(**audit.pii_scan_json)
+        except Exception:
+            pass
+
     return UploadResponse(
         audit_id=audit.id,
         accounts_found=len(accounts),
         accounts=[AccountOut.model_validate(a) for a in accounts],
+        pii_scan=pii_scan,
     )
 
 
@@ -93,6 +102,51 @@ async def list_audit_accounts(
     )
     accounts = accs_result.scalars().all()
     return [AccountOut.model_validate(a) for a in accounts]
+
+
+# ── Data Safety Receipt ───────────────────────────────────────────────────────
+
+@router.get("/{audit_id}/safety-receipt")
+async def audit_safety_receipt(audit_id: str, db: DB, current_user: CurrentUser):
+    """Return the PII scan summary for this audit — available at any status."""
+    audit_result = await db.execute(select(Audit).where(Audit.id == audit_id))
+    audit = audit_result.scalar_one_or_none()
+    if not audit or audit.user_id != current_user.id:
+        raise HTTPException(404, "Audit not found.")
+
+    pii = audit.pii_scan_json or {}
+    return {
+        "audit_id":    audit_id,
+        "pii_scan":    pii,
+        "pdf_deleted": True,   # always — deleted immediately after OCR extraction
+    }
+
+
+# ── Update account (OCR correction by user) ───────────────────────────────────
+
+@router.patch("/{audit_id}/accounts/{account_id}", response_model=AccountOut)
+async def patch_audit_account(
+    audit_id:   str,
+    account_id: str,
+    body:       AccountUpdate,
+    db:         DB,
+    current_user: CurrentUser,
+):
+    """
+    Allow users to correct OCR extraction errors before running analysis.
+    Sets verified_by_user=True and upgrades confidence to "high" after edit.
+    """
+    try:
+        account = await update_account(
+            db, audit_id, account_id, current_user.id,
+            updates=body.model_dump(exclude_none=True),
+        )
+    except ValueError as exc:
+        raise HTTPException(404, str(exc))
+    except Exception:
+        logger.exception("Account update failed %s/%s", audit_id, account_id)
+        raise HTTPException(500, "Failed to update account.")
+    return AccountOut.model_validate(account)
 
 
 # ── Verify accounts ───────────────────────────────────────────────────────────
@@ -234,6 +288,14 @@ async def _build_results_response(db, audit: Audit, tier: TierEnum) -> AuditResu
 
     unlocked = sum(1 for r in rec_out if not r.locked)
 
+    # PII scan summary — shown in results page as Data Safety Receipt
+    pii_scan = None
+    if audit.pii_scan_json:
+        try:
+            pii_scan = PiiScanSummary(**audit.pii_scan_json)
+        except Exception:
+            pass
+
     return AuditResultsResponse(
         audit_id=audit.id,
         status=audit.status.value,
@@ -243,4 +305,5 @@ async def _build_results_response(db, audit: Audit, tier: TierEnum) -> AuditResu
         summary=summary,
         accounts=[AccountOut.model_validate(a) for a in accounts],
         recommendations=rec_out,
+        pii_scan=pii_scan,
     )

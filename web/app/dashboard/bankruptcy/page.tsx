@@ -63,9 +63,9 @@ export default async function BankruptcyPage() {
   const totalSteps     = bcase ? bcase.steps.length : 0;
 
   return (
-    <section className="max-w-3xl">
-      <h1 className="text-3xl font-bold">Bankruptcy Filing Guide</h1>
-      <p className="mt-2 text-slate-400">Educational toolkit for understanding the bankruptcy process.</p>
+    <section>
+      <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Bankruptcy Filing Guide</h1>
+      <p className="mt-1.5 text-sm text-slate-400 max-w-lg">Educational toolkit for understanding the bankruptcy process. All content is informational only — not legal advice.</p>
 
       {/* Disclaimer */}
       <div className="mt-6 rounded-xl border border-amber-800 bg-amber-950/40 p-4 text-sm text-amber-300">
@@ -86,19 +86,12 @@ export default async function BankruptcyPage() {
       {/* Case tracker */}
       <div className="mt-10">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-semibold">My Case Tracker</h2>
-          {!bcase && (
-            <a
-              href="/dashboard/bankruptcy/new-case"
-              className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-500"
-            >
-              Start Tracking
-            </a>
-          )}
+          <h2 className="text-base font-semibold text-slate-200">My Case Tracker</h2>
+          {/* Case tracking setup — coming soon */}
         </div>
 
         {!bcase ? (
-          <p className="mt-4 text-slate-500">No case started. Click &ldquo;Start Tracking&rdquo; to begin logging your progress.</p>
+          <p className="mt-4 text-slate-500">No case started. Case tracking functionality is coming soon.</p>
         ) : (
           <div className="mt-4 rounded-xl bg-slate-800 p-5">
             <div className="flex items-center gap-3">
@@ -155,7 +148,7 @@ export default async function BankruptcyPage() {
 
       {/* External resources */}
       <div className="mt-10">
-        <h2 className="text-xl font-semibold">Official Resources</h2>
+        <h2 className="text-base font-semibold text-slate-200">Official Resources</h2>
         <ul className="mt-3 space-y-2">
           {info.resources.map((r) => (
             <li key={r.url}>

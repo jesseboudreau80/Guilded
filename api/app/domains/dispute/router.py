@@ -5,9 +5,10 @@ from sqlalchemy import select
 
 from app.core.deps import DB, CurrentUser
 from app.models.audit import AuditRecommendation
+from app.models.dispute import DisputeDraft
 
 from .schemas import (
-    DisputeDraftDetail, DisputeDraftOut, DisputeRecOut,
+    DisputeDraftDetail, DisputeDraftOut, DisputeListItem, DisputeRecOut,
     GenerateDisputeRequest, VALID_STRATEGIES,
 )
 from .service import generate_dispute, get_dispute_draft
@@ -37,6 +38,9 @@ async def generate_dispute_endpoint(
             audit_id=body.audit_id,
             recommendation_ids=body.recommendation_ids,
             strategy=body.strategy,
+            context_flags=body.context_flags,
+            context_notes=body.context_notes,
+            bureau_targets=body.bureau_targets,
         )
     except ValueError as exc:
         raise HTTPException(404, str(exc))
@@ -75,3 +79,25 @@ async def get_dispute_draft_endpoint(
         recommendation_ids=rec_ids,
         recommendations=[DisputeRecOut.model_validate(r) for r in recs],
     )
+
+
+@router.get("/", response_model=list[DisputeListItem])
+async def list_dispute_drafts(db: DB, current_user: CurrentUser):
+    """List the current user's dispute drafts, newest first."""
+    result = await db.execute(
+        select(DisputeDraft)
+        .where(DisputeDraft.user_id == current_user.id)
+        .order_by(DisputeDraft.created_at.desc())
+        .limit(50)
+    )
+    drafts = result.scalars().all()
+    return [
+        DisputeListItem(
+            id            = d.id,
+            audit_id      = d.audit_id,
+            strategy_type = d.strategy_type,
+            rec_count     = len(d.account_ids or []),
+            created_at    = d.created_at,
+        )
+        for d in drafts
+    ]

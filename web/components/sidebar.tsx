@@ -35,6 +35,7 @@ const NAV_GROUPS: NavGroup[] = [
       { label: "Guild Academy",  href: "/dashboard/academy",     icon: GraduationCap },
       { label: "Credit Audit",   href: "/dashboard/audit/start", icon: Search        },
       { label: "My Audits",      href: "/dashboard/audits",      icon: ClipboardList },
+      { label: "My Disputes",   href: "/dashboard/disputes",    icon: FileText      },
       { label: "Guild Counsel",  href: "/dashboard/ai",          icon: MessageSquare },
     ],
   },
@@ -140,6 +141,13 @@ export function Sidebar({ tier }: { tier?: string }) {
     return () => window.removeEventListener("guilded:sidebar-open", handler);
   }, []);
 
+  // Lock the layout scroll container while mobile nav is open
+  useEffect(() => {
+    const el = document.querySelector<HTMLElement>("[data-scroll-lock]");
+    if (el) el.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { if (el) el.style.overflow = ""; };
+  }, [mobileOpen]);
+
   return (
     <>
       {/* ── Desktop sidebar ───────────────────────────────────────────── */}
@@ -157,6 +165,7 @@ export function Sidebar({ tier }: { tier?: string }) {
         <div className="fixed inset-0 z-50 md:hidden">
           <div
             className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"
+            style={{ touchAction: "none" }}
             onClick={() => setMobileOpen(false)}
           />
           <aside className="absolute inset-y-0 left-0 flex w-64 animate-fade-in flex-col bg-card shadow-2xl">

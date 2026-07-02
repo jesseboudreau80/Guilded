@@ -8,6 +8,13 @@ export const TIER_RANK: Record<Tier, number> = {
   HERO:       3,
 };
 
+export const TIER_PRICE: Record<Tier, string> = {
+  APPRENTICE: "Free",
+  JOURNEYMAN: "$25/month",
+  MASTER:     "$49/month",
+  HERO:       "Contact us",
+};
+
 export const AI_LIMITS: Record<Tier, number> = {
   APPRENTICE: 5,
   JOURNEYMAN: 20,
