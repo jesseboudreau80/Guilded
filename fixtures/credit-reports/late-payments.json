@@ -1,0 +1,119 @@
+{
+  "reportId": "SAMPLE-0002",
+  "synthetic": true,
+  "disclaimer": "FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.",
+  "generatedFor": "late-payments (scattered 30/60/90-day lates, no collections)",
+  "consumer": {
+    "name": "Casey Fixture",
+    "dateOfBirth": "1992-11-03",
+    "ssnMasked": "999-XX-0002",
+    "addresses": [
+      "456 Placeholder Avenue, Apt 2B, Springfield, US 00002"
+    ],
+    "employers": [
+      "Sample Logistics LLC"
+    ]
+  },
+  "scores": {
+    "equifax": 641,
+    "experian": 652,
+    "transunion": 636
+  },
+  "summary": {
+    "totalAccounts": 4,
+    "openAccounts": 4,
+    "derogatoryAccounts": 2,
+    "collectionsCount": 0,
+    "publicRecordCount": 0,
+    "hardInquiries": 2,
+    "totalBalance": 3607000,
+    "revolvingUtilizationPct": 58.5
+  },
+  "tradelines": [
+    {
+      "creditor": "Sample National Bank",
+      "accountNumberMasked": "XXXX-2001",
+      "accountType": "CREDIT_CARD",
+      "openedDate": "2019-01",
+      "status": "LATE_30",
+      "balance": 312000,
+      "creditLimit": 500000,
+      "monthlyPayment": 9500,
+      "pastDueAmount": 9500,
+      "paymentHistory24Mo": "1CC1CCC2CCCCCCCCCCCCCCCC",
+      "remarks": "30 days past due as of last reporting",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Fixture Auto Finance",
+      "accountNumberMasked": "XXXX-2002",
+      "accountType": "AUTO_LOAN",
+      "openedDate": "2021-05",
+      "status": "LATE_90",
+      "balance": 987000,
+      "creditLimit": null,
+      "monthlyPayment": 36800,
+      "pastDueAmount": 110400,
+      "paymentHistory24Mo": "321CCCC1CCCCCCCCCCCCCCCC",
+      "remarks": "90 days past due",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Example Retail Card Services",
+      "accountNumberMasked": "XXXX-2003",
+      "accountType": "RETAIL_CARD",
+      "openedDate": "2020-11",
+      "status": "CURRENT",
+      "balance": 68000,
+      "creditLimit": 150000,
+      "monthlyPayment": 3000,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "CCCC21CCCCCCCCCCCCCCCCCC",
+      "remarks": "Previously 60 days late, now current",
+      "reportedBy": [
+        "EQUIFAX",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Placeholder Student Lending",
+      "accountNumberMasked": "XXXX-2004",
+      "accountType": "STUDENT_LOAN",
+      "openedDate": "2014-09",
+      "status": "CURRENT",
+      "balance": 2240000,
+      "creditLimit": null,
+      "monthlyPayment": 24500,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "CCCCCCCCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    }
+  ],
+  "collections": [],
+  "publicRecords": [],
+  "inquiries": [
+    {
+      "creditor": "Sample National Bank",
+      "date": "2025-09",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Example Retail Card Services",
+      "date": "2025-04",
+      "inquiryType": "HARD"
+    }
+  ]
+}

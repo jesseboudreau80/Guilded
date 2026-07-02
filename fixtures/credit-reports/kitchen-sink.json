@@ -1,0 +1,203 @@
+{
+  "reportId": "SAMPLE-0006",
+  "synthetic": true,
+  "disclaimer": "FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.",
+  "generatedFor": "kitchen-sink (Chapter 13, foreclosure, charge-offs, collections, maxed utilization, heavy inquiries)",
+  "consumer": {
+    "name": "Quinn Allmarks",
+    "dateOfBirth": "1983-02-08",
+    "ssnMasked": "999-XX-0006",
+    "addresses": [
+      "987 Worstcase Way, Springfield, US 00007"
+    ],
+    "employers": [
+      "Example Hospitality Group",
+      "Prior: Sample Staffing Agency"
+    ]
+  },
+  "scores": {
+    "equifax": 487,
+    "experian": 495,
+    "transunion": 481
+  },
+  "summary": {
+    "totalAccounts": 5,
+    "openAccounts": 3,
+    "derogatoryAccounts": 5,
+    "collectionsCount": 3,
+    "publicRecordCount": 2,
+    "hardInquiries": 5,
+    "totalBalance": 5815700,
+    "revolvingUtilizationPct": 98.9
+  },
+  "tradelines": [
+    {
+      "creditor": "Example Mortgage Corp",
+      "accountNumberMasked": "XXXX-6001",
+      "accountType": "MORTGAGE",
+      "openedDate": "2016-05",
+      "status": "FORECLOSURE",
+      "balance": 0,
+      "creditLimit": null,
+      "monthlyPayment": null,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "--------555555443221CCCC",
+      "remarks": "Foreclosure completed 2025-01",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Sample National Bank",
+      "accountNumberMasked": "XXXX-6002",
+      "accountType": "CREDIT_CARD",
+      "openedDate": "2017-09",
+      "status": "CHARGE_OFF",
+      "balance": 723800,
+      "creditLimit": 700000,
+      "monthlyPayment": null,
+      "pastDueAmount": 723800,
+      "paymentHistory24Mo": "555555554321CCCCCCCCCCCC",
+      "remarks": "Charged off as bad debt",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Example Retail Card Services",
+      "accountNumberMasked": "XXXX-6003",
+      "accountType": "RETAIL_CARD",
+      "openedDate": "2021-03",
+      "status": "LATE_90",
+      "balance": 148700,
+      "creditLimit": 150000,
+      "monthlyPayment": 4500,
+      "pastDueAmount": 13500,
+      "paymentHistory24Mo": "3211C21CCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Placeholder Student Lending",
+      "accountNumberMasked": "XXXX-6004",
+      "accountType": "STUDENT_LOAN",
+      "openedDate": "2010-09",
+      "status": "LATE_120",
+      "balance": 4180000,
+      "creditLimit": null,
+      "monthlyPayment": 38200,
+      "pastDueAmount": 152800,
+      "paymentHistory24Mo": "443321CCCCCCCCCCCCCCCCCC",
+      "remarks": "Deferment ended; account seriously delinquent",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Fixture Subprime Card Bank",
+      "accountNumberMasked": "XXXX-6005",
+      "accountType": "CREDIT_CARD",
+      "openedDate": "2024-08",
+      "status": "LATE_30",
+      "balance": 98600,
+      "creditLimit": 100000,
+      "monthlyPayment": 4000,
+      "pastDueAmount": 4000,
+      "paymentHistory24Mo": "1C1CCCCCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "TRANSUNION"
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "agency": "Sample Recovery Group",
+      "originalCreditor": "Springfield General Hospital (fictitious)",
+      "accountNumberMasked": "XXXX-6101",
+      "collectionType": "MEDICAL",
+      "placedDate": "2025-02",
+      "originalAmount": 342100,
+      "currentBalance": 342100,
+      "status": "UNPAID"
+    },
+    {
+      "agency": "Placeholder Collections LLC",
+      "originalCreditor": "Example Apartments LP",
+      "accountNumberMasked": "XXXX-6102",
+      "collectionType": "RENTAL",
+      "placedDate": "2024-09",
+      "originalAmount": 289400,
+      "currentBalance": 289400,
+      "status": "UNPAID"
+    },
+    {
+      "agency": "Fixture Debt Buyers Inc.",
+      "originalCreditor": "Example Telecom",
+      "accountNumberMasked": "XXXX-6103",
+      "collectionType": "TELECOM",
+      "placedDate": "2023-12",
+      "originalAmount": 66200,
+      "currentBalance": 33100,
+      "status": "SETTLED"
+    }
+  ],
+  "publicRecords": [
+    {
+      "recordType": "BANKRUPTCY_CH13",
+      "filedDate": "2025-06",
+      "status": "FILED",
+      "court": "US Bankruptcy Court, District of Springfield (fictitious)",
+      "referenceNumber": "25-BK-00913",
+      "amount": null,
+      "resolvedDate": null
+    },
+    {
+      "recordType": "CIVIL_JUDGMENT",
+      "filedDate": "2024-02",
+      "status": "SATISFIED",
+      "court": "Springfield County Civil Court (fictitious)",
+      "referenceNumber": "CV-2024-0288",
+      "amount": 91800,
+      "resolvedDate": "2025-04"
+    }
+  ],
+  "inquiries": [
+    {
+      "creditor": "Fixture Payday Advance",
+      "date": "2026-01",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Example Subprime Lending",
+      "date": "2025-12",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Sample Rent-to-Own",
+      "date": "2025-10",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Fixture Subprime Card Bank",
+      "date": "2024-08",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Placeholder Furniture Credit",
+      "date": "2025-05",
+      "inquiryType": "HARD"
+    }
+  ]
+}

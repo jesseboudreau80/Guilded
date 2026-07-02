@@ -1,0 +1,55 @@
+==============================================================================
+*** SAMPLE TRI-BUREAU CREDIT REPORT — FICTITIOUS TEST DATA ***
+FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.
+==============================================================================
+
+Report ID: SAMPLE-0004    Scenario: bankruptcy-ch7 (discharged Chapter 7 with included accounts)
+
+CONSUMER INFORMATION
+  Name: Riley Specimen
+  DOB: 1979-01-30   SSN: 999-XX-0004 (999 prefix = never issued)
+  Address: 321 Nullpointer Court, Springfield, US 00005
+  Employer: Sample Municipal Services
+
+CREDIT SCORES
+  Equifax: 542   Experian: 549   TransUnion: 538
+
+SUMMARY
+  Total accounts: 3   Open: 1   Derogatory: 2
+  Collections: 0   Public records: 1   Hard inquiries: 1
+  Total balance: $180.00   Revolving utilization: 60%
+
+TRADELINES (3)
+History legend (most recent month first): C=paid as agreed, 1=30d late, 2=60d, 3=90d, 4=120d, 5=150d+/charge-off, -=not reported
+
+  Sample National Bank  (CREDIT CARD)  Acct XXXX-4001
+    Opened: 2015-06   Status: INCLUDED IN BANKRUPTCY   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $0.00   Limit: $8000.00   Past due: $0.00
+    24-month history: ------------555554CCCCCC
+    Remarks: Discharged through Chapter 7 bankruptcy
+
+  Example Retail Card Services  (RETAIL CARD)  Acct XXXX-4002
+    Opened: 2017-12   Status: INCLUDED IN BANKRUPTCY   Reported by: EQUIFAX, EXPERIAN
+    Balance: $0.00   Limit: $2000.00   Past due: $0.00
+    24-month history: ------------55554CCCCCCC
+    Remarks: Discharged through Chapter 7 bankruptcy
+
+  Fixture Secured Card Bank  (CREDIT CARD)  Acct XXXX-4003
+    Opened: 2025-02   Status: CURRENT   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $180.00   Limit: $300.00   Past due: $0.00
+    24-month history: CCCCCCCCCCCCCCCCCCCCCCCC
+    Remarks: Secured card opened post-discharge
+
+COLLECTIONS (0)
+  None reported.
+
+PUBLIC RECORDS (1)
+  BANKRUPTCY CH7  Filed: 2024-03  Status: DISCHARGED  Ref: 24-BK-00042
+    Court: US Bankruptcy Court, District of Springfield (fictitious)   Amount: N/A   Resolved: 2024-07
+
+INQUIRIES (1)
+  2025-02  Fixture Secured Card Bank  (HARD)
+
+==============================================================================
+END OF SAMPLE REPORT — FICTITIOUS TEST DATA
+==============================================================================

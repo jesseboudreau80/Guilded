@@ -1,0 +1,97 @@
+{
+  "reportId": "SAMPLE-0001",
+  "synthetic": true,
+  "disclaimer": "FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.",
+  "generatedFor": "clean-baseline (control persona, no derogatory marks)",
+  "consumer": {
+    "name": "Jordan Sample",
+    "dateOfBirth": "1988-04-12",
+    "ssnMasked": "999-XX-0001",
+    "addresses": [
+      "123 Example Street, Springfield, US 00001"
+    ],
+    "employers": [
+      "Acme Testing Co."
+    ]
+  },
+  "scores": {
+    "equifax": 782,
+    "experian": 789,
+    "transunion": 778
+  },
+  "summary": {
+    "totalAccounts": 3,
+    "openAccounts": 3,
+    "derogatoryAccounts": 0,
+    "collectionsCount": 0,
+    "publicRecordCount": 0,
+    "hardInquiries": 1,
+    "totalBalance": 23022000,
+    "revolvingUtilizationPct": 3.5
+  },
+  "tradelines": [
+    {
+      "creditor": "Sample National Bank",
+      "accountNumberMasked": "XXXX-1001",
+      "accountType": "CREDIT_CARD",
+      "openedDate": "2016-03",
+      "status": "CURRENT",
+      "balance": 42000,
+      "creditLimit": 1200000,
+      "monthlyPayment": 3500,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "CCCCCCCCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Fixture Auto Finance",
+      "accountNumberMasked": "XXXX-1002",
+      "accountType": "AUTO_LOAN",
+      "openedDate": "2022-08",
+      "status": "CURRENT",
+      "balance": 1480000,
+      "creditLimit": null,
+      "monthlyPayment": 41200,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "CCCCCCCCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Example Mortgage Corp",
+      "accountNumberMasked": "XXXX-1003",
+      "accountType": "MORTGAGE",
+      "openedDate": "2019-06",
+      "status": "CURRENT",
+      "balance": 21500000,
+      "creditLimit": null,
+      "monthlyPayment": 168000,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "CCCCCCCCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    }
+  ],
+  "collections": [],
+  "publicRecords": [],
+  "inquiries": [
+    {
+      "creditor": "Fixture Auto Finance",
+      "date": "2022-08",
+      "inquiryType": "HARD"
+    }
+  ]
+}

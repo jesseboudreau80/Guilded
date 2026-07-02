@@ -10,7 +10,9 @@ export async function POST(request: Request) {
   const user = await requireUser();
   if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const { tier } = schema.parse(await request.json());
+  const parsed = schema.safeParse(await request.json().catch(() => null));
+  if (!parsed.success) return NextResponse.json({ error: "A valid paid tier is required." }, { status: 400 });
+  const { tier } = parsed.data;
   const priceId = SUBSCRIPTION_PRICE_IDS[tier as Exclude<Tier, "APPRENTICE">];
   if (!priceId) return NextResponse.json({ error: "Missing price config" }, { status: 500 });
 

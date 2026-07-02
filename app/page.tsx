@@ -8,13 +8,22 @@ export default function HomePage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [error, setError] = useState("");
+
   const register = async (e: FormEvent) => {
     e.preventDefault();
-    await fetch("/api/auth/register", {
+    setError("");
+    const res = await fetch("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),
     });
+    if (!res.ok) {
+      const data = await res.json().catch(() => null);
+      setError(data?.error || "Registration failed. Please check your details.");
+      return;
+    }
+    await signIn("credentials", { email, password, callbackUrl: "/dashboard" });
   };
 
   const login = async (e: FormEvent) => {
@@ -32,8 +41,9 @@ export default function HomePage() {
         <input type="password" className="rounded bg-card p-3" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <div className="flex gap-2">
           <button type="submit" className="rounded bg-slate-700 px-4 py-2">Register</button>
-          <button onClick={login} className="rounded bg-accent px-4 py-2">Sign in</button>
+          <button type="button" onClick={login} className="rounded bg-accent px-4 py-2">Sign in</button>
         </div>
+        {error && <p className="rounded border border-red-500 bg-red-500/10 p-3 text-sm text-red-300">{error}</p>}
       </form>
     </main>
   );

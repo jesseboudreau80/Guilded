@@ -1,0 +1,58 @@
+==============================================================================
+*** SAMPLE TRI-BUREAU CREDIT REPORT — FICTITIOUS TEST DATA ***
+FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.
+==============================================================================
+
+Report ID: SAMPLE-0005    Scenario: repo-judgment (auto repossession with deficiency, civil judgment, tax lien)
+
+CONSUMER INFORMATION
+  Name: Avery Mockdata
+  DOB: 1990-09-15   SSN: 999-XX-0005 (999 prefix = never issued)
+  Address: 654 Stub Street, Springfield, US 00006
+  Employer: Placeholder Construction Co.
+
+CREDIT SCORES
+  Equifax: 521   Experian: 530   TransUnion: 516
+
+SUMMARY
+  Total accounts: 3   Open: 2   Derogatory: 2
+  Collections: 1   Public records: 2   Hard inquiries: 3
+  Total balance: $16673.00   Revolving utilization: 55.3%
+
+TRADELINES (3)
+History legend (most recent month first): C=paid as agreed, 1=30d late, 2=60d, 3=90d, 4=120d, 5=150d+/charge-off, -=not reported
+
+  Fixture Auto Finance  (AUTO LOAN)  Acct XXXX-5001
+    Opened: 2022-04   Status: REPOSSESSION   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $6124.00   Limit: N/A   Past due: $6124.00
+    24-month history: --5555543321CCCCCCCCCCCC
+    Remarks: Vehicle repossessed 2025-03. Deficiency balance after auction.
+
+  Sample National Bank  (CREDIT CARD)  Acct XXXX-5002
+    Opened: 2019-08   Status: LATE 120   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $2975.00   Limit: $3000.00   Past due: $356.00
+    24-month history: 4321C1CCCCCCCCCCCCCCCCCC
+
+  Example Credit Union  (LINE OF CREDIT)  Acct XXXX-5003
+    Opened: 2020-10   Status: CURRENT   Reported by: EXPERIAN, TRANSUNION
+    Balance: $1450.00   Limit: $5000.00   Past due: $0.00
+    24-month history: CC1CCCCCCCCCCCCCCCCCCCCC
+
+COLLECTIONS (1)
+  Placeholder Collections LLC for Fixture Auto Finance  Acct XXXX-5101  [AUTO_DEFICIENCY]
+    Placed: 2025-07   Original: $6124.00   Balance: $6124.00   Status: UNPAID
+
+PUBLIC RECORDS (2)
+  CIVIL JUDGMENT  Filed: 2024-10  Status: UNSATISFIED  Ref: CV-2024-1187
+    Court: Springfield County Civil Court (fictitious)   Amount: $2345.00   Resolved: —
+  TAX LIEN  Filed: 2023-05  Status: RELEASED  Ref: TL-2023-0331
+    Court: Springfield County Recorder (fictitious)   Amount: $1872.00   Resolved: 2025-01
+
+INQUIRIES (3)
+  2025-11  Example Subprime Lending  (HARD)
+  2025-08  Sample Rent-to-Own  (HARD)
+  2025-06  Fixture Payday Advance  (HARD)
+
+==============================================================================
+END OF SAMPLE REPORT — FICTITIOUS TEST DATA
+==============================================================================

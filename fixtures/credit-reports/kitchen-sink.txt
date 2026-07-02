@@ -1,0 +1,77 @@
+==============================================================================
+*** SAMPLE TRI-BUREAU CREDIT REPORT — FICTITIOUS TEST DATA ***
+FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.
+==============================================================================
+
+Report ID: SAMPLE-0006    Scenario: kitchen-sink (Chapter 13, foreclosure, charge-offs, collections, maxed utilization, heavy inquiries)
+
+CONSUMER INFORMATION
+  Name: Quinn Allmarks
+  DOB: 1983-02-08   SSN: 999-XX-0006 (999 prefix = never issued)
+  Address: 987 Worstcase Way, Springfield, US 00007
+  Employer: Example Hospitality Group
+  Employer: Prior: Sample Staffing Agency
+
+CREDIT SCORES
+  Equifax: 487   Experian: 495   TransUnion: 481
+
+SUMMARY
+  Total accounts: 5   Open: 3   Derogatory: 5
+  Collections: 3   Public records: 2   Hard inquiries: 5
+  Total balance: $58157.00   Revolving utilization: 98.9%
+
+TRADELINES (5)
+History legend (most recent month first): C=paid as agreed, 1=30d late, 2=60d, 3=90d, 4=120d, 5=150d+/charge-off, -=not reported
+
+  Example Mortgage Corp  (MORTGAGE)  Acct XXXX-6001
+    Opened: 2016-05   Status: FORECLOSURE   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $0.00   Limit: N/A   Past due: $0.00
+    24-month history: --------555555443221CCCC
+    Remarks: Foreclosure completed 2025-01
+
+  Sample National Bank  (CREDIT CARD)  Acct XXXX-6002
+    Opened: 2017-09   Status: CHARGE OFF   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $7238.00   Limit: $7000.00   Past due: $7238.00
+    24-month history: 555555554321CCCCCCCCCCCC
+    Remarks: Charged off as bad debt
+
+  Example Retail Card Services  (RETAIL CARD)  Acct XXXX-6003
+    Opened: 2021-03   Status: LATE 90   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $1487.00   Limit: $1500.00   Past due: $135.00
+    24-month history: 3211C21CCCCCCCCCCCCCCCCC
+
+  Placeholder Student Lending  (STUDENT LOAN)  Acct XXXX-6004
+    Opened: 2010-09   Status: LATE 120   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $41800.00   Limit: N/A   Past due: $1528.00
+    24-month history: 443321CCCCCCCCCCCCCCCCCC
+    Remarks: Deferment ended; account seriously delinquent
+
+  Fixture Subprime Card Bank  (CREDIT CARD)  Acct XXXX-6005
+    Opened: 2024-08   Status: LATE 30   Reported by: EQUIFAX, TRANSUNION
+    Balance: $986.00   Limit: $1000.00   Past due: $40.00
+    24-month history: 1C1CCCCCCCCCCCCCCCCCCCCC
+
+COLLECTIONS (3)
+  Sample Recovery Group for Springfield General Hospital (fictitious)  Acct XXXX-6101  [MEDICAL]
+    Placed: 2025-02   Original: $3421.00   Balance: $3421.00   Status: UNPAID
+  Placeholder Collections LLC for Example Apartments LP  Acct XXXX-6102  [RENTAL]
+    Placed: 2024-09   Original: $2894.00   Balance: $2894.00   Status: UNPAID
+  Fixture Debt Buyers Inc. for Example Telecom  Acct XXXX-6103  [TELECOM]
+    Placed: 2023-12   Original: $662.00   Balance: $331.00   Status: SETTLED
+
+PUBLIC RECORDS (2)
+  BANKRUPTCY CH13  Filed: 2025-06  Status: FILED  Ref: 25-BK-00913
+    Court: US Bankruptcy Court, District of Springfield (fictitious)   Amount: N/A   Resolved: —
+  CIVIL JUDGMENT  Filed: 2024-02  Status: SATISFIED  Ref: CV-2024-0288
+    Court: Springfield County Civil Court (fictitious)   Amount: $918.00   Resolved: 2025-04
+
+INQUIRIES (5)
+  2026-01  Fixture Payday Advance  (HARD)
+  2025-12  Example Subprime Lending  (HARD)
+  2025-10  Sample Rent-to-Own  (HARD)
+  2024-08  Fixture Subprime Card Bank  (HARD)
+  2025-05  Placeholder Furniture Credit  (HARD)
+
+==============================================================================
+END OF SAMPLE REPORT — FICTITIOUS TEST DATA
+==============================================================================

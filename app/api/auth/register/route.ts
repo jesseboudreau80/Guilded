@@ -10,7 +10,14 @@ const schema = z.object({
 });
 
 export async function POST(req: Request) {
-  const body = schema.parse(await req.json());
+  const parsed = schema.safeParse(await req.json().catch(() => null));
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "Name (2+ chars), a valid email, and a password of 8+ characters are required." },
+      { status: 400 }
+    );
+  }
+  const body = parsed.data;
   const existing = await prisma.user.findUnique({ where: { email: body.email } });
   if (existing) return NextResponse.json({ error: "Email already registered" }, { status: 409 });
 

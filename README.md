@@ -44,12 +44,27 @@ Guilded is a production-oriented educational credit literacy platform built with
    npm run dev
    ```
 
+## Testing
+
+```bash
+npm test            # vitest suite (business logic + fixture validation)
+npm run typecheck   # tsc --noEmit
+```
+
+Synthetic credit report fixtures for testers live in `fixtures/credit-reports/`
+(six fictitious personas from clean baseline to bankruptcies and
+repossessions). Regenerate with `npm run fixtures:generate`. See
+`fixtures/credit-reports/README.md` and `docs/REVIEW.md`.
+
 ## Stripe notes
 
 - Set product price IDs via `STRIPE_PRICE_JOURNEYMAN`, `STRIPE_PRICE_MASTER`, and `STRIPE_PRICE_HERO`.
 - Webhook endpoint is `POST /api/stripe/webhook` and requires raw-body signature verification.
 - Invoice success increments `successfulBillingCount`.
+- Failed invoices and `customer.subscription.updated` sync `PAST_DUE` status.
 - Subscription deleted event sets user back to Apprentice + canceled status.
+- Webhook processing is idempotent: event IDs are recorded in `WebhookEvent`
+  so Stripe retries cannot duplicate consultations or billing counts.
 
 ## AI guardrails
 

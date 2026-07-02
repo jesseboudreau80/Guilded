@@ -1,0 +1,51 @@
+==============================================================================
+*** SAMPLE TRI-BUREAU CREDIT REPORT — FICTITIOUS TEST DATA ***
+FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.
+==============================================================================
+
+Report ID: SAMPLE-0001    Scenario: clean-baseline (control persona, no derogatory marks)
+
+CONSUMER INFORMATION
+  Name: Jordan Sample
+  DOB: 1988-04-12   SSN: 999-XX-0001 (999 prefix = never issued)
+  Address: 123 Example Street, Springfield, US 00001
+  Employer: Acme Testing Co.
+
+CREDIT SCORES
+  Equifax: 782   Experian: 789   TransUnion: 778
+
+SUMMARY
+  Total accounts: 3   Open: 3   Derogatory: 0
+  Collections: 0   Public records: 0   Hard inquiries: 1
+  Total balance: $230220.00   Revolving utilization: 3.5%
+
+TRADELINES (3)
+History legend (most recent month first): C=paid as agreed, 1=30d late, 2=60d, 3=90d, 4=120d, 5=150d+/charge-off, -=not reported
+
+  Sample National Bank  (CREDIT CARD)  Acct XXXX-1001
+    Opened: 2016-03   Status: CURRENT   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $420.00   Limit: $12000.00   Past due: $0.00
+    24-month history: CCCCCCCCCCCCCCCCCCCCCCCC
+
+  Fixture Auto Finance  (AUTO LOAN)  Acct XXXX-1002
+    Opened: 2022-08   Status: CURRENT   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $14800.00   Limit: N/A   Past due: $0.00
+    24-month history: CCCCCCCCCCCCCCCCCCCCCCCC
+
+  Example Mortgage Corp  (MORTGAGE)  Acct XXXX-1003
+    Opened: 2019-06   Status: CURRENT   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $215000.00   Limit: N/A   Past due: $0.00
+    24-month history: CCCCCCCCCCCCCCCCCCCCCCCC
+
+COLLECTIONS (0)
+  None reported.
+
+PUBLIC RECORDS (0)
+  None reported.
+
+INQUIRIES (1)
+  2022-08  Fixture Auto Finance  (HARD)
+
+==============================================================================
+END OF SAMPLE REPORT — FICTITIOUS TEST DATA
+==============================================================================

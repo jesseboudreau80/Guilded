@@ -1,0 +1,136 @@
+{
+  "reportId": "SAMPLE-0005",
+  "synthetic": true,
+  "disclaimer": "FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.",
+  "generatedFor": "repo-judgment (auto repossession with deficiency, civil judgment, tax lien)",
+  "consumer": {
+    "name": "Avery Mockdata",
+    "dateOfBirth": "1990-09-15",
+    "ssnMasked": "999-XX-0005",
+    "addresses": [
+      "654 Stub Street, Springfield, US 00006"
+    ],
+    "employers": [
+      "Placeholder Construction Co."
+    ]
+  },
+  "scores": {
+    "equifax": 521,
+    "experian": 530,
+    "transunion": 516
+  },
+  "summary": {
+    "totalAccounts": 3,
+    "openAccounts": 2,
+    "derogatoryAccounts": 2,
+    "collectionsCount": 1,
+    "publicRecordCount": 2,
+    "hardInquiries": 3,
+    "totalBalance": 1667300,
+    "revolvingUtilizationPct": 55.3
+  },
+  "tradelines": [
+    {
+      "creditor": "Fixture Auto Finance",
+      "accountNumberMasked": "XXXX-5001",
+      "accountType": "AUTO_LOAN",
+      "openedDate": "2022-04",
+      "status": "REPOSSESSION",
+      "balance": 612400,
+      "creditLimit": null,
+      "monthlyPayment": null,
+      "pastDueAmount": 612400,
+      "paymentHistory24Mo": "--5555543321CCCCCCCCCCCC",
+      "remarks": "Vehicle repossessed 2025-03. Deficiency balance after auction.",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Sample National Bank",
+      "accountNumberMasked": "XXXX-5002",
+      "accountType": "CREDIT_CARD",
+      "openedDate": "2019-08",
+      "status": "LATE_120",
+      "balance": 297500,
+      "creditLimit": 300000,
+      "monthlyPayment": 8900,
+      "pastDueAmount": 35600,
+      "paymentHistory24Mo": "4321C1CCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Example Credit Union",
+      "accountNumberMasked": "XXXX-5003",
+      "accountType": "LINE_OF_CREDIT",
+      "openedDate": "2020-10",
+      "status": "CURRENT",
+      "balance": 145000,
+      "creditLimit": 500000,
+      "monthlyPayment": 5000,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "CC1CCCCCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "agency": "Placeholder Collections LLC",
+      "originalCreditor": "Fixture Auto Finance",
+      "accountNumberMasked": "XXXX-5101",
+      "collectionType": "AUTO_DEFICIENCY",
+      "placedDate": "2025-07",
+      "originalAmount": 612400,
+      "currentBalance": 612400,
+      "status": "UNPAID"
+    }
+  ],
+  "publicRecords": [
+    {
+      "recordType": "CIVIL_JUDGMENT",
+      "filedDate": "2024-10",
+      "status": "UNSATISFIED",
+      "court": "Springfield County Civil Court (fictitious)",
+      "referenceNumber": "CV-2024-1187",
+      "amount": 234500,
+      "resolvedDate": null
+    },
+    {
+      "recordType": "TAX_LIEN",
+      "filedDate": "2023-05",
+      "status": "RELEASED",
+      "court": "Springfield County Recorder (fictitious)",
+      "referenceNumber": "TL-2023-0331",
+      "amount": 187200,
+      "resolvedDate": "2025-01"
+    }
+  ],
+  "inquiries": [
+    {
+      "creditor": "Example Subprime Lending",
+      "date": "2025-11",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Sample Rent-to-Own",
+      "date": "2025-08",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Fixture Payday Advance",
+      "date": "2025-06",
+      "inquiryType": "HARD"
+    }
+  ]
+}

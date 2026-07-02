@@ -1,0 +1,139 @@
+{
+  "reportId": "SAMPLE-0003",
+  "synthetic": true,
+  "disclaimer": "FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.",
+  "generatedFor": "collections-chargeoff (medical + telecom collections, charged-off card)",
+  "consumer": {
+    "name": "Morgan Testcase",
+    "dateOfBirth": "1985-07-22",
+    "ssnMasked": "999-XX-0003",
+    "addresses": [
+      "789 Mockingbird Lane, Springfield, US 00003",
+      "12 Prior Address Road, Springfield, US 00004"
+    ],
+    "employers": [
+      "Fixture Manufacturing Inc."
+    ]
+  },
+  "scores": {
+    "equifax": 568,
+    "experian": 574,
+    "transunion": 561
+  },
+  "summary": {
+    "totalAccounts": 3,
+    "openAccounts": 2,
+    "derogatoryAccounts": 2,
+    "collectionsCount": 3,
+    "publicRecordCount": 0,
+    "hardInquiries": 2,
+    "totalBalance": 2818200,
+    "revolvingUtilizationPct": 0
+  },
+  "tradelines": [
+    {
+      "creditor": "Sample National Bank",
+      "accountNumberMasked": "XXXX-3001",
+      "accountType": "CREDIT_CARD",
+      "openedDate": "2018-02",
+      "status": "CHARGE_OFF",
+      "balance": 486200,
+      "creditLimit": 450000,
+      "monthlyPayment": null,
+      "pastDueAmount": 486200,
+      "paymentHistory24Mo": "5555554321CCCCCCCCCCCCCC",
+      "remarks": "Charged off. Account closed by credit grantor.",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Example Credit Union",
+      "accountNumberMasked": "XXXX-3002",
+      "accountType": "PERSONAL_LOAN",
+      "openedDate": "2022-03",
+      "status": "LATE_60",
+      "balance": 542000,
+      "creditLimit": null,
+      "monthlyPayment": 21400,
+      "pastDueAmount": 42800,
+      "paymentHistory24Mo": "21C1CCCCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Fixture Auto Finance",
+      "accountNumberMasked": "XXXX-3003",
+      "accountType": "AUTO_LOAN",
+      "openedDate": "2023-01",
+      "status": "CURRENT",
+      "balance": 1620000,
+      "creditLimit": null,
+      "monthlyPayment": 44900,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "CCCCCCCCCCCCCCCCCCCCCCCC",
+      "remarks": null,
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "agency": "Sample Recovery Group",
+      "originalCreditor": "Springfield General Hospital (fictitious)",
+      "accountNumberMasked": "XXXX-3101",
+      "collectionType": "MEDICAL",
+      "placedDate": "2024-06",
+      "originalAmount": 128700,
+      "currentBalance": 128700,
+      "status": "UNPAID"
+    },
+    {
+      "agency": "Placeholder Collections LLC",
+      "originalCreditor": "Example Telecom",
+      "accountNumberMasked": "XXXX-3102",
+      "collectionType": "TELECOM",
+      "placedDate": "2023-11",
+      "originalAmount": 41300,
+      "currentBalance": 41300,
+      "status": "DISPUTED"
+    },
+    {
+      "agency": "Sample Recovery Group",
+      "originalCreditor": "Example Power & Light",
+      "accountNumberMasked": "XXXX-3103",
+      "collectionType": "UTILITY",
+      "placedDate": "2022-04",
+      "originalAmount": 28800,
+      "currentBalance": 0,
+      "status": "PAID"
+    }
+  ],
+  "publicRecords": [],
+  "inquiries": [
+    {
+      "creditor": "Fixture Auto Finance",
+      "date": "2023-01",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Example Credit Union",
+      "date": "2022-03",
+      "inquiryType": "HARD"
+    },
+    {
+      "creditor": "Sample Insurance Co.",
+      "date": "2025-10",
+      "inquiryType": "SOFT"
+    }
+  ]
+}

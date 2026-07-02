@@ -1,0 +1,106 @@
+{
+  "reportId": "SAMPLE-0004",
+  "synthetic": true,
+  "disclaimer": "FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.",
+  "generatedFor": "bankruptcy-ch7 (discharged Chapter 7 with included accounts)",
+  "consumer": {
+    "name": "Riley Specimen",
+    "dateOfBirth": "1979-01-30",
+    "ssnMasked": "999-XX-0004",
+    "addresses": [
+      "321 Nullpointer Court, Springfield, US 00005"
+    ],
+    "employers": [
+      "Sample Municipal Services"
+    ]
+  },
+  "scores": {
+    "equifax": 542,
+    "experian": 549,
+    "transunion": 538
+  },
+  "summary": {
+    "totalAccounts": 3,
+    "openAccounts": 1,
+    "derogatoryAccounts": 2,
+    "collectionsCount": 0,
+    "publicRecordCount": 1,
+    "hardInquiries": 1,
+    "totalBalance": 18000,
+    "revolvingUtilizationPct": 60
+  },
+  "tradelines": [
+    {
+      "creditor": "Sample National Bank",
+      "accountNumberMasked": "XXXX-4001",
+      "accountType": "CREDIT_CARD",
+      "openedDate": "2015-06",
+      "status": "INCLUDED_IN_BANKRUPTCY",
+      "balance": 0,
+      "creditLimit": 800000,
+      "monthlyPayment": null,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "------------555554CCCCCC",
+      "remarks": "Discharged through Chapter 7 bankruptcy",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    },
+    {
+      "creditor": "Example Retail Card Services",
+      "accountNumberMasked": "XXXX-4002",
+      "accountType": "RETAIL_CARD",
+      "openedDate": "2017-12",
+      "status": "INCLUDED_IN_BANKRUPTCY",
+      "balance": 0,
+      "creditLimit": 200000,
+      "monthlyPayment": null,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "------------55554CCCCCCC",
+      "remarks": "Discharged through Chapter 7 bankruptcy",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN"
+      ]
+    },
+    {
+      "creditor": "Fixture Secured Card Bank",
+      "accountNumberMasked": "XXXX-4003",
+      "accountType": "CREDIT_CARD",
+      "openedDate": "2025-02",
+      "status": "CURRENT",
+      "balance": 18000,
+      "creditLimit": 30000,
+      "monthlyPayment": 2500,
+      "pastDueAmount": 0,
+      "paymentHistory24Mo": "CCCCCCCCCCCCCCCCCCCCCCCC",
+      "remarks": "Secured card opened post-discharge",
+      "reportedBy": [
+        "EQUIFAX",
+        "EXPERIAN",
+        "TRANSUNION"
+      ]
+    }
+  ],
+  "collections": [],
+  "publicRecords": [
+    {
+      "recordType": "BANKRUPTCY_CH7",
+      "filedDate": "2024-03",
+      "status": "DISCHARGED",
+      "court": "US Bankruptcy Court, District of Springfield (fictitious)",
+      "referenceNumber": "24-BK-00042",
+      "amount": null,
+      "resolvedDate": "2024-07"
+    }
+  ],
+  "inquiries": [
+    {
+      "creditor": "Fixture Secured Card Bank",
+      "date": "2025-02",
+      "inquiryType": "HARD"
+    }
+  ]
+}

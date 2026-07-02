@@ -1,12 +1,19 @@
 import { prisma } from "@/lib/prisma";
 import { stripe } from "@/lib/stripe";
-import { Tier } from "@prisma/client";
+import { SubscriptionStatus, Tier } from "@prisma/client";
 
 function mapPriceToTier(priceId: string): Tier {
   if (priceId === process.env.STRIPE_PRICE_HERO) return "HERO";
   if (priceId === process.env.STRIPE_PRICE_MASTER) return "MASTER";
   if (priceId === process.env.STRIPE_PRICE_JOURNEYMAN) return "JOURNEYMAN";
   return "APPRENTICE";
+}
+
+function mapStripeStatus(status: string): SubscriptionStatus {
+  if (status === "active" || status === "trialing") return "ACTIVE";
+  if (status === "past_due" || status === "unpaid") return "PAST_DUE";
+  if (status === "canceled") return "CANCELED";
+  return "INACTIVE";
 }
 
 export async function POST(req: Request) {
@@ -20,6 +27,15 @@ export async function POST(req: Request) {
     event = stripe.webhooks.constructEvent(body, sig, process.env.STRIPE_WEBHOOK_SECRET || "");
   } catch {
     return new Response("Invalid signature", { status: 400 });
+  }
+
+  // Stripe retries webhooks; recording the event id makes processing idempotent
+  // (a replayed checkout.session.completed must not create a second consultation
+  // or double-count a billing cycle).
+  try {
+    await prisma.webhookEvent.create({ data: { id: event.id, type: event.type } });
+  } catch {
+    return new Response("ok (already processed)");
   }
 
   if (event.type === "checkout.session.completed") {
@@ -66,6 +82,25 @@ export async function POST(req: Request) {
         },
       });
     }
+  }
+
+  if (event.type === "invoice.payment_failed") {
+    const invoice = event.data.object;
+    const subscriptionId = typeof invoice.subscription === "string" ? invoice.subscription : "";
+    if (subscriptionId) {
+      await prisma.user.updateMany({
+        where: { stripeSubscriptionId: subscriptionId },
+        data: { subscriptionStatus: "PAST_DUE" },
+      });
+    }
+  }
+
+  if (event.type === "customer.subscription.updated") {
+    const subscription = event.data.object;
+    await prisma.user.updateMany({
+      where: { stripeSubscriptionId: subscription.id },
+      data: { subscriptionStatus: mapStripeStatus(subscription.status) },
+    });
   }
 
   if (event.type === "customer.subscription.deleted") {

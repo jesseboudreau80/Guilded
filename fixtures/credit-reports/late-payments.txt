@@ -1,0 +1,60 @@
+==============================================================================
+*** SAMPLE TRI-BUREAU CREDIT REPORT — FICTITIOUS TEST DATA ***
+FICTITIOUS SAMPLE DATA — This report was generated for software testing and education. It does not describe a real person, account, or event.
+==============================================================================
+
+Report ID: SAMPLE-0002    Scenario: late-payments (scattered 30/60/90-day lates, no collections)
+
+CONSUMER INFORMATION
+  Name: Casey Fixture
+  DOB: 1992-11-03   SSN: 999-XX-0002 (999 prefix = never issued)
+  Address: 456 Placeholder Avenue, Apt 2B, Springfield, US 00002
+  Employer: Sample Logistics LLC
+
+CREDIT SCORES
+  Equifax: 641   Experian: 652   TransUnion: 636
+
+SUMMARY
+  Total accounts: 4   Open: 4   Derogatory: 2
+  Collections: 0   Public records: 0   Hard inquiries: 2
+  Total balance: $36070.00   Revolving utilization: 58.5%
+
+TRADELINES (4)
+History legend (most recent month first): C=paid as agreed, 1=30d late, 2=60d, 3=90d, 4=120d, 5=150d+/charge-off, -=not reported
+
+  Sample National Bank  (CREDIT CARD)  Acct XXXX-2001
+    Opened: 2019-01   Status: LATE 30   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $3120.00   Limit: $5000.00   Past due: $95.00
+    24-month history: 1CC1CCC2CCCCCCCCCCCCCCCC
+    Remarks: 30 days past due as of last reporting
+
+  Fixture Auto Finance  (AUTO LOAN)  Acct XXXX-2002
+    Opened: 2021-05   Status: LATE 90   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $9870.00   Limit: N/A   Past due: $1104.00
+    24-month history: 321CCCC1CCCCCCCCCCCCCCCC
+    Remarks: 90 days past due
+
+  Example Retail Card Services  (RETAIL CARD)  Acct XXXX-2003
+    Opened: 2020-11   Status: CURRENT   Reported by: EQUIFAX, TRANSUNION
+    Balance: $680.00   Limit: $1500.00   Past due: $0.00
+    24-month history: CCCC21CCCCCCCCCCCCCCCCCC
+    Remarks: Previously 60 days late, now current
+
+  Placeholder Student Lending  (STUDENT LOAN)  Acct XXXX-2004
+    Opened: 2014-09   Status: CURRENT   Reported by: EQUIFAX, EXPERIAN, TRANSUNION
+    Balance: $22400.00   Limit: N/A   Past due: $0.00
+    24-month history: CCCCCCCCCCCCCCCCCCCCCCCC
+
+COLLECTIONS (0)
+  None reported.
+
+PUBLIC RECORDS (0)
+  None reported.
+
+INQUIRIES (2)
+  2025-09  Sample National Bank  (HARD)
+  2025-04  Example Retail Card Services  (HARD)
+
+==============================================================================
+END OF SAMPLE REPORT — FICTITIOUS TEST DATA
+==============================================================================
