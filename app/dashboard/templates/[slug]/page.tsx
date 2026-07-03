@@ -16,8 +16,8 @@ export default async function TemplatePage({ params }: { params: { slug: string 
     return (
       <div>
         <h1 className="text-2xl font-semibold">{template.title}</h1>
-        <p className="mt-3 text-slate-300">This template unlocks with the {TIER_LABELS[template.requiredTier]} plan.</p>
-        <Link href="/dashboard/upgrade" className="mt-4 inline-block rounded bg-accent px-4 py-2">
+        <p className="mt-3 text-slate-600">This template unlocks with the {TIER_LABELS[template.requiredTier]} plan.</p>
+        <Link href="/dashboard/upgrade" className="mt-4 inline-block rounded bg-accent px-4 py-2 font-medium text-white">
           View plans
         </Link>
       </div>
@@ -26,22 +26,22 @@ export default async function TemplatePage({ params }: { params: { slug: string 
 
   return (
     <article className="max-w-3xl">
-      <Link href="/dashboard/templates" className="text-sm text-slate-400 hover:text-white">
+      <Link href="/dashboard/templates" className="text-sm text-slate-500 hover:text-slate-900">
         ← Templates Library
       </Link>
       <h1 className="mt-2 text-2xl font-semibold">{template.title}</h1>
-      <p className="mt-3 text-slate-300">{template.whenToUse}</p>
+      <p className="mt-3 text-slate-600">{template.whenToUse}</p>
 
       <div className="mt-5 flex items-center justify-between">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-400">The letter</h2>
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">The letter</h2>
         <CopyTemplateButton text={template.body} />
       </div>
-      <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded border border-slate-700 bg-card p-4 text-sm leading-relaxed text-slate-200">
+      <pre className="mt-2 overflow-x-auto whitespace-pre-wrap rounded border border-slate-200 bg-card p-4 text-sm leading-relaxed text-slate-700">
         {template.body}
       </pre>
 
-      <h2 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-400">Before you send it</h2>
-      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-300">
+      <h2 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-500">Before you send it</h2>
+      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600">
         {template.tips.map((tip, i) => (
           <li key={i}>{tip}</li>
         ))}

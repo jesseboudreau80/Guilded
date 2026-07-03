@@ -27,9 +27,9 @@ export default function AIPage() {
       <h1 className="text-2xl font-semibold">AI Assistant</h1>
       <form onSubmit={submit} className="mt-4 space-y-3">
         <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} className="h-40 w-full rounded bg-card p-3" />
-        <button className="rounded bg-accent px-4 py-2">Send</button>
+        <button className="rounded bg-accent px-4 py-2 font-medium text-white">Send</button>
       </form>
-      {blocked && <div className="mt-4 rounded border border-amber-500 bg-amber-500/10 p-3">Monthly AI cap reached. Please upgrade your plan.</div>}
+      {blocked && <div className="mt-4 rounded border border-amber-400 bg-amber-50 p-3">Monthly AI cap reached. Please upgrade your plan.</div>}
       {result && <pre className="mt-4 whitespace-pre-wrap rounded bg-card p-4 text-sm">{result}</pre>}
     </div>
   );

@@ -18,14 +18,14 @@ export function MarkCompleteButton({ lessonId, initialCompleted }: { lessonId: s
   };
 
   if (completed) {
-    return <p className="mt-6 rounded border border-emerald-600/50 bg-emerald-500/10 p-3 text-sm text-emerald-300">✅ Lesson completed</p>;
+    return <p className="mt-6 rounded border border-emerald-600/40 bg-emerald-50 p-3 text-sm text-emerald-800">✅ Lesson completed</p>;
   }
 
   return (
     <button
       onClick={markComplete}
       disabled={saving}
-      className="mt-6 rounded bg-accent px-4 py-2 disabled:opacity-50"
+      className="mt-6 rounded bg-accent px-4 py-2 font-medium text-white disabled:opacity-50"
     >
       {saving ? "Saving..." : "Mark lesson complete"}
     </button>

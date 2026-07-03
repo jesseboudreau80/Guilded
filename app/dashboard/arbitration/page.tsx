@@ -17,12 +17,12 @@ export default async function ArbitrationPage() {
     return (
       <div>
         <h1 className="text-2xl font-semibold">Arbitration</h1>
-        <p className="mt-2 text-slate-300">
+        <p className="mt-2 text-slate-600">
           The arbitration curriculum unlocks with the {TIER_LABELS[arbitrationModule?.requiredTier ?? "MASTER"]} plan: what
           consumer arbitration is, how to find and read the clause in your own agreements, forum rules and consumer
           cost caps, the full process timeline, and how to prepare a case file.
         </p>
-        <Link href="/dashboard/upgrade" className="mt-4 inline-block rounded bg-accent px-4 py-2">
+        <Link href="/dashboard/upgrade" className="mt-4 inline-block rounded bg-accent px-4 py-2 font-medium text-white">
           View plans
         </Link>
       </div>
@@ -32,14 +32,14 @@ export default async function ArbitrationPage() {
   return (
     <div>
       <h1 className="text-2xl font-semibold">Arbitration</h1>
-      <p className="mt-2 text-slate-300">
+      <p className="mt-2 text-slate-600">
         {arbitrationModule?.description ||
           "Advanced educational workflows and guides for arbitration preparation."}
       </p>
       {arbitrationModule && (
         <ol className="mt-5 space-y-2">
           {arbitrationModule.lessons.map((lesson, i) => (
-            <li key={lesson.id} className="rounded border border-slate-700 bg-card p-3">
+            <li key={lesson.id} className="rounded border border-slate-200 bg-card p-3">
               <Link href={`/dashboard/modules/${lesson.id}`} className="hover:underline">
                 {i + 1}. {lesson.title}
               </Link>

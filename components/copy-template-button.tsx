@@ -12,7 +12,7 @@ export function CopyTemplateButton({ text }: { text: string }) {
   };
 
   return (
-    <button onClick={copy} className="rounded bg-accent px-4 py-2 text-sm">
+    <button onClick={copy} className="rounded bg-accent px-4 py-2 font-medium text-white text-sm">
       {copied ? "Copied ✓" : "Copy template"}
     </button>
   );

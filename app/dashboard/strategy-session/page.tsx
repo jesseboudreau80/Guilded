@@ -28,15 +28,15 @@ export default function StrategySessionPage() {
   return (
     <div>
       <h1 className="text-2xl font-semibold">Strategy Session</h1>
-      <p className="mt-2 text-slate-300">Base rate: $200/hour.</p>
+      <p className="mt-2 text-slate-600">Base rate: $200/hour.</p>
       {eligibility && (
-        <div className="mt-4 rounded border border-slate-700 bg-card p-4">
+        <div className="mt-4 rounded border border-slate-200 bg-card p-4">
           <p>{eligibility.message}</p>
           <p>Next eligible discounted booking date: {eligibility.nextEligibleDate ? new Date(eligibility.nextEligibleDate).toLocaleDateString() : "Eligible now"}</p>
           <p className="mt-2 font-semibold">Current checkout price: ${(eligibility.price / 100).toFixed(2)}</p>
         </div>
       )}
-      <button onClick={book} className="mt-4 rounded bg-accent px-4 py-2">Proceed to Checkout</button>
+      <button onClick={book} className="mt-4 rounded bg-accent px-4 py-2 font-medium text-white">Proceed to Checkout</button>
     </div>
   );
 }

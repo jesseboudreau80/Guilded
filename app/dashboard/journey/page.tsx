@@ -22,14 +22,14 @@ export default async function JourneyPage() {
   return (
     <div>
       <h1 className="text-2xl font-semibold">My Journey</h1>
-      <div className="mt-4 rounded border border-slate-700 bg-card p-4">
+      <div className="mt-4 rounded border border-slate-200 bg-card p-4">
         <div className="flex items-center justify-between">
-          <p className="text-slate-300">
+          <p className="text-slate-600">
             {doneCount} of {unlockedLessons.length} available lessons complete
           </p>
           <p className="font-semibold">{pct}%</p>
         </div>
-        <div className="mt-2 h-2 overflow-hidden rounded bg-slate-800">
+        <div className="mt-2 h-2 overflow-hidden rounded bg-slate-200">
           <div className="h-full bg-accent" style={{ width: `${pct}%` }} />
         </div>
         {nextLesson && (
@@ -44,9 +44,9 @@ export default async function JourneyPage() {
           const locked = !canAccess(user.tier, module.requiredTier);
           const done = module.lessons.filter((l) => completed.has(l.id)).length;
           return (
-            <div key={module.id} className="flex items-center justify-between rounded border border-slate-800 bg-card p-3">
+            <div key={module.id} className="flex items-center justify-between rounded border border-slate-200 bg-card p-3">
               <div>
-                <p className={locked ? "text-slate-500" : "text-slate-200"}>{module.title}</p>
+                <p className={locked ? "text-slate-500" : "text-slate-700"}>{module.title}</p>
                 <p className="text-xs text-slate-500">
                   {locked ? `Unlocks with ${TIER_LABELS[module.requiredTier]}` : `${done}/${module.lessons.length} lessons complete`}
                 </p>

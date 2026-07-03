@@ -5,7 +5,7 @@ export default async function AccountPage() {
   return (
     <div>
       <h1 className="text-2xl font-semibold">Account</h1>
-      <div className="mt-4 rounded border border-slate-700 bg-card p-4">
+      <div className="mt-4 rounded border border-slate-200 bg-card p-4">
         <p>Tier: {user?.tier}</p>
         <p>Subscription status: {user?.subscriptionStatus}</p>
         <p>Successful billing cycles: {user?.successfulBillingCount}</p>

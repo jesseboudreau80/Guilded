@@ -18,10 +18,10 @@ export default function UpgradePage() {
       <h1 className="text-2xl font-semibold">Upgrade Plan</h1>
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         {tiers.map(([tier, label, price, blurb]) => (
-          <button key={tier} onClick={() => checkout(tier)} className="rounded border border-slate-700 bg-card p-4 text-left hover:border-slate-500">
+          <button key={tier} onClick={() => checkout(tier)} className="rounded border border-slate-200 bg-card p-4 text-left hover:border-emerald-600/50">
             <p className="font-semibold">{label}</p>
-            <p className="text-slate-300">{price}</p>
-            <p className="mt-2 text-xs text-slate-400">{blurb}</p>
+            <p className="text-slate-600">{price}</p>
+            <p className="mt-2 text-xs text-slate-500">{blurb}</p>
           </button>
         ))}
       </div>

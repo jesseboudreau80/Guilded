@@ -19,10 +19,10 @@ export default async function LessonPage({ params }: { params: { lessonId: strin
     return (
       <div>
         <h1 className="text-2xl font-semibold">{lesson.module.title}</h1>
-        <p className="mt-3 text-slate-300">
+        <p className="mt-3 text-slate-600">
           This lesson unlocks with the {TIER_LABELS[lesson.module.requiredTier]} plan.
         </p>
-        <Link href="/dashboard/upgrade" className="mt-4 inline-block rounded bg-accent px-4 py-2">
+        <Link href="/dashboard/upgrade" className="mt-4 inline-block rounded bg-accent px-4 py-2 font-medium text-white">
           View plans
         </Link>
       </div>
@@ -35,11 +35,11 @@ export default async function LessonPage({ params }: { params: { lessonId: strin
 
   return (
     <article className="max-w-3xl">
-      <Link href="/dashboard/modules" className="text-sm text-slate-400 hover:text-white">
+      <Link href="/dashboard/modules" className="text-sm text-slate-500 hover:text-slate-900">
         ← {lesson.module.title}
       </Link>
       <h1 className="mt-2 text-2xl font-semibold">{lesson.title}</h1>
-      <div className="mt-5 space-y-4 leading-relaxed text-slate-200">
+      <div className="mt-5 space-y-4 leading-relaxed text-slate-700">
         {lesson.content.split("\n\n").map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}
