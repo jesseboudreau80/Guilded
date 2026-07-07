@@ -13,7 +13,7 @@ Consumer arbitration is the highest-leverage legal tool available to an informed
 
 Here is the core mechanism: when a creditor wants to sue you, they can only do so through their own court system. But when **you** have a claim against a creditor — an FCRA violation, an FDCPA violation, a billing error — many of those same creditor contracts give you the right to resolve the dispute through binding arbitration at JAMS or the American Arbitration Association (AAA) rather than through court. The arbitration fees — which can run $1,500–$3,000 just to file — are typically paid by the business, not by you as a consumer.
 
-> **Guild Insight:** Arbitration is not a magic wand and it is not appropriate for every situation. It is a specific, legal tool for specific circumstances — primarily when you have documented FCRA or FDCPA violations and a creditor or collector who is acting in bad faith. Using arbitration without violations to support your claims is a waste of time and potentially creates legal liability.
+> **Plutus Insight:** Arbitration is not a magic wand and it is not appropriate for every situation. It is a specific, legal tool for specific circumstances — primarily when you have documented FCRA or FDCPA violations and a creditor or collector who is acting in bad faith. Using arbitration without violations to support your claims is a waste of time and potentially creates legal liability.
 
 ### When Arbitration Is the Right Tool
 
@@ -43,7 +43,7 @@ Locate the original credit agreement — available from the creditor if you requ
 
 **The opt-out window:** Some agreements give you 30–60 days to opt out of the arbitration clause when you open the account. If you've recently opened the account, check whether this window is still open — opting out preserves your right to sue in small claims court.
 
-> **Guild Insight:** The CFPB maintains a database of credit card agreements at consumerfinance.gov. Before spending hours searching for an old paper agreement, check there first. For older or closed accounts, submit a written request to the creditor under FCRA §609 — they're required to provide account information, including terms, upon request.
+> **Plutus Insight:** The CFPB maintains a database of credit card agreements at consumerfinance.gov. Before spending hours searching for an old paper agreement, check there first. For older or closed accounts, submit a written request to the creditor under FCRA §609 — they're required to provide account information, including terms, upon request.
 
 ---
 
@@ -71,7 +71,7 @@ Under AAA Consumer Rules, the consumer pays $200 to file most claims. JAMS fees 
 
 Follow the rules for serving the respondent. Usually certified mail to their legal or registered agent address.
 
-> **Guild Insight:** Many creditors, when served with a valid arbitration demand on a documented FCRA violation, will settle rather than pay $2,000+ in arbitration fees to fight a $1,000 statutory damages claim. This is the leverage point. Document your violations meticulously, follow the procedural requirements exactly, and be prepared to see the process through — but many cases resolve at the pre-filing or early arbitration stage.
+> **Plutus Insight:** Many creditors, when served with a valid arbitration demand on a documented FCRA violation, will settle rather than pay $2,000+ in arbitration fees to fight a $1,000 statutory damages claim. This is the leverage point. Document your violations meticulously, follow the procedural requirements exactly, and be prepared to see the process through — but many cases resolve at the pre-filing or early arbitration stage.
 
 ---
 
@@ -104,7 +104,7 @@ When a collection agency contacts you about a legitimate debt, the settlement pr
 
 **Never give bank account information to collectors.** Pay by money order or cashier's check after receiving written confirmation of the settlement terms.
 
-> **Guild Insight:** A pay-for-delete agreement is only as good as the paper trail behind it. Get the agreement on their letterhead, signed. Save the payment confirmation. After 30–60 days, pull your reports and verify the deletion. If they don't delete, the written agreement is your evidence for a CFPB complaint and potential FDCPA violation claim for breaking the agreement.
+> **Plutus Insight:** A pay-for-delete agreement is only as good as the paper trail behind it. Get the agreement on their letterhead, signed. Save the payment confirmation. After 30–60 days, pull your reports and verify the deletion. If they don't delete, the written agreement is your evidence for a CFPB complaint and potential FDCPA violation claim for breaking the agreement.
 
 ### Knowing When to Settle vs. When to Fight
 

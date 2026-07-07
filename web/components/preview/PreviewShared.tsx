@@ -284,7 +284,7 @@ export function LockedRecs() {
           Journeyman unlocks all 2 additional actions, advanced dispute workflows, 20 AI questions per month, and bureau-specific targeting.
         </p>
         <Link href="/" className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-gold/30 bg-gold/10 px-3.5 py-1.5 text-xs font-semibold text-gold hover:bg-gold/20 transition-colors">
-          Advance to Journeyman — $25/month <ArrowRight size={11} />
+          Advance to Journeyman — $19/month <ArrowRight size={11} />
         </Link>
       </div>
     </div>

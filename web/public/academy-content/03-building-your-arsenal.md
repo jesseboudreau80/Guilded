@@ -15,7 +15,7 @@ The formula is simple: total balances across all credit cards divided by total c
 
 **The 30% myth:** Many resources say "keep utilization under 30%." That's the floor, not the goal. People with scores above 780 typically carry utilization in the single digits — 1% to 9%. The FICO algorithm rewards low utilization, and the difference between 28% and 8% can be 20–40 points.
 
-> **Guild Insight:** Utilization is calculated at the moment your bureau receives updated balance information — usually when your statement closes. If you pay your card off mid-cycle but the statement closes showing a high balance, the bureau sees the high balance. Pay before your statement closes, not just before the due date, to control what gets reported.
+> **Plutus Insight:** Utilization is calculated at the moment your bureau receives updated balance information — usually when your statement closes. If you pay your card off mid-cycle but the statement closes showing a high balance, the bureau sees the high balance. Pay before your statement closes, not just before the due date, to control what gets reported.
 
 ### Strategies to Lower Utilization Fast
 
@@ -49,7 +49,7 @@ Good options to research: Discover it Secured, Capital One Platinum Secured, Ope
 
 Use the card for small, regular purchases — a streaming subscription, gas, or groceries. Keep the balance below 10% of the limit. Pay the statement balance in full every month before the due date. Set up autopay. Then don't touch it.
 
-> **Guild Insight:** The secured card is not emergency spending money. If you deposit $300 and spend $280 on groceries because you needed the cash, you've undermined the tool. Treat the card as a credit-building device: use it lightly, pay it fully, and let the positive payment history accumulate.
+> **Plutus Insight:** The secured card is not emergency spending money. If you deposit $300 and spend $280 on groceries because you needed the cash, you've undermined the tool. Treat the card as a credit-building device: use it lightly, pay it fully, and let the positive payment history accumulate.
 
 After 12 months of on-time payments and responsible use, request that the card be graduated to an unsecured card or product-changed to a card with better rewards. At that point, the secured deposit is returned and you have a positive, aged account on your file.
 
@@ -67,7 +67,7 @@ You don't need a complex system. The simplest approach that works: list every mo
 
 Set up autopay for at least the minimum payment on every account you currently have open. Not because you'll pay minimums — you'll pay more when you can — but because autopay prevents the scenario where you simply forget during a busy month and generate a new 30-day late mark on an otherwise recovering report. One new late payment can cancel months of dispute progress.
 
-> **Guild Insight:** The single most financially destructive thing for someone in credit repair is a new late payment on a current account. It's harder to dispute accurate information, and a fresh late payment resets the aging clock on your payment history damage. Protect your current accounts above all else.
+> **Plutus Insight:** The single most financially destructive thing for someone in credit repair is a new late payment on a current account. It's harder to dispute accurate information, and a fresh late payment resets the aging clock on your payment history damage. Protect your current accounts above all else.
 
 ---
 
@@ -85,4 +85,4 @@ During active credit repair, minimize new applications. Every new hard inquiry n
 
 The exception: if you're preparing for a mortgage application within 12–18 months, a credit builder loan from a credit union can add positive installment history without the risks of a credit card. Do the math on timing.
 
-> **Guild Insight:** Before applying for any new credit, ask yourself: will this application help or hurt my credit repair timeline? New credit is only useful when it adds something the rest of your file doesn't have — either payment history (if your file is thin) or an installment account (if you only have revolving credit). Don't apply for credit just because an offer arrived.
+> **Plutus Insight:** Before applying for any new credit, ask yourself: will this application help or hurt my credit repair timeline? New credit is only useful when it adds something the rest of your file doesn't have — either payment history (if your file is thin) or an installment account (if you only have revolving credit). Don't apply for credit just because an offer arrived.

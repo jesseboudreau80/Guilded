@@ -1,6 +1,6 @@
 {% from "_macros.html" import email_wrapper, cta_button, divider, section_label, stat_row %}
 
-{% call email_wrapper(subject_preview="Your Guild rank is building, " + user_name + ". Keep the momentum.") %}
+{% call email_wrapper(subject_preview="Your rank is building, " + user_name + ". Keep the momentum.") %}
 
   <!-- Rank badge area -->
   <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -12,7 +12,7 @@
       </td>
       <td style="vertical-align:middle;">
         <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:11px;font-weight:600;color:#bfa03a;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;">
-          Guild Rank
+          Rank
         </div>
         <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:800;color:#f1f5f9;letter-spacing:-0.3px;">
           {{ rank }}

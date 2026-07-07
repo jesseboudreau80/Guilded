@@ -28,7 +28,7 @@ export default function PreviewLayout({ children }: { children: React.ReactNode 
             <div className="flex items-center gap-3">
               <Link href="/preview" className="flex items-center gap-2 shrink-0">
                 <Shield size={16} className="text-gold" />
-                <span className="text-sm font-bold text-white">Guilded</span>
+                <span className="text-sm font-bold text-white">Plutus</span>
               </Link>
               <ChevronRight size={12} className="text-slate-700" />
               <span className="text-xs font-semibold text-gold uppercase tracking-widest">Preview</span>
@@ -77,7 +77,7 @@ export default function PreviewLayout({ children }: { children: React.ReactNode 
         <div className="mx-auto max-w-4xl flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <div className="flex items-center gap-2">
             <Shield size={13} className="text-gold" />
-            <span className="text-sm font-bold text-white">Guilded</span>
+            <span className="text-sm font-bold text-white">Plutus</span>
             <span className="text-xs text-slate-600 ml-2">© 2026 · Early Access</span>
           </div>
           <div className="flex flex-wrap gap-4 text-xs text-slate-600">

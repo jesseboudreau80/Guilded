@@ -95,6 +95,7 @@ def _check_env() -> None:
 
 ALLOWED_ORIGINS = [
     "https://guilded.jesseboudreau.com",
+    "https://plutus.jesseboudreau.com",  # Plutus rebrand domain (2026-07-03)
 ]
 
 
@@ -194,14 +195,14 @@ async def health():
 
 @app.get("/whoami")
 async def whoami():
-    return {"app": "Guilded API", "version": "2.0.0", "port": 8100, "environment": "production", "owner": "jesse"}
+    return {"app": "Plutus API", "version": "2.0.0", "port": 8100, "environment": "production", "owner": "jesse"}
 
 
 @app.get("/.well-known/aegis-meta")
 async def aegis_meta():
     import os, time
     return {
-        "pack_id": "guilded", "pack_name": "Guilded", "version": "2.0.0",
+        "pack_id": "guilded", "pack_name": "Plutus", "version": "2.0.0",
         "environment": "production", "frontend_port": 3000, "backend_port": 8100,
         "auth_required": True, "governance_enabled": False, "replay_supported": False,
         "observability_supported": False, "systemd_service": None,

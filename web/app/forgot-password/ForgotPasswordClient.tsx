@@ -38,7 +38,7 @@ export default function ForgotPasswordPage() {
         {/* Brand */}
         <div className="flex items-center gap-2.5 mb-8 justify-center">
           <Shield size={18} className="text-gold" />
-          <Link href="/" className="text-base font-bold text-white">Guilded</Link>
+          <Link href="/" className="text-base font-bold text-white">Plutus</Link>
         </div>
 
         <div className="rounded-2xl border border-slate-700 bg-slate-900 p-8">
@@ -115,7 +115,7 @@ export default function ForgotPasswordPage() {
         </div>
 
         <p className="mt-6 text-center text-xs text-slate-700">
-          Guilded · Educational platform · Not legal advice
+          Plutus · Educational platform · Not legal advice
         </p>
       </div>
     </div>

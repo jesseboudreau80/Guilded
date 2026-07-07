@@ -16,7 +16,7 @@ type Props = {
 /**
  * AcademyReferenceCard
  *
- * An expandable card that surfaces the relevant Guild Academy module
+ * An expandable card that surfaces the relevant Plutus Academy module
  * for a detected audit signal. Designed for the audit results page
  * and dashboard intelligence callouts.
  *

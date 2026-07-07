@@ -6,7 +6,7 @@ import {
   Lock, Star, TrendingUp, Users, AlertTriangle,
 } from "lucide-react";
 
-export const metadata = { title: "Social Assets Preview — Guilded" };
+export const metadata = { title: "Social Assets Preview — Plutus" };
 
 // All cards are 1:1 square or 4:5 portrait — optimized for Facebook/Instagram
 
@@ -28,7 +28,7 @@ function XPMilestoneCard() {
         </div>
         <div className="flex items-center gap-2 rounded-full border border-gold/20 bg-gold/10 px-4 py-2">
           <Shield size={12} className="text-gold" />
-          <span className="text-xs font-semibold text-gold">Guilded · Credit Recovery</span>
+          <span className="text-xs font-semibold text-gold">Plutus · Credit Recovery</span>
         </div>
       </div>
     </div>
@@ -92,11 +92,11 @@ function ModuleCompletionCard() {
         </div>
         <div className="flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1.5">
           <BookOpen size={11} className="text-emerald-400" />
-          <span className="text-xs font-medium text-emerald-400">Guild Academy · Foundation</span>
+          <span className="text-xs font-medium text-emerald-400">Plutus Academy · Foundation</span>
         </div>
         <div className="flex items-center gap-1.5 rounded-full border border-slate-700 px-3 py-1">
           <Shield size={11} className="text-gold" />
-          <span className="text-[10px] font-semibold text-slate-500">Guilded</span>
+          <span className="text-[10px] font-semibold text-slate-500">Plutus</span>
         </div>
       </div>
     </div>
@@ -163,7 +163,7 @@ function LawEducationCard({ statute, title, body }: { statute: string; title: st
       <div className="border-t border-slate-800/60 px-5 py-3 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
           <Shield size={11} className="text-gold" />
-          <span className="text-[10px] font-semibold text-slate-500">Guilded</span>
+          <span className="text-[10px] font-semibold text-slate-500">Plutus</span>
         </div>
         <span className="text-[10px] text-slate-600">Educational · Not legal advice</span>
       </div>
@@ -186,7 +186,7 @@ function FounderCard() {
           </div>
         </div>
         <p className="text-sm text-slate-300 leading-relaxed">
-          &quot;I built Guilded for the community I&apos;ve been running for years — 25,000 people navigating
+          &quot;I built Plutus for the community I&apos;ve been running for years — 25,000 people navigating
           the credit system on their own terms. You deserve real tools, not templates.&quot;
         </p>
         <div className="mt-4 flex items-center gap-2">
@@ -197,7 +197,7 @@ function FounderCard() {
       <div className="border-t border-slate-800 px-6 py-3 flex items-center justify-between bg-slate-900/60">
         <div className="flex items-center gap-1.5">
           <Shield size={11} className="text-gold" />
-          <span className="text-xs font-bold text-white">Guilded</span>
+          <span className="text-xs font-bold text-white">Plutus</span>
         </div>
         <span className="text-[10px] text-slate-600">Credit Recovery · Educational</span>
       </div>
@@ -239,7 +239,7 @@ function DisputeStrategyCard() {
       </div>
       <div className="border-t border-slate-800 px-5 py-2.5 flex items-center gap-1.5">
         <Shield size={10} className="text-gold" />
-        <span className="text-[10px] font-semibold text-slate-500">Guilded · Strategic Dispute Generator</span>
+        <span className="text-[10px] font-semibold text-slate-500">Plutus · Strategic Dispute Generator</span>
       </div>
     </div>
   );
@@ -252,7 +252,7 @@ function TransparencyCard() {
       <div className="px-5 py-5">
         <div className="flex items-center gap-2 mb-4">
           <Star size={13} className="text-gold" />
-          <p className="text-xs font-semibold uppercase tracking-widest text-gold">What Guilded Is Not</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-gold">What Plutus Is Not</p>
         </div>
         <div className="space-y-2.5">
           {[
@@ -273,7 +273,7 @@ function TransparencyCard() {
       </div>
       <div className="border-t border-slate-800 px-5 py-3 flex items-center gap-1.5">
         <Shield size={10} className="text-gold" />
-        <span className="text-[10px] font-semibold text-slate-500">Guilded · Transparent by design</span>
+        <span className="text-[10px] font-semibold text-slate-500">Plutus · Transparent by design</span>
       </div>
     </div>
   );

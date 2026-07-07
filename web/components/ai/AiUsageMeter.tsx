@@ -35,7 +35,7 @@ export function AiUsageMeter({ used, limit, period = "monthly" }: Props) {
         <p className="text-xs text-slate-400">AI Usage</p>
         <p className="text-xs text-slate-500">
           {isWeekly
-            ? `${used} of ${limit} · per week`
+            ? `${used} of ${limit} · per month`
             : `${used} / ${limit} messages`}
         </p>
       </div>
@@ -47,7 +47,7 @@ export function AiUsageMeter({ used, limit, period = "monthly" }: Props) {
       </div>
       {isWeekly && !atLimit && (
         <p className="mt-1.5 text-xs text-slate-600">
-          {limit} structured AI uses per week.
+          {limit} structured AI uses per month.
         </p>
       )}
       {atLimit && (

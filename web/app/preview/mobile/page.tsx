@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Shield, CheckCircle, Circle, Target, Zap, Lock, BookOpen, AlertTriangle } from "lucide-react";
 import { DEMO_JOURNEY, DEMO_RECS, DEMO_STATS } from "@/lib/demo-data";
 
-export const metadata = { title: "Mobile Preview — Guilded" };
+export const metadata = { title: "Mobile Preview — Plutus" };
 
 // Phone frame wrapper for each card
 function PhoneFrame({ label, children }: { label: string; children: React.ReactNode }) {
@@ -40,7 +40,7 @@ function MobileDashboard() {
       <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800">
         <div className="flex items-center gap-1.5">
           <Shield size={14} className="text-gold" />
-          <span className="text-sm font-bold text-white">Guilded</span>
+          <span className="text-sm font-bold text-white">Plutus</span>
         </div>
         <span className="text-[10px] font-semibold text-gold uppercase tracking-wide border border-gold/30 rounded-full px-2 py-0.5">Preview</span>
       </div>
@@ -187,7 +187,7 @@ function MobileAcademy() {
     <div className="bg-slate-950 min-h-[560px] flex flex-col">
       <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-800">
         <BookOpen size={14} className="text-gold" />
-        <span className="text-sm font-semibold text-slate-200">Guild Academy</span>
+        <span className="text-sm font-semibold text-slate-200">Plutus Academy</span>
       </div>
 
       <div className="flex-1 px-3 py-3 space-y-2 overflow-y-auto">
@@ -248,7 +248,7 @@ export default function PreviewMobile() {
         <div className="flex flex-wrap justify-center gap-10">
           <PhoneFrame label="Dashboard"><MobileDashboard /></PhoneFrame>
           <PhoneFrame label="Audit Results"><MobileResults /></PhoneFrame>
-          <PhoneFrame label="Guild Academy"><MobileAcademy /></PhoneFrame>
+          <PhoneFrame label="Plutus Academy"><MobileAcademy /></PhoneFrame>
         </div>
 
         <div className="mt-12 text-center">

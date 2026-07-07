@@ -3,10 +3,10 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { Shield, Mail, BookOpen, MessageSquare, ExternalLink } from "lucide-react";
 
-export const metadata = { title: "Support — Guilded" };
+export const metadata = { title: "Support — Plutus" };
 
 const QUICK_LINKS = [
-  { icon: BookOpen,      label: "AI Disclaimer",  href: "/ai-disclaimer",  desc: "Understand what Guild Counsel is and is not" },
+  { icon: BookOpen,      label: "AI Disclaimer",  href: "/ai-disclaimer",  desc: "Understand what Plutus Counsel is and is not" },
   { icon: Shield,        label: "Privacy Policy",  href: "/privacy",        desc: "How we handle your data" },
   { icon: MessageSquare, label: "Terms of Service", href: "/terms",          desc: "Platform terms and conditions" },
 ];
@@ -18,7 +18,7 @@ export default function SupportPage() {
         {/* Nav */}
         <div className="flex items-center gap-2.5 mb-10">
           <Shield size={17} className="text-gold" />
-          <Link href="/" className="text-sm font-bold text-white">Guilded</Link>
+          <Link href="/" className="text-sm font-bold text-white">Plutus</Link>
           <span className="text-slate-700 mx-1">·</span>
           <span className="text-sm text-slate-500">Support</span>
         </div>
@@ -54,9 +54,9 @@ export default function SupportPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">Common Questions</p>
           <div className="space-y-2">
             {[
-              { q: "Is Guilded a credit repair company?", a: "No. Guilded is an educational platform. We teach you to use your own legal rights under FCRA and FDCPA — we don't dispute anything on your behalf." },
+              { q: "Is Plutus a credit repair company?", a: "No. Plutus is an educational platform. We teach you to use your own legal rights under FCRA and FDCPA — we don't dispute anything on your behalf." },
               { q: "Are my documents secure?", a: "Credit report PDFs are processed to extract text, then deleted. We do not store raw PDF files. Extracted data is encrypted and accessible only to you." },
-              { q: "Is the AI advice legally valid?", a: "Guild Counsel provides educational guidance only — not legal advice. Always verify AI-generated content before submitting to bureaus or creditors." },
+              { q: "Is the AI advice legally valid?", a: "Plutus Counsel provides educational guidance only — not legal advice. Always verify AI-generated content before submitting to bureaus or creditors." },
               { q: "Can I cancel my subscription?", a: "Yes, at any time from your Account page. You keep access through the end of your billing period." },
             ].map(({ q, a }) => (
               <details key={q} className="rounded-xl border border-slate-800 bg-slate-900/40">

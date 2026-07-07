@@ -15,7 +15,7 @@ You cannot fix what you can't see. Before you dispute a single item, close a sin
 
 Pull your reports from **AnnualCreditReport.com** — this is the federally authorized source under the FCRA. Download each as a PDF and save them with the date in the filename: `equifax-2025-01-15.pdf`. Keep every version you pull — they become your evidence log over time.
 
-> **Guild Insight:** Third-party monitoring services like Credit Karma are useful for tracking changes, but they don't always show complete tradeline detail. For actual dispute work, use the full reports from AnnualCreditReport.com. The Date of First Delinquency — which determines the 7-year reporting clock — may only appear on the full bureau report.
+> **Plutus Insight:** Third-party monitoring services like Credit Karma are useful for tracking changes, but they don't always show complete tradeline detail. For actual dispute work, use the full reports from AnnualCreditReport.com. The Date of First Delinquency — which determines the 7-year reporting clock — may only appear on the full bureau report.
 
 ### What to Do When You Don't Recognize an Account
 
@@ -35,7 +35,7 @@ Here's why it matters: when you dispute a negative account, the bureau forwards 
 
 Write a letter to each bureau requesting removal of name variations you've never used, addresses that are more than two years old, and employer information you no longer need. Keep this letter simple — you're requesting cleanup of inaccurate or outdated records, not disputing fraud. The bureau has 30 days to respond.
 
-> **Guild Insight:** Don't remove your current address or your most common name spelling — you need those to match when you file future disputes. The goal is to trim unnecessary data points, not create a mismatch with your own identity.
+> **Plutus Insight:** Don't remove your current address or your most common name spelling — you need those to match when you file future disputes. The goal is to trim unnecessary data points, not create a mismatch with your own identity.
 
 ---
 
@@ -47,7 +47,7 @@ Create a spreadsheet. For every negative account, record the creditor name, the 
 
 Now sort by priority. **Highest priority:** accounts with verifiable inaccuracies (wrong balance, wrong status, wrong date, account that isn't yours), and accounts past the 7-year reporting window — these must be removed and you have the strongest legal standing. **Second priority:** collection accounts that may be unverifiable, especially older debts sold multiple times. **Third priority:** goodwill requests for isolated late payments on accounts you still actively use. **Lower priority:** accurate, recent, verifiable negative information — this is harder to remove and takes the most time.
 
-> **Guild Insight:** Don't blast 20 disputes at once hoping some stick. That approach overwhelms your documentation system and can actually flag you as a credit repair mill, causing bureaus to slow their responses. Work methodically — your strongest cases first, then build from there.
+> **Plutus Insight:** Don't blast 20 disputes at once hoping some stick. That approach overwhelms your documentation system and can actually flag you as a credit repair mill, causing bureaus to slow their responses. Work methodically — your strongest cases first, then build from there.
 
 ---
 
@@ -61,4 +61,4 @@ If verified, you can re-dispute with additional evidence, file a CFPB complaint,
 
 Most meaningful credit repair happens over 3–12 months of consistent dispute cycles. Set realistic expectations. You're running a campaign, not a single skirmish.
 
-> **Guild Insight:** Send disputes via certified mail with return receipt. This creates a legal record of delivery and starts the clock with documentation. If a bureau fails to respond within 30 days, they must remove the disputed item. That paper trail matters if you ever need to enforce your rights through the CFPB or in court.
+> **Plutus Insight:** Send disputes via certified mail with return receipt. This creates a legal record of delivery and starts the clock with documentation. If a bureau fails to respond within 30 days, they must remove the disputed item. That paper trail matters if you ever need to enforce your rights through the CFPB or in court.

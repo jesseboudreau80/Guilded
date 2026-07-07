@@ -113,7 +113,7 @@ export default async function ArbitrationPage() {
       <p className="text-xs text-slate-700 leading-relaxed">
         Arbitration content is educational only and does not constitute legal advice.
         Complex legal situations may require consultation with a consumer protection attorney.
-        Guild Counsel AI can provide educational context but is not a substitute for licensed legal representation.
+        Plutus Counsel AI can provide educational context but is not a substitute for licensed legal representation.
       </p>
     </section>
   );

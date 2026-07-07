@@ -7,7 +7,7 @@ import {
 } from "@/components/preview/PreviewShared";
 import { DEMO_RECS, DEMO_STATS } from "@/lib/demo-data";
 
-export const metadata = { title: "Audit Results Preview — Guilded" };
+export const metadata = { title: "Audit Results Preview — Plutus" };
 
 export default function PreviewResults() {
   return (
@@ -19,7 +19,7 @@ export default function PreviewResults() {
           <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-2">Credit Audit</p>
           <h1 className="text-3xl font-bold text-slate-100">AI-generated recovery intelligence</h1>
           <p className="mt-3 text-sm text-slate-500 max-w-lg mx-auto">
-            Upload your credit report PDF. Guilded identifies every dispute opportunity, FCRA violation,
+            Upload your credit report PDF. Plutus identifies every dispute opportunity, FCRA violation,
             and strategic action — ranked by impact and grounded in consumer law.
           </p>
           <div className="mt-5 max-w-xl mx-auto">

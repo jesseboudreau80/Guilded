@@ -98,7 +98,7 @@ function RenderBlock({ block }: { block: Block }) {
           <div className="flex items-center gap-1.5 mb-2">
             <Shield size={11} className="text-gold" />
             <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-              Guild Insight
+              Plutus Insight
             </span>
           </div>
           <p
@@ -126,7 +126,7 @@ function LockedState({ tierRequired }: { tierRequired: string }) {
       </div>
       <p className="text-base font-semibold text-slate-200">{label} Rank Required</p>
       <p className="mt-2 text-sm text-slate-500 max-w-sm">
-        This module requires a higher Guild rank. Advance to unlock the full training.
+        This module requires a higher rank. Advance to unlock the full training.
       </p>
       <Link
         href="/dashboard/upgrade"
@@ -306,7 +306,7 @@ export default function AcademyModulePage() {
           href="/dashboard/academy"
           className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors"
         >
-          <ArrowLeft size={12} /> Guild Academy
+          <ArrowLeft size={12} /> Plutus Academy
         </Link>
         <div className="mt-8 space-y-4 animate-pulse">
           <div className="h-4 w-40 rounded bg-slate-800" />
@@ -330,7 +330,7 @@ export default function AcademyModulePage() {
           href="/dashboard/academy"
           className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors"
         >
-          <ArrowLeft size={12} /> Guild Academy
+          <ArrowLeft size={12} /> Plutus Academy
         </Link>
         <ContentUnavailable slug={slug} />
       </section>
@@ -569,7 +569,7 @@ export default function AcademyModulePage() {
               </div>
               <p className="text-xs text-slate-700 leading-relaxed">
                 All content is for educational purposes only and does not constitute legal or financial advice.
-                Guild Counsel AI can make mistakes — review all AI-generated output before acting.
+                Plutus Counsel AI can make mistakes — review all AI-generated output before acting.
               </p>
             </div>
           </div>

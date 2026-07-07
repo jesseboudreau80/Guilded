@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file="../.env", extra="ignore")
 
     # App
-    app_name: str = "Guilded API"
+    app_name: str = "Plutus API"
     debug: bool = False
 
     # Database — must be postgresql+asyncpg:// format
@@ -56,7 +56,7 @@ class Settings(BaseSettings):
 
     # Email — Resend
     resend_api_key: str = ""
-    email_from:     str = "Guilded <noreply@guilded.finance>"
+    email_from:     str = "Plutus <noreply@guilded.finance>"
 
     # Aegis Governance Layer
     aegis_url:              str   = ""

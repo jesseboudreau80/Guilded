@@ -16,7 +16,7 @@ const TIER_DETAILS: Record<string, {
     color:   "text-slate-300",
     border:  "border-slate-700",
     bg:      "bg-slate-800/40",
-    features: ["1 credit audit", "5 AI questions/week", "4 training modules", "Basic dispute templates"],
+    features: ["1 credit audit", "5 AI questions/month", "4 training modules", "Basic dispute templates"],
   },
   JOURNEYMAN: {
     label:   "Journeyman Plan",
@@ -49,8 +49,8 @@ const NEXT_TIER: Record<string, string | null> = {
 };
 
 const NEXT_TIER_PRICE: Record<string, string> = {
-  JOURNEYMAN: "$25/month",
-  MASTER:     "$49/month",
+  JOURNEYMAN: "$19/month",
+  MASTER:     "$47/month",
   HERO:       "Contact us",
 };
 
@@ -86,7 +86,7 @@ export default async function AccountPage() {
 
       <div>
         <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Account</h1>
-        <p className="mt-1 text-sm text-slate-400">Manage your Guilded account and subscription.</p>
+        <p className="mt-1 text-sm text-slate-400">Manage your Plutus account and subscription.</p>
       </div>
 
       {/* ── Desktop 2-column: membership left, profile right ──────────── */}
@@ -248,7 +248,7 @@ export default async function AccountPage() {
         {/* Legal */}
         <div className="rounded-xl border border-slate-800/40 bg-slate-900/20 px-5 py-4">
           <p className="text-xs text-slate-500 leading-relaxed mb-3">
-            Guilded provides educational tools and guidance for financial recovery.
+            Plutus provides educational tools and guidance for financial recovery.
             All content is for informational purposes only — not legal or financial advice.
           </p>
           <div className="flex flex-wrap gap-3 text-xs">

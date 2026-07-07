@@ -5,8 +5,22 @@ import { getToken } from "next-auth/jwt";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // ── Auth: protect /dashboard/* ────────────────────────────────────────────
-  if (pathname.startsWith("/dashboard")) {
+  // ── Canonical host: 301 guilded.jesseboudreau.com → plutus.jesseboudreau.com ─
+  // Plutus rebrand (2026-07-03). Old links in Jesse's FB group keep working;
+  // guilded-api.jesseboudreau.com is unaffected (this middleware is web-only).
+  const host = request.headers.get("host");
+  if (host === "guilded.jesseboudreau.com") {
+    const url = request.nextUrl.clone();
+    url.protocol = "https:";
+    url.host = "plutus.jesseboudreau.com";
+    url.port = "";
+    return NextResponse.redirect(url, 301);
+  }
+
+  // ── Auth: protect /dashboard/* and /preview/* ────────────────────────────
+  // /preview/* renders hardcoded demo data (including fake testimonials) —
+  // it must never be publicly reachable (CROA optics, PLUTUS_AUDIT.md #6).
+  if (pathname.startsWith("/dashboard") || pathname.startsWith("/preview")) {
     const token = await getToken({ req: request });
     if (!token) {
       return NextResponse.redirect(new URL("/", request.url));

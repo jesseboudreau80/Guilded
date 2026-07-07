@@ -32,7 +32,7 @@ export default function OpsGuidePage() {
           <h1 className="text-2xl font-semibold">Founder Operations Guide</h1>
         </div>
         <p className="mt-1 text-sm text-slate-400">
-          Daily and weekly operational checklists for running the Guilded beta.
+          Daily and weekly operational checklists for running the Plutus beta.
         </p>
       </div>
 
@@ -94,7 +94,7 @@ export default function OpsGuidePage() {
       <OpsSection title="High-Risk Retention Points" items={[
         "Drop-off before first audit: mitigated by onboarding + daily mission, monitor signup→audit rate",
         "Drop-off after audit snapshot: ensure snapshot → training path is clear and emotionally reassuring",
-        "AI limit friction (APPRENTICE 5 messages/week): ensure upgrade prompt is calm and capability-framed",
+        "AI limit friction (APPRENTICE 5 messages/month): ensure upgrade prompt is calm and capability-framed",
         "Module 1→2 drop-off: most users stop after first module — monitor academy completion funnel",
         "Long audit processing time (>60s): ProcessingTimeline manages this, but check for timeouts",
         "Confusion about educational-only nature: ensure AI disclaimer is visible and tone is clear",

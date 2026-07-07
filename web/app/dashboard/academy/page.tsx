@@ -294,7 +294,7 @@ export default function AcademyPage() {
       <section>
         <div className="flex items-center gap-2">
           <Shield size={20} className="text-gold" />
-          <h1 className="text-2xl font-semibold">Guild Academy</h1>
+          <h1 className="text-2xl font-semibold">Plutus Academy</h1>
         </div>
         <p className="mt-6 text-sm text-slate-400">Loading your training campaign…</p>
       </section>
@@ -308,7 +308,7 @@ export default function AcademyPage() {
         <div>
           <div className="flex items-center gap-2.5">
             <Shield size={20} className="text-gold shrink-0" />
-            <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Guild Academy</h1>
+            <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Plutus Academy</h1>
           </div>
           <p className="mt-1.5 text-sm text-slate-400 max-w-lg">
             {completedCount > 0
@@ -377,7 +377,7 @@ export default function AcademyPage() {
             Personalize your training path
           </p>
           <p className="mt-1 text-xs text-slate-500 max-w-sm mx-auto">
-            Run a credit audit and the Guild AI will identify exactly which modules matter most for your situation — ordered for maximum effectiveness.
+            Run a credit audit and the Plutus AI will identify exactly which modules matter most for your situation — ordered for maximum effectiveness.
           </p>
           <Link
             href="/dashboard/audit/start"

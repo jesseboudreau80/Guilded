@@ -42,7 +42,7 @@ class GuildRank(str, enum.Enum):
     JOURNEYMAN        = "Journeyman"
     STRATEGIST        = "Strategist"
     MASTER_NEGOTIATOR = "Master Negotiator"
-    GUILD_COMMANDER   = "Guild Commander"
+    GUILD_COMMANDER   = "Commander"
 
 
 # (threshold_xp, rank) — highest threshold wins
@@ -94,11 +94,11 @@ BADGE_DEFINITIONS: dict[str, str] = {
     "first_module":      "First Blood — Completed your first training module",
     "audit_warrior":     "Audit Warrior — Completed your first credit audit",
     "dispute_drafter":   "Dispute Drafter — Generated your first dispute letter",
-    "full_campaign":     "Full Campaign — Completed all 7 Guild Academy modules",
+    "full_campaign":     "Full Campaign — Completed all 7 Plutus Academy modules",
     "rank_journeyman":   "Promoted — Reached Journeyman rank",
     "rank_strategist":   "Promoted — Reached Strategist rank",
     "rank_master":       "Promoted — Reached Master Negotiator rank",
-    "rank_commander":    "Guild Commander — Reached the highest rank",
+    "rank_commander":    "Commander — Reached the highest rank",
 }
 
 

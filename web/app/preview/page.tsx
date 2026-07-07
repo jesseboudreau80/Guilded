@@ -322,7 +322,7 @@ export default function PreviewPage() {
           <Star size={10} /> Product Preview · Sample Data
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl md:text-5xl max-w-2xl mx-auto">
-          See what Guilded<br />
+          See what Plutus<br />
           <span className="text-gold">looks like inside</span>
         </h1>
         <p className="mt-4 text-base leading-relaxed text-slate-400 max-w-xl mx-auto">
@@ -413,7 +413,7 @@ export default function PreviewPage() {
           <SectionHeading
             label="Credit Audit"
             title="AI-generated recovery intelligence"
-            sub="Upload your credit report PDF. Guilded identifies every dispute opportunity, FCRA violation, and strategic action — ranked by impact."
+            sub="Upload your credit report PDF. Plutus identifies every dispute opportunity, FCRA violation, and strategic action — ranked by impact."
           />
           <DemoBadge />
 
@@ -507,7 +507,7 @@ export default function PreviewPage() {
                   Journeyman unlocks all 2 additional actions, advanced dispute workflows, 20 AI questions per month, and bureau-specific targeting.
                 </p>
                 <Link href="/" className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-gold/30 bg-gold/10 px-3.5 py-1.5 text-xs font-semibold text-gold hover:bg-gold/20 transition-colors">
-                  Advance to Journeyman — $25/month <ArrowRight size={11} />
+                  Advance to Journeyman — $19/month <ArrowRight size={11} />
                 </Link>
               </div>
             </div>
@@ -539,7 +539,7 @@ export default function PreviewPage() {
       <section className="px-6 py-16 border-b border-slate-800/40">
         <div className="mx-auto max-w-3xl">
           <SectionHeading
-            label="Guild Academy"
+            label="Plutus Academy"
             title="Seven modules. A complete recovery system."
             sub="Structured training on FCRA rights, dispute tactics, debt collections combat, utilization strategy, and long-term credit restoration."
           />
@@ -569,12 +569,12 @@ export default function PreviewPage() {
             Built for the community — not to exploit it
           </h2>
           <p className="mt-5 text-base leading-relaxed text-slate-400">
-            Guilded was built by someone who runs DIY Credit Repair 101 — a 25,000-member Facebook community
+            Plutus was built by someone who runs DIY Credit Repair 101 — a 25,000-member Facebook community
             of people navigating the credit system on their own terms. I&apos;ve watched members get misled,
             overcharged, and handed templates that don&apos;t reflect their actual situation.
           </p>
           <p className="mt-4 text-base leading-relaxed text-slate-400">
-            Guilded is the tool I wish had existed from the start — structured, intelligent,
+            Plutus is the tool I wish had existed from the start — structured, intelligent,
             transparent about what it can and can&apos;t do, and built on consumer protection law, not hype.
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
@@ -607,7 +607,7 @@ export default function PreviewPage() {
                 icon:  BookOpen,
                 color: "text-gold",
                 bg:    "border-gold/20 bg-gold/5",
-                title: "Guild Academy",
+                title: "Plutus Academy",
                 desc:  "Seven structured modules covering FCRA rights, collections combat, dispute tactics, utilization strategy, and legal escalation.",
                 tag:   "Apprentice+",
               },
@@ -662,7 +662,7 @@ export default function PreviewPage() {
           <div className="mt-10 rounded-xl border border-slate-800 bg-slate-900/40 px-5 py-4">
             <p className="text-xs font-semibold text-slate-400 mb-1">Educational Platform Notice</p>
             <p className="text-xs leading-relaxed text-slate-600">
-              Guilded is an educational platform — not a credit repair company, law firm, or financial institution.
+              Plutus is an educational platform — not a credit repair company, law firm, or financial institution.
               All guidance is for informational purposes only. We teach you to use your own legal rights.
               Results vary based on individual credit profiles and bureau reporting accuracy.
             </p>

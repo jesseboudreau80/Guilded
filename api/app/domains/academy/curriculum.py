@@ -161,7 +161,7 @@ CURRICULUM: list[dict] = [
     {
         "slug":              "enrichment-and-support",
         "title":             "Enrichment & Support",
-        "description":       "Advanced tools, interactive resources, and community support to sustain and enhance your credit journey — including ongoing education and exclusive Guild resources.",
+        "description":       "Advanced tools, interactive resources, and community support to sustain and enhance your credit journey — including ongoing education and exclusive member resources.",
         "curriculum_topic":  "long_term_health",
         "tier_required":     "JOURNEYMAN",
         "order_index":       6,
@@ -171,7 +171,7 @@ CURRICULUM: list[dict] = [
             {"title": "Advanced Dispute Templates",          "content_key": "advanced-templates",      "is_preview": True},
             {"title": "Credit Monitoring Systems",           "content_key": "credit-monitoring",       "is_preview": False},
             {"title": "Identity Protection Protocol",        "content_key": "identity-protection",     "is_preview": False},
-            {"title": "Guild Resources and Community",       "content_key": "guild-resources",         "is_preview": False},
+            {"title": "Member Resources and Community",      "content_key": "guild-resources",         "is_preview": False},
         ],
         "triggers": [
             {
@@ -189,7 +189,7 @@ CURRICULUM: list[dict] = [
     {
         "slug":              "mastering-debt-arbitration",
         "title":             "Mastering Debt Arbitration",
-        "description":       "Advanced Guild strategy for members ready to use legal leverage against creditors — from pre-dispute preparation to JAMS/AAA filing and settlement negotiation.",
+        "description":       "Advanced strategy for members ready to use legal leverage against creditors — from pre-dispute preparation to JAMS/AAA filing and settlement negotiation.",
         "curriculum_topic":  "arbitration",
         "tier_required":     "MASTER",
         "order_index":       7,

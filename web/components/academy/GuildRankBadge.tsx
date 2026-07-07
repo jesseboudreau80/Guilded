@@ -18,7 +18,7 @@ const RANK_BAR_BG: Record<string, string> = {
   "Journeyman":        "bg-blue-400",
   "Strategist":        "bg-indigo-400",
   "Master Negotiator": "bg-gold",
-  "Guild Commander":   "bg-gold",
+  "Commander":         "bg-gold",
 };
 
 export function GuildRankBadge({ rank, xp, nextXP, progressPct, variant = "badge" }: Props) {

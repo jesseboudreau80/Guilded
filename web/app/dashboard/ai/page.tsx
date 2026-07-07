@@ -128,7 +128,7 @@ export default function AiPage() {
         <div className="flex items-center gap-2.5">
           <Shield size={18} className="text-gold shrink-0" />
           <div>
-            <h1 className="text-lg font-semibold tracking-tight">Guild Counsel</h1>
+            <h1 className="text-lg font-semibold tracking-tight">Plutus Counsel</h1>
             <p className="text-xs text-slate-500">Structured credit strategy guidance</p>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function AiPage() {
             <div className="h-12 w-12 rounded-2xl border border-gold/30 bg-gold/10 flex items-center justify-center mb-4">
               <Shield size={22} className="text-gold" />
             </div>
-            <h2 className="text-base font-semibold text-slate-200">Guild Counsel is ready</h2>
+            <h2 className="text-base font-semibold text-slate-200">Plutus Counsel is ready</h2>
             <p className="mt-2 text-sm text-slate-500 max-w-sm leading-relaxed">
               Ask any credit strategy question. Receive structured, tactically-sound guidance aligned with federal consumer protection law.
             </p>
@@ -260,7 +260,7 @@ export default function AiPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={atLimit ? "Upgrade to continue…" : "Ask Guild Counsel a question…"}
+            placeholder={atLimit ? "Upgrade to continue…" : "Ask Plutus Counsel a question…"}
             disabled={atLimit || loading}
             rows={1}
             className="flex-1 resize-none bg-transparent text-sm text-slate-200 placeholder-slate-600 outline-none disabled:opacity-40"
@@ -276,7 +276,7 @@ export default function AiPage() {
           </button>
         </div>
         <p className="mt-2 text-center text-xs text-slate-700">
-          Guild Counsel · Educational guidance only · Not legal or financial advice
+          Plutus Counsel · Educational guidance only · Not legal or financial advice
         </p>
       </form>
 

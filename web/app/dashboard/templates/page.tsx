@@ -39,7 +39,7 @@ export default async function TemplatesPage() {
         </div>
         <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Letter Strategies</h1>
         <p className="mt-2 text-sm text-slate-400 leading-relaxed">
-          Guilded generates dispute letters tailored to your specific accounts. Run a credit audit
+          Plutus generates dispute letters tailored to your specific accounts. Run a credit audit
           first — the AI identifies which strategy applies and generates a customized letter.
         </p>
       </div>

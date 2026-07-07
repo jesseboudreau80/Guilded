@@ -153,7 +153,7 @@ export function buildMilestones(params: {
     {
       id:    "account",
       label: "Account activated",
-      desc:  "You joined Guilded",
+      desc:  "You joined Plutus",
       done:  true,        // always true — they're here
       href:  "/dashboard",
       cta:   "Done",
@@ -195,7 +195,7 @@ export function buildMilestones(params: {
     {
       id:    "module",
       label: "Training started",
-      desc:  "Begin your first Guild Academy module to understand your rights",
+      desc:  "Begin your first Plutus Academy module to understand your rights",
       done:  params.hasModule,
       href:  params.latestModSlug
         ? `/dashboard/academy/${params.latestModSlug}`

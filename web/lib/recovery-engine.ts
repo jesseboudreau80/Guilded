@@ -314,7 +314,7 @@ export function getPrimaryCTA(
       return {
         label: nextUnlocked ? `Begin: ${nextUnlocked.title}` : "Begin Training",
         href:  nextUnlocked ? `/dashboard/academy/${nextUnlocked.slug}` : "/dashboard/academy",
-        desc:  "Start the Guild Academy to build the strategic knowledge your recovery depends on.",
+        desc:  "Start the Plutus Academy to build the strategic knowledge your recovery depends on.",
         urgent: false,
       };
     case "active_dispute":
@@ -382,7 +382,7 @@ export function getMissions(
 
   // Mission 3: counsel session
   if (!hadActivityToday && missions.length < 3) {
-    missions.push({ id: "counsel", label: "Ask Guild Counsel one question", description: "Get a tactical answer aligned with your recovery phase.", xp_reward: 5, href: "/dashboard/ai" });
+    missions.push({ id: "counsel", label: "Ask Plutus Counsel one question", description: "Get a tactical answer aligned with your recovery phase.", xp_reward: 5, href: "/dashboard/ai" });
   }
 
   return missions.slice(0, 3);

@@ -13,7 +13,7 @@ export default function DashboardSupportPage() {
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">Support</h1>
         <p className="mt-1 text-sm text-slate-400">
-          We&apos;re here to help. Every message goes directly to the Guilded team.
+          We&apos;re here to help. Every message goes directly to the Plutus team.
         </p>
       </div>
 
@@ -53,14 +53,14 @@ export default function DashboardSupportPage() {
           <div className="rounded-xl border border-gold/20 bg-gold/5 px-5 py-4">
             <div className="flex items-center gap-2 mb-2">
               <Shield size={13} className="text-gold" />
-              <p className="text-sm font-semibold text-gold">Ask Guild Counsel</p>
+              <p className="text-sm font-semibold text-gold">Ask Plutus Counsel</p>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
               For credit strategy questions, dispute guidance, or understanding your audit findings,
-              Guild Counsel can answer immediately on any page.
+              Plutus Counsel can answer immediately on any page.
             </p>
             <Link href="/dashboard/ai" className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-gold hover:underline">
-              <MessageSquare size={11} /> Open Guild Counsel
+              <MessageSquare size={11} /> Open Plutus Counsel
             </Link>
           </div>
 
@@ -69,7 +69,7 @@ export default function DashboardSupportPage() {
             <SectionHeader label="Resources" />
             <div className="grid gap-2 sm:grid-cols-2">
               {[
-                { icon: BookOpen, label: "AI Disclaimer",   href: "/ai-disclaimer",  desc: "What Guild Counsel is and is not" },
+                { icon: BookOpen, label: "AI Disclaimer",   href: "/ai-disclaimer",  desc: "What Plutus Counsel is and is not" },
                 { icon: Shield,   label: "Privacy Policy",   href: "/privacy",        desc: "How your data is handled" },
               ].map(({ icon: Icon, label, href, desc }) => (
                 <Link key={href} href={href} className="flex items-start gap-3 rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-3 hover:border-slate-700 transition-colors">

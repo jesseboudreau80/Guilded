@@ -2,7 +2,7 @@
  * Academy Intelligence Layer
  *
  * Maps credit signals (from audit findings, account analysis, etc.)
- * to Guild Academy modules and lessons with contextual explanations.
+ * to Plutus Academy modules and lessons with contextual explanations.
  *
  * Used by:
  *  - SmartRecommendationPill  (signal → clickable academy link)
@@ -217,7 +217,7 @@ export const GUILD_RANK_COLORS: Record<string, string> = {
   "Journeyman":        "text-blue-400 border-blue-500/30",
   "Strategist":        "text-indigo-400 border-indigo-500/30",
   "Master Negotiator": "text-gold border-gold/30",
-  "Guild Commander":   "text-gold border-gold",
+  "Commander":   "text-gold border-gold",
 };
 
 export const GUILD_RANK_BG: Record<string, string> = {
@@ -225,7 +225,7 @@ export const GUILD_RANK_BG: Record<string, string> = {
   "Journeyman":        "bg-blue-900/30",
   "Strategist":        "bg-indigo-900/30",
   "Master Negotiator": "bg-gold/10",
-  "Guild Commander":   "bg-gold/20",
+  "Commander":   "bg-gold/20",
 };
 
 export const SEVERITY_COLORS: Record<SignalSeverity, string> = {

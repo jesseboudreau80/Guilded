@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { Shield } from "lucide-react";
 
-export const metadata = { title: "Privacy Policy — Guilded" };
+export const metadata = { title: "Privacy Policy — Plutus" };
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       <div className="mx-auto max-w-2xl">
         <div className="flex items-center gap-2.5 mb-8">
           <Shield size={18} className="text-gold" />
-          <Link href="/" className="text-sm font-bold text-white">Guilded</Link>
+          <Link href="/" className="text-sm font-bold text-white">Plutus</Link>
         </div>
 
         <h1 className="text-2xl font-semibold text-slate-100">Privacy Policy</h1>
@@ -34,13 +34,13 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="2. How We Use Your Information">
-          <p>We use your information to: provide and improve the Guilded service, personalize your recovery experience, process billing transactions, communicate service updates, and troubleshoot technical issues.</p>
+          <p>We use your information to: provide and improve the Plutus service, personalize your recovery experience, process billing transactions, communicate service updates, and troubleshoot technical issues.</p>
           <p>We do not sell your personal information. We do not share your credit data or financial information with advertisers or third-party marketers.</p>
         </Section>
 
         <Section title="3. Credit Report Data">
           <p>Credit report PDFs you upload are processed to extract account data. Extracted account data is stored in our database to power your audit history and recommendations. Raw PDF files are deleted after text extraction is complete.</p>
-          <p>This data is accessible only to you and authorized Guilded personnel for technical support purposes.</p>
+          <p>This data is accessible only to you and authorized Plutus personnel for technical support purposes.</p>
         </Section>
 
         <Section title="4. AI and Third-Party Services">

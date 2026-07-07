@@ -23,7 +23,7 @@ First dispute responses arrive. Some deletions, some verifications. Document eve
 
 Your score may begin to show minor improvement if early deletions are removing heavily weighted negative items. Utilization improvements you made in Month 1 should be reflected by now.
 
-> **Guild Insight:** A single deletion rarely produces dramatic score movement unless it was a heavily weighted item — a recent charge-off or a collection with high balance. Multiple small deletions over several months compound into significant improvement. The timeline is real, and it requires patience.
+> **Plutus Insight:** A single deletion rarely produces dramatic score movement unless it was a heavily weighted item — a recent charge-off or a collection with high balance. Multiple small deletions over several months compound into significant improvement. The timeline is real, and it requires patience.
 
 **Months 5–6: Momentum Building**
 
@@ -53,7 +53,7 @@ Negative item removal is only half of the equation. The other half is building t
 
 If you have a family member or trusted friend with a long-standing, low-utilization credit card, becoming an authorized user on that account can add years of positive history to your profile instantly. You don't need to use the card. The account's history, age, and utilization appear on your report as if it were your own.
 
-> **Guild Insight:** The authorized user strategy works best when the primary cardholder has a long account age, low utilization, and a perfect payment history. One late payment on their account will appear on yours. Vet the account carefully before agreeing to be added, and have a conversation with the cardholder about their habits.
+> **Plutus Insight:** The authorized user strategy works best when the primary cardholder has a long account age, low utilization, and a perfect payment history. One late payment on their account will appear on yours. Vet the account carefully before agreeing to be added, and have a conversation with the cardholder about their habits.
 
 ### Credit Builder Loans
 
@@ -77,7 +77,7 @@ Once you've built and restored your credit profile, the work shifts from offense
 
 **Shopping for credit aggressively.** Multiple applications in a short period signals risk. Be intentional about every credit application. Rate-shop within the FICO deduplication window for mortgages and auto loans.
 
-> **Guild Insight:** A credit profile is like physical fitness — it's easier to maintain than to rebuild. The habits that got you here — paying on time, keeping utilization low, not closing old accounts, being strategic about new credit — are the same habits that protect what you've built.
+> **Plutus Insight:** A credit profile is like physical fitness — it's easier to maintain than to rebuild. The habits that got you here — paying on time, keeping utilization low, not closing old accounts, being strategic about new credit — are the same habits that protect what you've built.
 
 ---
 
@@ -93,4 +93,4 @@ A strong credit profile is not a trophy. It's infrastructure. The real return on
 
 **Business credit separation** — once your personal credit is strong, you can begin building business credit under an EIN, separating personal and business liability and expanding your access to capital.
 
-> **Guild Insight:** Credit is a tool, not a goal. The goal is financial stability, access, and opportunity. Credit is the mechanism that gives you access to those things at the lowest cost. Treat it like the infrastructure it is — maintain it, use it intentionally, and leverage it when the return justifies the cost.
+> **Plutus Insight:** Credit is a tool, not a goal. The goal is financial stability, access, and opportunity. Credit is the mechanism that gives you access to those things at the lowest cost. Treat it like the infrastructure it is — maintain it, use it intentionally, and leverage it when the return justifies the cost.

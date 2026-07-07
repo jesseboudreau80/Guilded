@@ -15,7 +15,7 @@ When you submit a dispute to a bureau, here is what happens: The bureau receives
 
 **This is the critical point that most people miss:** bureaus do not independently investigate disputes. They act as a relay — they forward your dispute to the furnisher and accept the furnisher's response. If the furnisher says "verified," the bureau marks it verified. The quality of the investigation depends entirely on whether the furnisher actually reviewed the specific information you disputed.
 
-> **Guild Insight:** This is why your dispute letter language matters. Vague disputes like "this account is wrong" give the furnisher no specific information to check against. Specific disputes — "the Date of First Delinquency reported is 01/2019 but the account was charged off in 03/2018, making this item past the 7-year reporting period" — require a specific response to a specific claim.
+> **Plutus Insight:** This is why your dispute letter language matters. Vague disputes like "this account is wrong" give the furnisher no specific information to check against. Specific disputes — "the Date of First Delinquency reported is 01/2019 but the account was charged off in 03/2018, making this item past the 7-year reporting period" — require a specific response to a specific claim.
 
 ### What You Can Dispute
 
@@ -39,7 +39,7 @@ A dispute letter has one job: give the bureau enough specific, documented inform
 
 **Supporting documentation:** If you have it, include it. Statements, letters, account records. If you don't have documentation, the dispute still has merit — the burden of verification falls on the furnisher.
 
-> **Guild Insight:** Keep copies of every letter you send and every response you receive. Date everything. If a bureau fails to investigate within 30 days or refuses to correct clear inaccuracies, your paper trail becomes evidence in a CFPB complaint or, in serious cases, a lawsuit under FCRA §616 and §617, which allow actual and punitive damages.
+> **Plutus Insight:** Keep copies of every letter you send and every response you receive. Date everything. If a bureau fails to investigate within 30 days or refuses to correct clear inaccuracies, your paper trail becomes evidence in a CFPB complaint or, in serious cases, a lawsuit under FCRA §616 and §617, which allow actual and punitive damages.
 
 ### Sending Your Dispute
 
@@ -64,7 +64,7 @@ Under FDCPA §809(b), within 30 days of a debt collector's first contact with yo
 
 During the validation period, the collector must cease collection activity — including reporting new information to credit bureaus — until they provide proper validation. If they cannot validate, they cannot legally continue collection efforts.
 
-> **Guild Insight:** A debt validation letter is not a dispute letter. A dispute goes to the bureau under the FCRA. A validation letter goes to the collection agency under the FDCPA. These are separate rights, separate processes, and separate timelines. You can — and often should — do both simultaneously.
+> **Plutus Insight:** A debt validation letter is not a dispute letter. A dispute goes to the bureau under the FCRA. A validation letter goes to the collection agency under the FDCPA. These are separate rights, separate processes, and separate timelines. You can — and often should — do both simultaneously.
 
 ### The Statute of Limitations on Debt Collection
 
@@ -93,7 +93,7 @@ If you have an otherwise solid payment history with a creditor and a single or i
 
 Goodwill letters are most effective when: the late payment was isolated (not part of a pattern), you've been a customer for a significant period, you have a good reason (medical emergency, job loss, administrative error), and you've since maintained current status on the account.
 
-> **Guild Insight:** Goodwill adjustments are not guaranteed and there's no legal obligation for a creditor to remove accurate information. But creditors receive millions of disputes — many from professional credit repair companies — and a personal, genuine letter from a real customer sometimes works when nothing else will. The worst they can say is no, and no costs you nothing.
+> **Plutus Insight:** Goodwill adjustments are not guaranteed and there's no legal obligation for a creditor to remove accurate information. But creditors receive millions of disputes — many from professional credit repair companies — and a personal, genuine letter from a real customer sometimes works when nothing else will. The worst they can say is no, and no costs you nothing.
 
 ---
 
@@ -113,4 +113,4 @@ If a bureau repeatedly verifies information you believe is inaccurate:
 
 **Consult a consumer protection attorney.** FCRA violations — failure to investigate, reaging, furnishing inaccurate information — can entitle you to actual damages, statutory damages up to $1,000 per violation, and attorney's fees. Many consumer protection attorneys work on contingency for FCRA cases.
 
-> **Guild Insight:** The credit bureau system depends on consumers accepting "verified" responses and giving up. Persistence — re-disputing with new evidence, filing CFPB complaints, escalating to direct furnisher disputes — is the difference between credit repair that works and credit repair that stalls.
+> **Plutus Insight:** The credit bureau system depends on consumers accepting "verified" responses and giving up. Persistence — re-disputing with new evidence, filing CFPB complaints, escalating to direct furnisher disputes — is the difference between credit repair that works and credit repair that stalls.

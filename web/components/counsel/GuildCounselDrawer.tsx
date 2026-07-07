@@ -35,7 +35,7 @@ const ROUTE_ACTIONS: { pattern: string; actions: QuickAction[] }[] = [
     pattern: "/dashboard/command-center",
     actions: [
       { label: "Priority Actions",   prompt: "What are my three highest-priority credit recovery actions right now?" },
-      { label: "Rank Explanation",   prompt: "Explain my current Guild rank and what I need to do to advance." },
+      { label: "Rank Explanation",   prompt: "Explain my current rank and what I need to do to advance." },
       { label: "Recovery Timeline",  prompt: "How long does credit recovery typically take and what milestones should I expect?" },
     ],
   },
@@ -140,7 +140,7 @@ function DrawerContent({ onClose }: { onClose: () => void }) {
       {/* ── Header ──────────────────────────────────────────────────── */}
       <div className="flex items-center gap-2 border-b border-slate-800 px-4 py-3">
         <Shield size={14} className="text-gold shrink-0" />
-        <span className="flex-1 text-sm font-semibold text-slate-200">Guild Counsel</span>
+        <span className="flex-1 text-sm font-semibold text-slate-200">Plutus Counsel</span>
 
         {/* Protected indicator */}
         <span className="hidden sm:flex items-center gap-1 text-xs text-slate-600 mr-2">
@@ -191,7 +191,7 @@ function DrawerContent({ onClose }: { onClose: () => void }) {
                 <div className="h-10 w-10 rounded-xl border border-gold/30 bg-gold/10 flex items-center justify-center mb-3">
                   <Shield size={18} className="text-gold" />
                 </div>
-                <p className="text-sm font-medium text-slate-300">Guild Counsel</p>
+                <p className="text-sm font-medium text-slate-300">Plutus Counsel</p>
                 <p className="mt-1 text-xs text-slate-500 leading-relaxed max-w-[220px]">
                   Your tactical financial recovery advisor. Ask anything about credit strategy.
                 </p>
@@ -285,7 +285,7 @@ function DrawerContent({ onClose }: { onClose: () => void }) {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Ask Guild Counsel…"
+                placeholder="Ask Plutus Counsel…"
                 disabled={state.loading}
                 rows={1}
                 className="flex-1 resize-none bg-transparent text-xs text-slate-200 placeholder-slate-600 outline-none disabled:opacity-40"
@@ -362,7 +362,7 @@ export function CounselTriggerButton() {
   return (
     <button
       onClick={toggle}
-      aria-label="Open Guild Counsel"
+      aria-label="Open Plutus Counsel"
       // bottom uses env(safe-area-inset-bottom) so the FAB clears the iOS
       // home indicator. On pages with a fixed sticky CTA (z-[41]) the FAB
       // sits beneath it intentionally — the CTA takes priority.
@@ -383,7 +383,7 @@ export function CounselTriggerButton() {
       `}
     >
       <Shield size={13} />
-      Guild Counsel
+      Plutus Counsel
     </button>
   );
 }

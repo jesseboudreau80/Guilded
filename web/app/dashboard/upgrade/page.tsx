@@ -19,6 +19,11 @@ type User = {
   founders_pass_type?: string | null;
 };
 
+// Founders Pass purchase UI is hidden until the STRIPE_LIVE_FOUNDERS_* price
+// IDs exist — without them the checkout endpoint returns a 500. Flip to true
+// once the live prices are created and configured in the API environment.
+const SHOW_FOUNDERS_PASS = false;
+
 // ── Tier definitions ──────────────────────────────────────────────────────────
 
 const TIERS = [
@@ -29,7 +34,7 @@ const TIERS = [
     priceDetail: "",
     positioning: "Start building your foundation.",
     benefits: [
-      "5 AI questions per week",
+      "5 AI questions per month",
       "Core learning modules",
       "Guided documentation templates",
       "Educational AI guidance",
@@ -38,7 +43,7 @@ const TIERS = [
   {
     key:         "JOURNEYMAN",
     name:        "Journeyman",
-    price:       "$25",
+    price:       "$19",
     priceDetail: "/month",
     positioning: "Structured tools for consistent progress.",
     benefits: [
@@ -52,7 +57,7 @@ const TIERS = [
   {
     key:         "MASTER",
     name:        "Master",
-    price:       "$49",
+    price:       "$47",
     priceDetail: "/month",
     positioning: "Advanced strategy and arbitration access.",
     benefits: [
@@ -145,7 +150,7 @@ export default function UpgradePage() {
             Advance Your Rank
           </h1>
           <p className="mt-2 text-sm text-slate-400 max-w-md">
-            Guilded provides structured tools aligned with your level of advancement.
+            Plutus provides structured tools aligned with your level of advancement.
             Cancel anytime — no long-term commitment required.
           </p>
         </div>
@@ -268,10 +273,10 @@ export default function UpgradePage() {
       </div>
 
       {/* ── Founders Pass ────────────────────────────────────────────────── */}
-      {!isFounder && (
+      {SHOW_FOUNDERS_PASS && !isFounder && (
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">
-            Guilded Founders Pass
+            Plutus Founders Pass
           </p>
 
           <div className="grid gap-5 md:grid-cols-2">
@@ -380,7 +385,7 @@ export default function UpgradePage() {
             <div>
               <p className="text-sm font-semibold text-gold">Founding Member Active</p>
               <p className="text-xs text-slate-400 mt-0.5">
-                You have lifetime access to Guilded.
+                You have lifetime access to Plutus.
                 {user?.founders_pass_type ? ` (${user.founders_pass_type} Pass)` : ""}
                 {" "}No recurring billing. No expiration.
               </p>

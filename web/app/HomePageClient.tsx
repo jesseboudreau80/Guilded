@@ -38,7 +38,7 @@ const PRICING = [
     color:    "border-slate-700",
     features: [
       "1 credit audit upload",
-      "5 AI guidance questions / week",
+      "5 AI guidance questions / month",
       "4 foundational training modules",
       "Basic dispute letter generation",
       "Recovery roadmap",
@@ -48,7 +48,7 @@ const PRICING = [
   },
   {
     name:     "Journeyman",
-    price:    "$25",
+    price:    "$19",
     sub:      "per month",
     color:    "border-gold/40",
     features: [
@@ -64,7 +64,7 @@ const PRICING = [
   },
   {
     name:     "Master",
-    price:    "$49",
+    price:    "$47",
     sub:      "per month",
     color:    "border-slate-700",
     features: [
@@ -83,24 +83,24 @@ const PRICING = [
 
 const FAQ = [
   {
-    q: "Is Guilded a credit repair company?",
-    a: "No. Guilded is an educational platform that teaches you to exercise your own legal rights under FCRA and FDCPA. We don&apos;t dispute anything on your behalf — we give you the knowledge, tools, and AI guidance to do it yourself.",
+    q: "Is Plutus a credit repair company?",
+    a: "No. Plutus is an educational platform that teaches you to exercise your own legal rights under FCRA and FDCPA. We don&apos;t dispute anything on your behalf — we give you the knowledge, tools, and AI guidance to do it yourself.",
   },
   {
     q: "Is the AI guidance legal advice?",
-    a: "No. All content from Guild Counsel is for educational purposes only and does not constitute legal or financial advice. We strongly recommend consulting a licensed consumer attorney for situations involving legal action.",
+    a: "No. All content from Plutus Counsel is for educational purposes only and does not constitute legal or financial advice. We strongly recommend consulting a licensed consumer attorney for situations involving legal action.",
   },
   {
     q: "How secure is my credit report?",
     a: "Your credit report PDF is processed to extract account data and then permanently deleted. We never store raw PDFs. Extracted data is encrypted at rest. Billing is handled by Stripe — we never see your card details.",
   },
   {
-    q: "Can Guilded guarantee my score will improve?",
-    a: "No. Results depend on your individual credit profile, the accuracy of bureau reporting, and your consistent action. Guilded provides the tools and strategy — outcomes vary based on many factors outside our control.",
+    q: "Can Plutus guarantee my score will improve?",
+    a: "No. Results depend on your individual credit profile, the accuracy of bureau reporting, and your consistent action. Plutus provides the tools and strategy — outcomes vary based on many factors outside our control.",
   },
   {
-    q: "How is Guilded different from credit monitoring apps?",
-    a: "Credit monitoring shows you your score. Guilded is an active recovery system — it analyzes your report for dispute opportunities, trains you on consumer protection law, and generates the actual dispute letters you need to act.",
+    q: "How is Plutus different from credit monitoring apps?",
+    a: "Credit monitoring shows you your score. Plutus is an active recovery system — it analyzes your report for dispute opportunities, trains you on consumer protection law, and generates the actual dispute letters you need to act.",
   },
   {
     q: "What happens when I cancel my subscription?",
@@ -114,14 +114,14 @@ const RECOVERY_STEPS = [
   {
     icon:  FileText,
     title: "Upload Your Report",
-    desc:  "Upload your credit report PDF. Guilded reads it securely and extracts every account, balance, and status on record.",
+    desc:  "Upload your credit report PDF. Plutus reads it securely and extracts every account, balance, and status on record.",
     color: "text-blue-400",
     border:"border-blue-500/20 bg-blue-500/5",
   },
   {
     icon:  Search,
     title: "AI Risk Analysis",
-    desc:  "The Guild AI identifies every dispute opportunity, FCRA violation, and risk factor — ranked by impact on your score.",
+    desc:  "The Plutus AI identifies every dispute opportunity, FCRA violation, and risk factor — ranked by impact on your score.",
     color: "text-gold",
     border:"border-gold/20 bg-gold/5",
   },
@@ -157,13 +157,13 @@ const SYSTEMS = [
   },
   {
     icon:  BookOpen,
-    title: "Guild Academy",
+    title: "Plutus Academy",
     desc:  "Seven structured training modules covering FCRA rights, collections combat, dispute strategy, utilization tactics, and long-term restoration.",
     tier:  "Apprentice+",
   },
   {
     icon:  MessageSquare,
-    title: "Guild Counsel",
+    title: "Plutus Counsel",
     desc:  "Tactical credit strategy guidance available throughout the platform, aligned with your current recovery phase and situation.",
     tier:  "All tiers",
   },
@@ -239,13 +239,13 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
+    <div className="min-h-screen bg-slate-950 text-slate-200 pb-20 md:pb-0">
 
       {/* ── Nav ───────────────────────────────────────────────────────────── */}
       <nav className="sticky top-0 z-20 flex items-center justify-between border-b border-slate-800/60 bg-slate-950/80 px-6 py-4 backdrop-blur-sm">
         <div className="flex items-center gap-2">
           <Shield size={17} className="text-gold" />
-          <span className="text-sm font-bold text-white">Guilded</span>
+          <span className="text-sm font-bold text-white">Plutus</span>
         </div>
         <button
           onClick={() => { setMode("login"); scrollToAuth(); }}
@@ -254,6 +254,25 @@ export default function HomePage() {
           Sign In
         </button>
       </nav>
+
+      {/* ── Founder deal strip — message match with the FB launch post.
+             Body copy only: this phrase must never appear in the meta layer. ── */}
+      <div className="border-b border-gold/20 bg-gradient-to-r from-gold/15 via-gold/10 to-gold/15 px-4 py-3">
+        <div className="mx-auto flex max-w-4xl flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-4">
+          <p className="text-sm text-slate-200">
+            <span className="font-semibold text-gold">DIY Credit Repair 101</span>
+            {" "}— Founder deal:{" "}
+            <span className="font-semibold text-white">$19/mo locked</span>
+            {" "}for the first 50 members
+          </p>
+          <button
+            onClick={() => { setMode("register"); scrollToAuth(); }}
+            className="shrink-0 rounded-lg bg-gold px-4 py-1.5 text-xs font-semibold text-slate-950 transition-opacity hover:opacity-90"
+          >
+            Claim Your Founder Spot
+          </button>
+        </div>
+      </div>
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden px-6 py-20 text-center md:py-28">
@@ -267,12 +286,12 @@ export default function HomePage() {
         </div>
 
         <h1 className="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl md:text-6xl max-w-3xl mx-auto leading-tight">
-          Financial Recovery.<br />
+          Take Back Control of Your Credit.<br />
           <span className="text-gold">Structured. Strategic. Protected.</span>
         </h1>
 
         <p className="mt-6 text-lg leading-relaxed text-slate-400 max-w-2xl mx-auto">
-          Guilded is a structured educational system for rebuilding your financial position —
+          Plutus is a structured educational system for rebuilding your credit —
           built on consumer protection law, intelligent analysis, and guided recovery training.
         </p>
 
@@ -320,7 +339,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-2">The Recovery System</p>
-            <h2 className="text-2xl font-semibold text-slate-100 md:text-3xl">How Guilded works</h2>
+            <h2 className="text-2xl font-semibold text-slate-100 md:text-3xl">How Plutus works</h2>
             <p className="mt-3 text-sm text-slate-500 max-w-xl mx-auto">
               A five-stage process designed for systematic, durable credit recovery — not quick fixes.
             </p>
@@ -466,7 +485,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-2xl rounded-xl border border-slate-800 bg-slate-900/40 px-6 py-5 text-center">
           <p className="text-xs font-semibold text-slate-400 mb-1">Educational Platform Notice</p>
           <p className="text-xs leading-relaxed text-slate-600">
-            Guilded is an educational platform — not a credit repair company, law firm, or financial institution.
+            Plutus is an educational platform — not a credit repair company, law firm, or financial institution.
             All guidance is for informational purposes only. We teach you to use your own legal rights.
             Results vary based on individual credit profiles and the accuracy of information reported to bureaus.
           </p>
@@ -596,7 +615,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <div className="flex items-center gap-2">
             <Shield size={14} className="text-gold" />
-            <span className="text-sm font-bold text-white">Guilded</span>
+            <span className="text-sm font-bold text-white">Plutus</span>
             <span className="text-xs text-slate-600 ml-2">© 2026 · Early Access</span>
           </div>
           <div className="flex flex-wrap gap-4 text-xs text-slate-600">
@@ -607,6 +626,25 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* ── Sticky mobile CTA — landing page only, respects iOS safe area ── */}
+      <div
+        className="fixed inset-x-0 bottom-0 z-30 border-t border-gold/20 bg-slate-950/95 px-4 pt-3 backdrop-blur-sm md:hidden"
+        style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 12px)" }}
+      >
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0">
+            <p className="truncate text-xs font-semibold text-slate-200">Founder deal — $19/mo locked</p>
+            <p className="truncate text-[11px] text-slate-500">Free tier available · No card required</p>
+          </div>
+          <button
+            onClick={() => { setMode("register"); scrollToAuth(); }}
+            className="shrink-0 rounded-xl bg-gold px-5 py-2.5 text-sm font-semibold text-slate-950 transition-opacity hover:opacity-90"
+          >
+            Start for free
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

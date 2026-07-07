@@ -13,7 +13,7 @@ Your credit score is a three-digit number — typically ranging from 300 to 850 
 
 **FICO scores** are the industry standard, used in over 90% of lending decisions in the United States. **VantageScore** is an alternative model jointly developed by the three major bureaus. Both analyze the same underlying data but weigh factors slightly differently. When a car dealership pulls your credit, they're likely seeing a specialized FICO Auto Score. When you apply for a mortgage, lenders pull all three bureau reports and use specific mortgage FICO models. The score you see on Credit Karma is a VantageScore — informative but not identical to what lenders see.
 
-> **Guild Insight:** The most important score is whatever score your specific lender uses. When preparing for a major credit application, ask the lender which bureau and which FICO model they pull. Then focus your energy on that specific score, not a generic average.
+> **Plutus Insight:** The most important score is whatever score your specific lender uses. When preparing for a major credit application, ask the lender which bureau and which FICO model they pull. Then focus your energy on that specific score, not a generic average.
 
 ### The Five Factors Behind Your Score
 
@@ -33,7 +33,7 @@ Your credit score is a three-digit number — typically ranging from 300 to 850 
 
 A credit report is not the same as a credit score. Your score is calculated from your report, but the report itself is the raw data — a full accounting of your credit history. You're entitled to a free report from each bureau (Equifax, Experian, TransUnion) every 12 months at **AnnualCreditReport.com**, the only federally authorized source.
 
-> **Guild Insight:** During active credit repair, you need all three reports because information is not automatically shared between bureaus. A collection account may appear on one report and not the others. Your Guilded audit pulls from what you upload — always work from a complete picture.
+> **Plutus Insight:** During active credit repair, you need all three reports because information is not automatically shared between bureaus. A collection account may appear on one report and not the others. Your Plutus audit pulls from what you upload — always work from a complete picture.
 
 ### The Four Sections of Your Report
 
@@ -49,7 +49,7 @@ A credit report is not the same as a credit score. Your score is calculated from
 
 Check every account against your records. Specifically look for: accounts you don't recognize (potential identity theft or mixed files), incorrect account statuses (an account showing open that you closed, or current that was paid), balances that don't match your records, late payments marked in months when you paid on time, duplicate accounts (the same debt appearing twice under different names), and accounts past their legal reporting period.
 
-> **Guild Insight:** The legal maximum reporting period for most negative information is **7 years from the date of first delinquency** under the FCRA. Charge-offs, collections, and late payments all expire on this clock — not from the date the collection agency bought the debt, not from when you last made a payment. If an item is past its 7-year window, it must be removed.
+> **Plutus Insight:** The legal maximum reporting period for most negative information is **7 years from the date of first delinquency** under the FCRA. Charge-offs, collections, and late payments all expire on this clock — not from the date the collection agency bought the debt, not from when you last made a payment. If an item is past its 7-year window, it must be removed.
 
 ---
 
@@ -65,7 +65,7 @@ The **Fair Credit Reporting Act (FCRA)** is the federal law that governs credit 
 
 **Data Furnisher Obligations (§623):** Creditors and debt collectors who report to bureaus are called "data furnishers." They have their own obligations under the FCRA — they must report accurately and must investigate disputes that bureaus forward to them. This is important: bureaus don't investigate disputes themselves. They forward your dispute to the furnisher, who must respond within the 30-day window.
 
-> **Guild Insight:** A common misconception is that disputing "forces" a deletion. What it does is start an investigation clock. If the furnisher verifies the account as accurate within 30 days, it stays. If they can't verify or don't respond in time, the bureau must delete it. Your goal in the dispute process is to challenge accounts that are genuinely inaccurate, incomplete, or unverifiable — not to game a system.
+> **Plutus Insight:** A common misconception is that disputing "forces" a deletion. What it does is start an investigation clock. If the furnisher verifies the account as accurate within 30 days, it stays. If they can't verify or don't respond in time, the bureau must delete it. Your goal in the dispute process is to challenge accounts that are genuinely inaccurate, incomplete, or unverifiable — not to game a system.
 
 ---
 
@@ -77,6 +77,6 @@ What it takes: **organization** (tracking every account, every dispute, every re
 
 The members of this community who have achieved the most dramatic improvements are not the ones who found a magic letter or a loophole. They're the ones who built a systematic plan, tracked every account, disputed every error they found, and kept going when responses were slow or unfavorable.
 
-> **Guild Insight:** Before disputing anything, document the current state of all three reports. Screenshot or save every account, balance, and status. This baseline becomes your evidence log when you're tracking what changed and when. Guilded's audit workflow does this for you — your uploaded report becomes a timestamped snapshot.
+> **Plutus Insight:** Before disputing anything, document the current state of all three reports. Screenshot or save every account, balance, and status. This baseline becomes your evidence log when you're tracking what changed and when. Plutus's audit workflow does this for you — your uploaded report becomes a timestamped snapshot.
 
 The foundation of everything that follows is understanding that **you have legal rights**, that **the information on your report may not be accurate**, and that **you have the tools to challenge inaccurate information through a well-established legal process**. That's it. That's the whole game. Everything else is execution.

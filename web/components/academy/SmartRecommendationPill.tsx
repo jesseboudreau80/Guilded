@@ -23,7 +23,7 @@ type Props = {
  * SmartRecommendationPill
  *
  * Renders a colored severity pill for a detected audit signal.
- * Clicking navigates to the relevant Guild Academy module.
+ * Clicking navigates to the relevant Plutus Academy module.
  *
  * Usage:
  *   <SmartRecommendationPill signalKey="has_collections" showModule />

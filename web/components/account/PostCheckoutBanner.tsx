@@ -37,7 +37,7 @@ export function PostCheckoutBanner() {
           <>
             <p className="text-sm font-semibold text-gold">Founders Pass activated</p>
             <p className="mt-0.5 text-xs text-slate-400">
-              Welcome to the founding cohort. You have lifetime access to Guilded.
+              Welcome to the founding cohort. You have lifetime access to Plutus.
               Thank you for your support.
             </p>
           </>

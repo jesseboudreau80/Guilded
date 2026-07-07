@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { Shield, AlertTriangle } from "lucide-react";
 
-export const metadata = { title: "AI Usage Disclaimer — Guilded" };
+export const metadata = { title: "AI Usage Disclaimer — Plutus" };
 
 export default function AIDisclaimerPage() {
   return (
@@ -11,7 +11,7 @@ export default function AIDisclaimerPage() {
       <div className="mx-auto max-w-2xl">
         <div className="flex items-center gap-2.5 mb-8">
           <Shield size={18} className="text-gold" />
-          <Link href="/" className="text-sm font-bold text-white">Guilded</Link>
+          <Link href="/" className="text-sm font-bold text-white">Plutus</Link>
         </div>
 
         <div className="flex items-center gap-3 mb-6">
@@ -22,18 +22,18 @@ export default function AIDisclaimerPage() {
         <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4 mb-8">
           <p className="text-sm font-semibold text-amber-400 mb-1">Educational Guidance Only</p>
           <p className="text-sm text-slate-400 leading-relaxed">
-            Guild Counsel and all AI-generated content on Guilded is provided for educational and informational purposes only. It is not legal advice, financial advice, or professional credit counseling.
+            Plutus Counsel and all AI-generated content on Plutus is provided for educational and informational purposes only. It is not legal advice, financial advice, or professional credit counseling.
           </p>
         </div>
 
         <div className="space-y-8 text-sm leading-relaxed text-slate-400">
           <div>
-            <h2 className="text-base font-semibold text-slate-100 mb-2">What Guild Counsel Is</h2>
-            <p>Guild Counsel is an AI assistant trained to provide general educational information about credit recovery, consumer protection law (FCRA, FDCPA), dispute strategies, and financial literacy. It is designed to help you understand your options and build knowledge — not to provide personalized professional advice.</p>
+            <h2 className="text-base font-semibold text-slate-100 mb-2">What Plutus Counsel Is</h2>
+            <p>Plutus Counsel is an AI assistant trained to provide general educational information about credit recovery, consumer protection law (FCRA, FDCPA), dispute strategies, and financial literacy. It is designed to help you understand your options and build knowledge — not to provide personalized professional advice.</p>
           </div>
 
           <div>
-            <h2 className="text-base font-semibold text-slate-100 mb-2">What Guild Counsel Is Not</h2>
+            <h2 className="text-base font-semibold text-slate-100 mb-2">What Plutus Counsel Is Not</h2>
             <ul className="space-y-2">
               {[
                 "An attorney or licensed legal advisor",

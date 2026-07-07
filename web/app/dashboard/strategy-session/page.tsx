@@ -6,7 +6,7 @@ import ConsultationCheckout from "./checkout";
 
 const SESSION_INCLUDES = [
   "30–60 minute focused credit strategy session",
-  "Review of your current Guilded audit findings",
+  "Review of your current Plutus audit findings",
   "Prioritized dispute and recovery action plan",
   "Answers to your specific credit questions",
   "Session notes and recommended next steps",

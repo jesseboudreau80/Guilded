@@ -10,6 +10,7 @@ import { authApi, academyApi, auditApi, disputeApi } from "@/lib/api";
 import { useGuildedSession } from "@/lib/session";
 import { AiUsageMeter } from "@/components/ai/AiUsageMeter";
 import { ContinueBar } from "@/components/dashboard/ContinueBar";
+import { FounderRateBanner } from "@/components/dashboard/FounderRateBanner";
 import { RecoveryJourney, buildMilestones } from "@/components/dashboard/RecoveryJourney";
 import { AI_LIMITS, AI_PERIOD, type Tier } from "@/lib/tiers";
 import {
@@ -94,7 +95,7 @@ function RecoveryProfileCard({
           <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-800/80">
             <div
               className={`h-full rounded-full transition-all opacity-70 ${
-                rank === "Guild Commander" ? "bg-gold" :
+                rank === "Commander" ? "bg-gold" :
                 rank === "Master Negotiator" ? "bg-gold" :
                 rank === "Strategist" ? "bg-indigo-400" :
                 rank === "Journeyman" ? "bg-blue-400" : "bg-slate-400"
@@ -244,6 +245,9 @@ export default function DashboardHome() {
           {user?.name ? `Welcome back, ${user.name.split(" ")[0]}` : "Welcome back"}
         </h1>
       </div>
+
+      {/* ── Founder-rate pitch — free tier only, dismissible ─────────────── */}
+      {user?.tier === "APPRENTICE" && <FounderRateBanner />}
 
       {/* ── Workspace: 2-column on desktop ────────────────────────────────── */}
       <div className="flex flex-col lg:flex-row lg:items-start gap-6">
@@ -414,7 +418,7 @@ export default function DashboardHome() {
           <TacticalPanel>
             <div className="flex items-center gap-2 mb-2">
               <Shield size={12} className="text-gold" />
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Guild Counsel</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Plutus Counsel</p>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">Tactical guidance aligned with your recovery phase.</p>
             {aiLimit !== null && (

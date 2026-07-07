@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, CheckCircle, Lock } from "lucide-react";
 import { DemoBadge, AcademyTimeline } from "@/components/preview/PreviewShared";
 import { DEMO_MODULES } from "@/lib/demo-data";
 
-export const metadata = { title: "Academy Preview — Guilded" };
+export const metadata = { title: "Academy Preview — Plutus" };
 
 const MODULE_DESCRIPTIONS: Record<string, string> = {
   "01": "FCRA rights, FDCPA rights, the 7-year rule, and the 5 things every consumer must know before disputing anything.",
@@ -27,7 +27,7 @@ export default function PreviewAcademy() {
 
         {/* Header */}
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-2">Guild Academy</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-gold mb-2">Plutus Academy</p>
           <h1 className="text-3xl font-bold text-slate-100">Seven modules. A complete recovery system.</h1>
           <p className="mt-3 text-sm text-slate-500 max-w-lg mx-auto">
             Structured training on FCRA rights, dispute tactics, collections combat, utilization strategy,

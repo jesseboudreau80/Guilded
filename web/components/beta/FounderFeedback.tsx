@@ -32,7 +32,7 @@ export function FounderFeedback() {
     track("feedback_submitted", { category });
 
     // MVP: pre-filled mailto (replace with API call in Phase 4)
-    const subject = encodeURIComponent(`[Guilded Beta Feedback] ${CATEGORIES.find((c) => c.value === category)?.label}`);
+    const subject = encodeURIComponent(`[Plutus Beta Feedback] ${CATEGORIES.find((c) => c.value === category)?.label}`);
     const body    = encodeURIComponent(`Category: ${category}\n\n${message}`);
     window.open(`mailto:guilded@jesseboudreau.com?subject=${subject}&body=${body}`, "_blank");
 
@@ -48,7 +48,7 @@ export function FounderFeedback() {
           <p className="text-sm font-medium text-emerald-400">Thank you for the feedback.</p>
         </div>
         <p className="mt-1 text-xs text-slate-500">
-          Your input directly shapes how Guilded develops. As a founding member, your perspective matters.
+          Your input directly shapes how Plutus develops. As a founding member, your perspective matters.
         </p>
         <button
           onClick={() => setDone(false)}
@@ -70,7 +70,7 @@ export function FounderFeedback() {
         </span>
       </div>
       <p className="text-xs text-slate-500 mb-4 leading-relaxed">
-        You&apos;re using Guilded during early access. Your feedback directly shapes the product.
+        You&apos;re using Plutus during early access. Your feedback directly shapes the product.
         What would make your recovery experience better?
       </p>
 

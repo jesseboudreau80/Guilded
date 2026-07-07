@@ -48,11 +48,11 @@ const QA_SECTIONS: { title: string; items: CheckItem[] }[] = [
     ],
   },
   {
-    title: "Guild Academy",
+    title: "Plutus Academy",
     items: [
       { id: "acad-list",     label: "Academy page loads all 7 modules in order" },
       { id: "acad-slug",     label: "Module slugs link to correct numbered .md files" },
-      { id: "acad-content",  label: "Module content renders markdown with Guild Insight callouts" },
+      { id: "acad-content",  label: "Module content renders markdown with Plutus Insight callouts" },
       { id: "acad-prevnext", label: "Previous/Next module navigation works on module pages" },
       { id: "acad-progress", label: "Sticky progress bar shows correct Module N/7" },
       { id: "acad-complete", label: "Mark Complete awards +50 XP and updates progress state", critical: true },
@@ -71,7 +71,7 @@ const QA_SECTIONS: { title: string; items: CheckItem[] }[] = [
     ],
   },
   {
-    title: "Guild Counsel",
+    title: "Plutus Counsel",
     items: [
       { id: "counsel-open",   label: "Counsel opens from header button" },
       { id: "counsel-float",  label: "Floating trigger button appears when drawer is closed" },

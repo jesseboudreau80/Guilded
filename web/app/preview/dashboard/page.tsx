@@ -5,7 +5,7 @@ import { ArrowRight, Shield, Target, Zap, BookOpen, FileText, AlertTriangle } fr
 import { DemoBadge, JourneyPanel, StatsGrid, RiskScorePanel } from "@/components/preview/PreviewShared";
 import { DEMO_BRIEFING, DEMO_RECS } from "@/lib/demo-data";
 
-export const metadata = { title: "Dashboard Preview — Guilded" };
+export const metadata = { title: "Dashboard Preview — Plutus" };
 
 export default function PreviewDashboard() {
   return (
@@ -105,7 +105,7 @@ export default function PreviewDashboard() {
             <div className="grid grid-cols-3 gap-3">
               {[
                 { icon: FileText, color: "text-blue-400",    bg: "border-blue-500/20 bg-blue-500/5",   label: "Credit Audit",    tag: "9 targets" },
-                { icon: BookOpen, color: "text-gold",         bg: "border-gold/20 bg-gold/5",           label: "Guild Academy",   tag: "Mod 02 active" },
+                { icon: BookOpen, color: "text-gold",         bg: "border-gold/20 bg-gold/5",           label: "Plutus Academy",   tag: "Mod 02 active" },
                 { icon: Zap,      color: "text-emerald-400",  bg: "border-emerald-500/20 bg-emerald-5/5", label: "Recovery XP",   tag: "300 earned" },
               ].map(({ icon: Icon, color, bg, label, tag }) => (
                 <div key={label} className={`rounded-2xl border p-4 ${bg}`}>

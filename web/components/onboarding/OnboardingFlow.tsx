@@ -14,8 +14,8 @@ const TOTAL_STEPS = 5;
 
 const PATH_CARDS = [
   { icon: FileText,       label: "Credit Audit",  desc: "Extract and analyze every account on your report" },
-  { icon: BookOpen,       label: "Guild Academy", desc: "Learn consumer law and recovery strategy"          },
-  { icon: MessageSquare,  label: "Guild Counsel", desc: "AI guidance available on every page"              },
+  { icon: BookOpen,       label: "Plutus Academy", desc: "Learn consumer law and recovery strategy"          },
+  { icon: MessageSquare,  label: "Plutus Counsel", desc: "AI guidance available on every page"              },
 ];
 
 const UPLOAD_TIPS = [
@@ -50,9 +50,9 @@ const STEPS: StepDef[] = [
     tag:      "Welcome",
     icon:     Shield,
     color:    "text-gold",
-    title:    "Welcome to Guilded",
+    title:    "Welcome to Plutus",
     subtitle: "Your structured financial recovery system",
-    body:     "Guilded is not a credit repair company. It is an educational platform that teaches you to use your own legal rights — systematically and strategically.",
+    body:     "Plutus is not a credit repair company. It is an educational platform that teaches you to use your own legal rights — systematically and strategically.",
     note:     "Educational guidance only. Not legal or financial advice.",
   },
   {
@@ -87,7 +87,7 @@ const STEPS: StepDef[] = [
     color:    "text-gold",
     title:    "Your first mission",
     subtitle: "Run your credit audit",
-    body:     "Upload your credit report and the Guild AI identifies every dispute opportunity, risk factor, and recovery action. Full analysis takes under 90 seconds.",
+    body:     "Upload your credit report and the Plutus AI identifies every dispute opportunity, risk factor, and recovery action. Full analysis takes under 90 seconds.",
   },
 ];
 
@@ -142,7 +142,7 @@ export function OnboardingFlow({ onComplete }: { onComplete?: () => void }) {
         <div className="flex items-center justify-between border-b border-slate-800 px-5 py-3.5">
           <div className="flex items-center gap-2">
             <Shield size={13} className="text-gold" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-gold">Guilded</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">Plutus</span>
             <span className="text-xs text-slate-600 ml-1">· {current.tag}</span>
           </div>
           <button onClick={() => dismiss(false)} className="rounded p-1 text-slate-600 hover:text-slate-300 transition-colors">

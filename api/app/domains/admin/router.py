@@ -388,7 +388,7 @@ async def send_test_email(body: TestEmailRequest, current_user: CurrentUser):
         elif body.template == "support_confirmation":
             sent = await email_service.send_support_confirmation(
                 body.to_email,
-                ticket_ref="GLD-TEST-001",
+                ticket_ref="PLT-TEST-001",
             )
 
     except Exception as exc:

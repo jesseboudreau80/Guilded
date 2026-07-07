@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
-  Lock, X, Shield,
+  Lock, X, Shield, Crown,
   LayoutGrid, GraduationCap, Search, ClipboardList,
   MessageSquare, FileText, Scale, User, Target,
 } from "lucide-react";
@@ -32,11 +32,11 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: "Recovery",
     items: [
-      { label: "Guild Academy",  href: "/dashboard/academy",     icon: GraduationCap },
+      { label: "Plutus Academy",  href: "/dashboard/academy",     icon: GraduationCap },
       { label: "Credit Audit",   href: "/dashboard/audit/start", icon: Search        },
       { label: "My Audits",      href: "/dashboard/audits",      icon: ClipboardList },
       { label: "My Disputes",   href: "/dashboard/disputes",    icon: FileText      },
-      { label: "Guild Counsel",  href: "/dashboard/ai",          icon: MessageSquare },
+      { label: "Plutus Counsel",  href: "/dashboard/ai",          icon: MessageSquare },
     ],
   },
   {
@@ -127,6 +127,20 @@ function NavContent({
           </div>
         </div>
       ))}
+
+      {/* Founder-rate upgrade link — free (Apprentice) tier only */}
+      {tier === "APPRENTICE" && (
+        <div className="px-0">
+          <Link
+            href="/dashboard/upgrade"
+            onClick={onNavigate}
+            className="flex items-center gap-2.5 rounded-lg border border-gold/30 bg-gold/10 px-3 py-2 text-sm font-medium text-gold transition-colors hover:bg-gold/20"
+          >
+            <Crown size={14} className="shrink-0 text-gold" />
+            <span className="flex-1">Upgrade — $19 founder rate</span>
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
@@ -155,7 +169,7 @@ export function Sidebar({ tier }: { tier?: string }) {
         {/* Brand */}
         <div className="flex items-center gap-2.5 px-5 py-6">
           <Shield size={17} className="text-gold shrink-0" />
-          <span className="text-base font-bold tracking-tight text-white">Guilded</span>
+          <span className="text-base font-bold tracking-tight text-white">Plutus</span>
         </div>
         <NavContent tier={tier} pathname={pathname} />
       </aside>
@@ -172,7 +186,7 @@ export function Sidebar({ tier }: { tier?: string }) {
             <div className="flex items-center justify-between px-5 py-5">
               <div className="flex items-center gap-2">
                 <Shield size={16} className="text-gold" />
-                <span className="text-base font-bold tracking-tight text-white">Guilded</span>
+                <span className="text-base font-bold tracking-tight text-white">Plutus</span>
               </div>
               <button
                 onClick={() => setMobileOpen(false)}

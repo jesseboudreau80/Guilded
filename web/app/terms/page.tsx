@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { Shield } from "lucide-react";
 
-export const metadata = { title: "Terms of Service — Guilded" };
+export const metadata = { title: "Terms of Service — Plutus" };
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -21,15 +21,15 @@ export default function TermsPage() {
         {/* Header */}
         <div className="flex items-center gap-2.5 mb-8">
           <Shield size={18} className="text-gold" />
-          <Link href="/" className="text-sm font-bold text-white">Guilded</Link>
+          <Link href="/" className="text-sm font-bold text-white">Plutus</Link>
         </div>
 
         <h1 className="text-2xl font-semibold text-slate-100">Terms of Service</h1>
         <p className="mt-2 text-sm text-slate-500">Last updated: May 2026</p>
 
         <Section title="1. Service Description">
-          <p>Guilded is an educational platform providing structured tools, guidance, and resources to help individuals understand and improve their credit health. All content is provided for informational and educational purposes only.</p>
-          <p>Guilded is not a law firm, credit repair organization, financial institution, or licensed financial advisor. Nothing provided through the platform constitutes legal advice, financial advice, or professional credit counseling.</p>
+          <p>Plutus is an educational platform providing structured tools, guidance, and resources to help individuals understand and improve their credit health. All content is provided for informational and educational purposes only.</p>
+          <p>Plutus is not a law firm, credit repair organization, financial institution, or licensed financial advisor. Nothing provided through the platform constitutes legal advice, financial advice, or professional credit counseling.</p>
         </Section>
 
         <Section title="2. Educational Use Only">
@@ -38,7 +38,7 @@ export default function TermsPage() {
         </Section>
 
         <Section title="3. No Guarantee of Results">
-          <p>Guilded makes no representations or guarantees regarding outcomes of any credit repair, dispute, or negotiation activities. Credit scores and credit report changes depend on many factors outside our control, including the responses of credit bureaus, creditors, and individual financial history.</p>
+          <p>Plutus makes no representations or guarantees regarding outcomes of any credit repair, dispute, or negotiation activities. Credit scores and credit report changes depend on many factors outside our control, including the responses of credit bureaus, creditors, and individual financial history.</p>
           <p>Past results described in educational content are illustrative only and not indicative of future results.</p>
         </Section>
 
@@ -48,7 +48,7 @@ export default function TermsPage() {
 
         <Section title="5. Subscription and Billing">
           <p>Paid subscription tiers are billed monthly or annually as selected at checkout. Subscriptions automatically renew unless cancelled. You may cancel your subscription at any time through your account settings. Refunds are not provided for partial billing periods except where required by applicable law.</p>
-          <p>Billing is processed by Stripe. Guilded does not store payment card information.</p>
+          <p>Billing is processed by Stripe. Plutus does not store payment card information.</p>
         </Section>
 
         <Section title="6. Data and Privacy">
@@ -56,7 +56,7 @@ export default function TermsPage() {
         </Section>
 
         <Section title="7. Limitation of Liability">
-          <p>To the maximum extent permitted by law, Guilded&apos;s total liability for any claim arising from or related to the service is limited to the amount you paid for the service in the 30 days preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
+          <p>To the maximum extent permitted by law, Plutus&apos;s total liability for any claim arising from or related to the service is limited to the amount you paid for the service in the 30 days preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
         </Section>
 
         <Section title="8. Changes to Terms">

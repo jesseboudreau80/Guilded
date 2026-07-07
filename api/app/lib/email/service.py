@@ -149,7 +149,7 @@ class EmailService:
         first = (user_name or "there").split()[0]
         return await self._send(
             to_email=to_email,
-            subject="Welcome to Guilded — your recovery starts now",
+            subject="Welcome to Plutus — your recovery starts now",
             template_name="welcome",
             context={
                 "user_name":    first,
@@ -174,7 +174,7 @@ class EmailService:
         first = (user_name or "there").split()[0]
         return await self._send(
             to_email=to_email,
-            subject="Verify your Guilded email address",
+            subject="Verify your Plutus email address",
             template_name="verification",
             context={
                 "user_name":         first,
@@ -199,7 +199,7 @@ class EmailService:
         first = (user_name or "there").split()[0]
         return await self._send(
             to_email=to_email,
-            subject="Reset your Guilded password",
+            subject="Reset your Plutus password",
             template_name="password_reset",
             context={
                 "user_name":    first,

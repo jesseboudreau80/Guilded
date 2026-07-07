@@ -10,8 +10,8 @@ export const TIER_RANK: Record<Tier, number> = {
 
 export const TIER_PRICE: Record<Tier, string> = {
   APPRENTICE: "Free",
-  JOURNEYMAN: "$25/month",
-  MASTER:     "$49/month",
+  JOURNEYMAN: "$19/month",
+  MASTER:     "$47/month",
   HERO:       "Contact us",
 };
 
@@ -22,10 +22,10 @@ export const AI_LIMITS: Record<Tier, number> = {
   HERO:       300,
 };
 
-// Apprentice is branded as weekly; all others are monthly.
-// The backend reset cadence is unchanged (monthly for all).
+// All tiers are monthly — backend resets monthly; weekly branding was a
+// false-advertising bug (backend resets every 30 days). Fixed 2026-07-02.
 export const AI_PERIOD: Record<Tier, "weekly" | "monthly"> = {
-  APPRENTICE: "weekly",
+  APPRENTICE: "monthly",
   JOURNEYMAN: "monthly",
   MASTER:     "monthly",
   HERO:       "monthly",

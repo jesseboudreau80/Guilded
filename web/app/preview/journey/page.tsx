@@ -5,10 +5,10 @@ import { ArrowRight, CheckCircle, Circle, Zap, Shield, TrendingUp } from "lucide
 import { DemoBadge } from "@/components/preview/PreviewShared";
 import { DEMO_JOURNEY, DEMO_STATS } from "@/lib/demo-data";
 
-export const metadata = { title: "Recovery Journey Preview — Guilded" };
+export const metadata = { title: "Recovery Journey Preview — Plutus" };
 
 const MILESTONE_DETAILS: Record<string, { desc: string; impact: string }> = {
-  account:   { desc: "You joined Guilded and activated your recovery account.",                                               impact: "Foundation"         },
+  account:   { desc: "You joined Plutus and activated your recovery account.",                                               impact: "Foundation"         },
   audit:     { desc: "Uploaded your credit report PDF. AI extracted all accounts, balances, and derogatory items.",           impact: "+100 XP · High"     },
   verified:  { desc: "Reviewed every extracted account for accuracy. Confirmed the AI read your report correctly.",            impact: "+50 XP · Medium"    },
   results:   { desc: "Activated your personalized recovery roadmap — 9 targets identified, ranked by legal strength.",        impact: "+75 XP · High"      },

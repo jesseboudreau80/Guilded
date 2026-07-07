@@ -14,33 +14,39 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Guilded",
-    template: "%s | Guilded",
+    default: "Plutus",
+    template: "%s | Plutus",
   },
   description:
     "Structured credit recovery education. Audit your credit report, learn your consumer law rights, and build a real dispute strategy — guided by AI.",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL ?? "https://guilded.jesseboudreau.com"
+    process.env.NEXT_PUBLIC_APP_URL ?? "https://plutus.jesseboudreau.com"
   ),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://guilded.jesseboudreau.com",
-    siteName: "Guilded",
-    title: "Guilded — Financial Recovery. Structured. Strategic. Protected.",
+    url: "https://plutus.jesseboudreau.com",
+    siteName: "Plutus",
+    title: "Plutus — Financial Recovery. Structured. Strategic. Protected.",
     description:
       "Structured credit recovery education. Audit your report, learn your legal rights under FCRA and FDCPA, and build a real dispute strategy — guided by AI.",
-    // ⚠️  PRE-LAUNCH TODO: Add og:image (1200×630 PNG) for Facebook/Instagram link previews.
-    // Without this, Facebook will scrape a generic image or show none.
-    // Suggested: a dark-background image with the Guilded shield, tagline, and risk score UI.
-    // images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Guilded — Credit Recovery Platform" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Plutus — Credit Recovery Platform" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guilded — Financial Recovery. Structured. Strategic. Protected.",
+    title: "Plutus — Financial Recovery. Structured. Strategic. Protected.",
     description:
       "Structured credit recovery education — audit, learn, dispute. Guided by AI.",
-    // images: ["/og-image.png"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

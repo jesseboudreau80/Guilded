@@ -15,7 +15,7 @@ type Props = {
  * InsightTooltip
  *
  * Wraps a piece of text with a hover card explaining the concept
- * and linking to the relevant Guild Academy module.
+ * and linking to the relevant Plutus Academy module.
  *
  * Implemented with CSS-only hover (no external tooltip library).
  * The tooltip opens upward; on mobile it renders inline.

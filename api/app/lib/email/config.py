@@ -19,7 +19,7 @@ import os
 logger = logging.getLogger(__name__)
 
 # Verified sending domain configured in Resend
-_VERIFIED_FROM = "Guilded <guilded@mail.jesseboudreau.com>"
+_VERIFIED_FROM = "Plutus <guilded@mail.jesseboudreau.com>"
 
 
 class EmailConfig:

@@ -3,13 +3,13 @@ export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { Shield, Lock, Server, Eye, CreditCard, FileText } from "lucide-react";
 
-export const metadata = { title: "Security & Data — Guilded" };
+export const metadata = { title: "Security & Data — Plutus" };
 
 const SECTIONS = [
   {
     icon:  Lock,
     title: "End-to-End Encryption",
-    body:  "All data transmitted between your browser and Guilded is encrypted using TLS 1.3. Passwords are never stored in plaintext — they are hashed using Argon2, a memory-hard algorithm designed to resist brute-force attacks.",
+    body:  "All data transmitted between your browser and Plutus is encrypted using TLS 1.3. Passwords are never stored in plaintext — they are hashed using Argon2, a memory-hard algorithm designed to resist brute-force attacks.",
   },
   {
     icon:  FileText,
@@ -19,17 +19,17 @@ const SECTIONS = [
   {
     icon:  Eye,
     title: "What We Can See",
-    body:  "Guilded staff can access account metadata (email, tier, usage counts) for support purposes. We cannot read your credit report content unless you explicitly share it in a support ticket. Your financial data is yours.",
+    body:  "Plutus staff can access account metadata (email, tier, usage counts) for support purposes. We cannot read your credit report content unless you explicitly share it in a support ticket. Your financial data is yours.",
   },
   {
     icon:  Server,
     title: "Infrastructure",
-    body:  "Guilded runs on secured infrastructure with access controls, automated backups, and monitoring. Our database uses row-level encryption for sensitive fields. Authentication tokens expire after 30 days.",
+    body:  "Plutus runs on secured infrastructure with access controls, automated backups, and monitoring. Our database uses row-level encryption for sensitive fields. Authentication tokens expire after 30 days.",
   },
   {
     icon:  CreditCard,
     title: "Payment Security",
-    body:  "Billing is handled by Stripe, a PCI DSS Level 1 certified payment processor. Guilded never sees, stores, or logs your payment card details. We receive only transaction confirmation and subscription status.",
+    body:  "Billing is handled by Stripe, a PCI DSS Level 1 certified payment processor. Plutus never sees, stores, or logs your payment card details. We receive only transaction confirmation and subscription status.",
   },
   {
     icon:  Shield,
@@ -44,7 +44,7 @@ export default function SecurityPage() {
       <div className="mx-auto max-w-2xl">
         <div className="flex items-center gap-2.5 mb-8">
           <Shield size={18} className="text-gold" />
-          <Link href="/" className="text-sm font-bold text-white">Guilded</Link>
+          <Link href="/" className="text-sm font-bold text-white">Plutus</Link>
         </div>
 
         <div className="flex items-center gap-2 mb-4">
@@ -52,7 +52,7 @@ export default function SecurityPage() {
           <h1 className="text-2xl font-semibold text-slate-100">Security &amp; Data</h1>
         </div>
         <p className="text-sm text-slate-400 leading-relaxed">
-          Guilded handles sensitive financial data. Here&apos;s exactly how we protect it.
+          Plutus handles sensitive financial data. Here&apos;s exactly how we protect it.
         </p>
 
         <div className="mt-8 space-y-6">

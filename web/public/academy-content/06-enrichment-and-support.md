@@ -19,7 +19,7 @@ Send a follow-up letter to the bureau: "On [date], I received notification that 
 
 This request forces the bureau to disclose how the investigation was actually conducted. In many cases, the investigation was superficial — a quick electronic confirmation through e-OSCAR, not a genuine review of documents. If the bureau cannot describe a meaningful investigation, this documentation becomes evidence in an escalation.
 
-> **Guild Insight:** The MOV letter is one of the most underused tools in credit repair. Many consumers simply accept "verified" and move on. Demanding the method of verification creates accountability and paper trail evidence for CFPB complaints and potential FCRA litigation.
+> **Plutus Insight:** The MOV letter is one of the most underused tools in credit repair. Many consumers simply accept "verified" and move on. Demanding the method of verification creates accountability and paper trail evidence for CFPB complaints and potential FCRA litigation.
 
 ### The Direct Furnisher Dispute
 
@@ -47,7 +47,7 @@ Active credit repair requires active monitoring. You need to know when items cha
 
 **New accounts and inquiries:** A new account or hard inquiry you didn't authorize is either a mixed file or identity theft. Set up alerts wherever possible.
 
-> **Guild Insight:** Score monitoring tools are useful for direction — up, down, flat — but don't over-optimize for the displayed number. FICO has 28+ score versions. The number on Credit Karma is not the same as the number your mortgage lender sees. Monitor trends, not daily fluctuations.
+> **Plutus Insight:** Score monitoring tools are useful for direction — up, down, flat — but don't over-optimize for the displayed number. FICO has 28+ score versions. The number on Credit Karma is not the same as the number your mortgage lender sees. Monitor trends, not daily fluctuations.
 
 ### Setting Up Alerts
 
@@ -79,11 +79,11 @@ Identity theft is not rare. Every year, millions of Americans discover accounts 
 
 **Step 5:** Dispute every fraudulent account with each bureau, attaching your Identity Theft Report and police report. Under the FCRA, bureaus must block fraudulent information from your report within 4 business days of receiving a valid Identity Theft Report.
 
-> **Guild Insight:** Identity theft disputes are governed by different FCRA provisions than standard accuracy disputes. Specifically, FCRA §605B requires bureaus to block information resulting from identity theft upon receipt of a valid identity theft report — a stronger protection than the standard 30-day investigation cycle. Use the right process.
+> **Plutus Insight:** Identity theft disputes are governed by different FCRA provisions than standard accuracy disputes. Specifically, FCRA §605B requires bureaus to block information resulting from identity theft upon receipt of a valid identity theft report — a stronger protection than the standard 30-day investigation cycle. Use the right process.
 
 ---
 
-## Guild Resources and Community
+## Member Resources and Community
 
 You are not doing this alone. The DIY Credit Repair 101 community — 25,000+ members — has been running for years. The collective knowledge in that group represents hundreds of thousands of hours of real-world experience with every scenario you might encounter.
 
@@ -97,10 +97,10 @@ You are not doing this alone. The DIY Credit Repair 101 community — 25,000+ me
 
 **Contribute back.** The community grows stronger when members who have succeeded share what worked. Your experience with a specific collection agency, a specific bureau, or a specific dispute approach is valuable to someone else facing the same situation.
 
-> **Guild Insight:** Credit repair is a skill. The first time you go through this process, it's slow and uncertain. The second time, you're faster. By the third time, you can walk through someone else's report and identify the highest-leverage items in minutes. Build your knowledge intentionally — this is a skill that protects your financial life forever.
+> **Plutus Insight:** Credit repair is a skill. The first time you go through this process, it's slow and uncertain. The second time, you're faster. By the third time, you can walk through someone else's report and identify the highest-leverage items in minutes. Build your knowledge intentionally — this is a skill that protects your financial life forever.
 
-### Guilded's Role in Your Journey
+### Plutus's Role in Your Journey
 
-Guilded is a tool, not a replacement for judgment. It surfaces the data, identifies patterns, generates draft letters, and tracks your progress — but every decision about what to dispute, how aggressively to pursue it, and when to escalate is yours. The AI can make mistakes. Read every output, verify against your actual report, and apply what you've learned in this academy.
+Plutus is a tool, not a replacement for judgment. It surfaces the data, identifies patterns, generates draft letters, and tracks your progress — but every decision about what to dispute, how aggressively to pursue it, and when to escalate is yours. The AI can make mistakes. Read every output, verify against your actual report, and apply what you've learned in this academy.
 
-The combination of your community knowledge, your FCRA rights, and Guilded's analytical tools is more powerful than any single component. Use all three.
+The combination of your community knowledge, your FCRA rights, and Plutus's analytical tools is more powerful than any single component. Use all three.

@@ -537,7 +537,7 @@ export default function AuditResultsPage() {
                     href="/dashboard/upgrade"
                     className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-gold/30 bg-gold/10 px-3.5 py-1.5 text-xs font-semibold text-gold hover:bg-gold/20 transition-colors"
                   >
-                    Advance to Journeyman — $25/month <ArrowRight size={11} />
+                    Advance to Journeyman — $19/month <ArrowRight size={11} />
                   </Link>
                 </div>
               </div>
@@ -744,7 +744,7 @@ export default function AuditResultsPage() {
           <div className="flex items-start gap-2 rounded-xl border border-slate-800/60 bg-slate-900/30 px-4 py-3">
             <Shield size={11} className="text-gold shrink-0 mt-0.5" />
             <p className="text-xs text-slate-600 leading-relaxed">
-              Guilded generates educational dispute letter frameworks based on your report data.
+              Plutus generates educational dispute letter frameworks based on your report data.
               <strong className="text-slate-500"> Review every letter carefully before sending.</strong>
               {" "}Results vary — no outcome is guaranteed.
               AI analysis is educational only and not legal advice.

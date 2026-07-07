@@ -313,7 +313,7 @@ async def create_founders_pass_checkout(body: FoundersPassRequest, current_user:
         raise HTTPException(
             500,
             f"Founders Pass price ID not configured for {pass_type}. "
-            "Set STRIPE_{'TEST' if not settings.stripe_is_live else 'LIVE'}_FOUNDERS_{pass_type}_PRICE_ID.",
+            f"Set STRIPE_{'TEST' if not settings.stripe_is_live else 'LIVE'}_FOUNDERS_{pass_type}_PRICE_ID.",
         )
 
     session_kwargs: dict = dict(

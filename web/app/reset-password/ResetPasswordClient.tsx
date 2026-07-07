@@ -84,7 +84,7 @@ function ResetForm() {
       <div className="mb-6">
         <h1 className="text-xl font-semibold text-slate-100">Set new password</h1>
         <p className="mt-1.5 text-sm text-slate-400">
-          Choose a strong password for your Guilded account.
+          Choose a strong password for your Plutus account.
         </p>
       </div>
 
@@ -133,7 +133,7 @@ export default function ResetPasswordPage() {
       <div className="w-full max-w-md">
         <div className="flex items-center gap-2.5 mb-8 justify-center">
           <Shield size={18} className="text-gold" />
-          <Link href="/" className="text-base font-bold text-white">Guilded</Link>
+          <Link href="/" className="text-base font-bold text-white">Plutus</Link>
         </div>
 
         <div className="rounded-2xl border border-slate-700 bg-slate-900 p-8">
