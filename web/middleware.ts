@@ -29,6 +29,12 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
+  // ── Closed pages: /preview/* shows fake testimonials (CROA optics) and the
+  // prepaid Strategy Session has no delivery path — neither is reachable (2026-10-27).
+  if (pathname.startsWith("/preview") || pathname.startsWith("/dashboard/strategy-session")) {
+    return NextResponse.redirect(new URL("/dashboard", request.url));
+  }
+
   // ── Auth: protect /dashboard/* and /preview/* ────────────────────────────
   // /preview/* renders hardcoded demo data (including fake testimonials) —
   // it must never be publicly reachable (CROA optics, PLUTUS_AUDIT.md #6).

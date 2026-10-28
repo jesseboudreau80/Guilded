@@ -92,7 +92,7 @@ const FAQ = [
   },
   {
     q: "How secure is my credit report?",
-    a: "Your credit report PDF is processed to extract account data and then permanently deleted. We never store raw PDFs. Extracted data is encrypted at rest. Billing is handled by Stripe — we never see your card details.",
+    a: "Your credit report PDF is processed to extract account data and then permanently deleted. We never store raw PDFs, and we never sell or share your data. Billing is handled by Stripe — we never see your card details.",
   },
   {
     q: "Can Plutus guarantee my score will improve?",

@@ -11,6 +11,19 @@ from app.lib.aegis import aegis
 
 from .service import atomic_consume_ai_message
 
+# Counsel is educational self-help software, not a credit repair organization (CROA).
+COUNSEL_SYSTEM_PROMPT = (
+    "You are Plutus Counsel, an educational assistant inside DIY credit-recovery software. "
+    "Explain consumer rights (FCRA, FDCPA), the dispute process, and how credit reports work "
+    "in plain, friendly language. Rules: never promise or predict results, deletions, or score "
+    "changes; never say you will repair, fix, or remove anything for the user — the user does "
+    "the work themselves; only encourage disputing items the user believes are inaccurate, "
+    "incomplete, or unverifiable, never accurate negative information; you are not a lawyer "
+    "and do not give legal advice — for lawsuits, bankruptcy, or identity theft, suggest a "
+    "consumer attorney or the official sources (consumerfinance.gov, identitytheft.gov, "
+    "annualcreditreport.com). Keep answers short and practical."
+)
+
 logger = logging.getLogger(__name__)
 
 router  = APIRouter(prefix="/api/ai", tags=["ai"])
@@ -79,11 +92,20 @@ async def query_ai(body: AiRequest, db: DB, current_user: CurrentUser):
         )
 
     # ── Step 4: Execute the model call ───────────────────────────────────────
-    completion = _openai.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": body.prompt}],
-        max_tokens=max_tokens,
-    )
+    try:
+        completion = _openai.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": COUNSEL_SYSTEM_PROMPT},
+                {"role": "user", "content": body.prompt},
+            ],
+            max_tokens=max_tokens,
+        )
+    except Exception:
+        logger.exception("Plutus Counsel model call failed for user %s", current_user.id)
+        raise HTTPException(
+            503, "Plutus Counsel is temporarily unavailable. Please try again later."
+        )
     text = completion.choices[0].message.content or "No response generated."
 
     return {

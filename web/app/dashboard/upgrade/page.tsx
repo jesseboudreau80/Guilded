@@ -398,8 +398,8 @@ export default function UpgradePage() {
       <div className="rounded-xl border border-slate-800 bg-slate-800/30 px-6 py-5">
         <div className="grid gap-4 sm:grid-cols-3 text-center">
           {[
-            { icon: Lock,   title: "Cancel anytime",        desc: "Subscriptions cancel instantly. No questions, no friction." },
-            { icon: Shield, title: "Privacy-first",         desc: "Your credit data is never sold or shared. Encrypted at rest." },
+            { icon: Lock,   title: "Cancel anytime",        desc: "Email guilded@jesseboudreau.com and we cancel the same day. No questions." },
+            { icon: Shield, title: "Privacy-first",         desc: "Your credit data is never sold or shared. Report PDFs are deleted after reading." },
             { icon: Check,  title: "No surprise charges",   desc: "One price, clear billing. Discounts show before you pay." },
           ].map(({ icon: Icon, title, desc }) => (
             <div key={title} className="flex flex-col items-center gap-2">

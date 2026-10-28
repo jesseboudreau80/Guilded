@@ -44,7 +44,8 @@ const NAV_GROUPS: NavGroup[] = [
     items: [
       { label: "Templates",        href: "/dashboard/templates",         icon: FileText,  },
       { label: "Arbitration",      href: "/dashboard/arbitration",       icon: Scale,     requiredTier: "MASTER" },
-      { label: "Strategy Session", href: "/dashboard/strategy-session",  icon: Target,    },
+      // Strategy Session hidden 2026-10-27: prepaid $200 consult with no delivery path
+      // (no email/scheduling after payment) and a CROA advance-fee risk.
     ],
   },
   {
