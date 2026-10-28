@@ -9,6 +9,18 @@ export async function middleware(request: NextRequest) {
   // Plutus rebrand (2026-07-03). Old links in Jesse's FB group keep working;
   // guilded-api.jesseboudreau.com is unaffected (this middleware is web-only).
   const host = request.headers.get("host");
+
+  // ── Force HTTPS: the site answers plain http:// (no edge redirect), and the
+  // API's CORS only allows the https origin — signups from an http:// page
+  // failed with "Network error" (2026-10-27). Cloudflare sets x-forwarded-proto.
+  if (request.headers.get("x-forwarded-proto") === "http" && host?.endsWith("jesseboudreau.com")) {
+    const url = request.nextUrl.clone();
+    url.protocol = "https:";
+    url.host = host === "guilded.jesseboudreau.com" ? "plutus.jesseboudreau.com" : host;
+    url.port = "";
+    return NextResponse.redirect(url, 301);
+  }
+
   if (host === "guilded.jesseboudreau.com") {
     const url = request.nextUrl.clone();
     url.protocol = "https:";
@@ -37,6 +49,9 @@ export async function middleware(request: NextRequest) {
   //   "Download.txt" because WKWebView sniffs the content and treats it as
   //   a file download instead of an HTML page.
   response.headers.set("X-Content-Type-Options", "nosniff");
+
+  // HSTS: once a browser has seen https, it never loads the http page again.
+  response.headers.set("Strict-Transport-Security", "max-age=31536000");
 
   // X-Frame-Options: SAMEORIGIN
   //   Prevents the site from being embedded in iframes on other domains.
