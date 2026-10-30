@@ -1,7 +1,7 @@
 import logging
 from datetime import date
 
-from openai import OpenAI
+from app.core.llm import chat_completion
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -13,12 +13,10 @@ from .prompts import DISPUTE_SYSTEM, build_dispute_user
 
 logger = logging.getLogger(__name__)
 
-_openai = OpenAI(api_key=settings.openai_api_key)
 
 
 def _call_llm_text(system: str, user: str, max_tokens: int = 2048) -> str:
-    response = _openai.chat.completions.create(
-        model="gpt-4o-mini",
+    response = chat_completion(
         messages=[
             {"role": "system", "content": system},
             {"role": "user",   "content": user},

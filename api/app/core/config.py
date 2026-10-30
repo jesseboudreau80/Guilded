@@ -53,6 +53,7 @@ class Settings(BaseSettings):
 
     # OpenAI
     openai_api_key: str = ""
+    groq_api_key: str = ""      # free primary LLM; see app/core/llm.py
 
     # Email — Resend
     resend_api_key: str = ""

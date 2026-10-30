@@ -17,6 +17,7 @@ import json
 import logging
 
 from openai import OpenAI
+from app.core.llm import chat_completion
 
 from app.core.config import settings
 from app.core.tiers import TIER_LEVEL
@@ -26,7 +27,6 @@ from .prompts import ANALYSIS_SYSTEM, ANALYSIS_USER
 
 logger = logging.getLogger(__name__)
 
-_openai = OpenAI(api_key=settings.openai_api_key, timeout=90.0)
 
 APPRENTICE_FREE_RECS = 3
 
@@ -38,8 +38,7 @@ def _call_analysis_llm(accounts_json: str, negative_count: int, total_count: int
         negative_count=negative_count,
         total_count=total_count,
     )
-    response = _openai.chat.completions.create(
-        model="gpt-4o-mini",
+    response = chat_completion(
         response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": ANALYSIS_SYSTEM},

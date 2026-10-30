@@ -2,6 +2,7 @@ import logging
 
 from fastapi import APIRouter, HTTPException
 from openai import OpenAI
+from app.core.llm import chat_completion
 from pydantic import BaseModel, field_validator
 
 from app.core.config import settings
@@ -27,7 +28,6 @@ COUNSEL_SYSTEM_PROMPT = (
 logger = logging.getLogger(__name__)
 
 router  = APIRouter(prefix="/api/ai", tags=["ai"])
-_openai = OpenAI(api_key=settings.openai_api_key)
 
 
 class AiRequest(BaseModel):
@@ -93,8 +93,7 @@ async def query_ai(body: AiRequest, db: DB, current_user: CurrentUser):
 
     # ── Step 4: Execute the model call ───────────────────────────────────────
     try:
-        completion = _openai.chat.completions.create(
-            model="gpt-4o-mini",
+        completion = chat_completion(
             messages=[
                 {"role": "system", "content": COUNSEL_SYSTEM_PROMPT},
                 {"role": "user", "content": body.prompt},

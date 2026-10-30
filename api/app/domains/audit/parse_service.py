@@ -18,13 +18,13 @@ import logging
 import re
 
 from openai import OpenAI
+from app.core.llm import chat_completion
 
 from app.core.config import settings
 from .prompts import EXTRACTION_SYSTEM, EXTRACTION_USER
 
 logger = logging.getLogger(__name__)
 
-_openai = OpenAI(api_key=settings.openai_api_key, timeout=90.0)
 
 # Valid enum values from the extraction schema
 _VALID_STATUSES = frozenset({
@@ -98,8 +98,7 @@ def score_confidence(account: dict) -> tuple[str, list[str]]:
 
 def _call_extraction_llm(text: str) -> list[dict]:
     """Call OpenAI to extract structured accounts from credit report text."""
-    response = _openai.chat.completions.create(
-        model="gpt-4o-mini",
+    response = chat_completion(
         response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": EXTRACTION_SYSTEM},
