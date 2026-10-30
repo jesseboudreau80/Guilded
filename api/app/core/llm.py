@@ -56,7 +56,8 @@ def chat_completion(
             kwargs["response_format"] = response_format
         if model.startswith("openai/gpt-oss"):
             # Reasoning model: keep deliberation short so it doesn't eat max_tokens.
-            kwargs["reasoning_effort"] = "low"
+            # extra_body, not the kwarg — the pinned openai SDK (1.57) predates it.
+            kwargs["extra_body"] = {"reasoning_effort": "low"}
         try:
             response = client.chat.completions.create(**kwargs)
             if not (response.choices and response.choices[0].message.content):
